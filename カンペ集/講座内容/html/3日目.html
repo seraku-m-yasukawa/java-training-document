@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3日目.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/m-yasukawa/Desktop/%E6%A1%88%E4%BB%B6/Java%E7%A0%94%E4%BF%AE%E3%82%AB%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%A9%E3%83%A0/%E7%A0%94%E4%BF%AE%E4%B8%AD%E3%83%A1%E3%83%A2/github-markdown.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div>
+<div class=main>
+<h1 id="3%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">3日目 カンペ</h1>
+<h2 id="%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</h2>
+<p>Java言語を使用して、以下の事ができるようになる。</p>
+<ul>
+<li>変数の作成及び使用</li>
+<li>条件分岐(if)を使て、処理フローを分ける</li>
+<li>振り替えし(while, for)を使って、反復処理を構築できる</li>
+<li><s>break、continueを使って、反復処理を制御できる</s></li>
+</ul>
+<h2 id="%E6%8E%88%E6%A5%AD%E3%83%97%E3%83%A9%E3%83%B3">授業プラン</h2>
+<ul>
+<li>あとで目次作りますたぶん</li>
+</ul>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91">オブジェクト指向</h1>
+<p>VBSみたいなのを、Procedualと呼ぶ。<br>
+※安川この辺ちゃんと聞けてないので、Procedualに関してはあとで書く、たぶん<br>
+メリット</p>
+<ul>
+<li>コードがシンプル<br>
+デメリット</li>
+<li>現実世界のことをソフトウェアの中で表現しにくい</li>
+</ul>
+<p>例えば、銀行のシステムのうち、「口座を作る」機能を作るとなったとする。<br>
+口座（アカウント）に必要なものを考えると、</p>
+<ul>
+<li>口座を特定するために「口座番号」</li>
+<li>誰の口座か把握するための「アカウントオーナーの名前」</li>
+<li>残高<br>
+が必要。</li>
+</ul>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<p>じゃあ、別の人が口座を作るとなったら？<br>
+この変数のセットをもうひとつ2とかつけて作る？</p>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<p>あるいは、<code>account</code>を<code>satoAccount</code>とかにする？</p>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<p>もっと複数人が登録するとなると、全員分作成する？無理。<br>
+画面単位で考えると、例えば、別画面を作るとなりました、新画面には利子を登録する機能を作ります、となると、変数コピペして、処理を追加して……ってする？<br>
+じゃあそれが追加で10画面必要です、とかになると？<br>
+そうすると、大量に同じ変数ができる。そんな中、突然「名前をフルネームじゃなくて、苗字と名前にわけてください」って言われたら、全画面の変数を直さないといけない。<br>
+当然手間だし、漏れが発生する可能性があったりで大変なので、やってません。</p>
+<p>じゃあ、もっと現実世界に即した書き方で表現しよう。じゃあ、口座っていう変数を作れば便利で面白いよね。</p>
+<pre class="hljs"><code><div>Account
+  ├─name
+  ├─number
+  └─totalMoner
+</div></code></pre>
+<p>ってのを作ればいいよね。こんな風にAccountってのを作って使いまわせば、修正があったとしても、このAccountを直せば、一気にすべて直せます。</p>
+<p>javaを深堀していくと、</p>
+<pre class="hljs"><code><div>int -&gt; Integer
+double -&gt; Double
+String
+</div></code></pre>
+<p>といった感じで、同じようなものがある。これらをもっと深堀していくと、全て<code>Object</code>というものから出来ている。<br>
+この<code>Object</code>を使ってプログラミングするから、OOP。<br>
+この機能を使って、自分で<code>Object</code>を作りさえすれば便利だよね。</p>
+<h1 id="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">オブジェクトについて</h1>
+<p>以前<code>Array.length</code>というのを設定せずとも使っていたが、これは<code>Array</code>というものの、<code>length</code>というプロパティを使っている。</p>
+<p>先程の<code>Account</code>をクラスと呼ぶ。<br>
+クラスを作ると言ったら、この大本となるものを作ると考えてほしい。</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span>
+</span></div></code></pre>
+<p>というのがクラス。で、このクラスがプログラムの名前と思ってもらえればいい。<br>
+また、オブジェクト指向なら必ずクラスを作る必要がある。</p>
+<p>名前に関しては、大体は最初にAppとかApplocationとかつける。<br>
+なぜなら、mainは一番最初に実行されるから。その実行されるものを関数と呼ぶ。<br>
+関数の名前は、その関数がどういう風に動くかを示している。</p>
+<h2 id="%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">プロパティ</h2>
+<p>さっきの口座をプログラミングで表す。例えばAccountを作る場合。<br>
+皆さんがAccountを口座として認識するために、</p>
+<ul>
+<li>Account
+<ul>
+<li>名前</li>
+<li>口座番号</li>
+<li>残高</li>
+</ul>
+</li>
+</ul>
+<p>がでてきた。<br>
+これらがそろっていれば口座と認識できるが、もし名前だけの場合、何かわからない。<br>
+<code>class Account</code>を口座と認識するには、これら全てが必要となる。<br>
+これらのことをプロパティと呼ぶ。</p>
+<h2 id="%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">メソッド</h2>
+<p>じゃあ口座でできることは？</p>
+<ul>
+<li>Account
+<ul>
+<li>引き出し</li>
+<li>振り込み</li>
+<li>預け入れ</li>
+<li>残高照会<br>
+などである。<br>
+これらの「口座でできること」を、メソッドと呼ぶ。<br>
+<code>class Account</code>は、プロパティとメソッドの全てを含んで出来ている。</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E6%88%BB%E3%82%8A%E5%80%A4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">戻り値について</h3>
+<p>戻り値とは、メソッドを実行した結果、返ってくる値のこと。javaだと<code>return 〇〇;</code>の〇〇のところ。<br>
+メソッドは、戻り値の型を指定してあげないといけない。下記のように書く。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAmount</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> amount;
+}
+</div></code></pre>
+<p>のように、メソッド名の後ろに戻り値の型を指定する。</p>
+<p>また、戻り値があるメソッドとないメソッドの2種類存在する。<br>
+戻り値がない場合、型のところに<code>void</code>と記述する。<code>return</code>は不要。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printHelloWorld</span><span class="hljs-params">()</span> </span>{
+    System.out.println(<span class="hljs-string">"HelloWorld"</span>);
+}
+</div></code></pre>
+<p>例えば、今の残高が欲しい場合は戻り値があるメソッドになるし、名前を設定するようなメソッドの場合は、戻り値がないメソッドとなる。</p>
+<h3 id="%E5%BC%95%E6%95%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">引数について</h3>
+<p>引数とは、メソッドに渡してあげる値のこと。<br>
+例えば、預け入れのメソッドを作成するとする。<br>
+預け入れするために必要な情報は何か？預け入れる金額である。<br>
+つまり、預け入れメソッドには、その金額を教えてあげないといけない。そんなときに引数で指定してあげる。<br>
+引数ありのメソッドは、</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deposit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+    amount += value;
+}
+</div></code></pre>
+<p>上記のように、メソッド名の後の<code>()</code>の中に型と引数名を設定する。<br>
+また、引数は、変数と同じように扱えるし、複数設定することもできる。複数設定するときは、カンマ区切りで表現する。</p>
+<p>次、引き出しメソッドを作ってみてもらう。<br>
+要件として、引き出し金額が残高よりも少ないと引き出せない。つまり、好き勝手に引き出されないようにしたい。<br>
+※適当に放置して、後で作りながら解説する。下記参考。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">withdraw</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+	<span class="hljs-keyword">if</span>(amount &gt;= value) {
+		amount -= value;
+	} <span class="hljs-keyword">else</span> {
+		System.out.println(<span class="hljs-string">"残高不足で引き出しできません。"</span>);
+	}
+}
+</div></code></pre>
+<h1 id="%E8%AA%B2%E9%A1%8C1">課題1</h1>
+<p>皆さんにクラスを考えてもらう。プロパティとメソッドは各2つ以上。</p>
+<ul>
+<li>車（定番中の定番）</li>
+<li>犬（これも定番！）</li>
+<li>注文</li>
+<li>商品（ちょっとひねってる）</li>
+<li>料理のレシピ</li>
+</ul>
+<p>メソッドがこれで、プロパティがこれで……って感じのもので大丈夫。</p>
+<h2 id="%E5%AE%9F%E9%9A%9B%E3%81%AB%E4%BD%9C%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE">実際に作ってもらったもの</h2>
+<details><summary>答え</summary>
+<ol>
+<li>車
+<ol>
+<li>プロパティ
+<ol>
+<li>車名</li>
+<li>値段</li>
+<li>サイズ</li>
+<li>年式</li>
+<li>グレード</li>
+<li>状態</li>
+</ol>
+</li>
+<li>メソッド
+<ol>
+<li>アクセル</li>
+<li>ブレーキ</li>
+<li>ハンドル操作</li>
+<li>エンジンをかける</li>
+<li>バックをする</li>
+<li>ライトを転倒</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>犬
+<ol>
+<li>プロパティ
+<ol>
+<li>名前</li>
+<li>生年月日</li>
+<li>性別</li>
+<li>犬種</li>
+<li>犬の名前</li>
+<li>年齢</li>
+</ol>
+</li>
+<li>メソッド
+<ol>
+<li>歩く</li>
+<li>走る</li>
+<li>吠える</li>
+<li>排泄する</li>
+<li>噛む</li>
+<li>食べる</li>
+<li>甘える</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>注文
+<ol>
+<li>プロパティ
+<ol>
+<li>商品名</li>
+<li>商品番号</li>
+<li>店舗名</li>
+<li>伝票</li>
+</ol>
+</li>
+<li>メソッド
+<ol>
+<li>宅配</li>
+<li>案内</li>
+<li>会計</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>商品
+<ol>
+<li>プロパティ
+<ol>
+<li>商品名</li>
+<li>商品コード</li>
+<li>定価</li>
+<li>在庫</li>
+<li>履歴</li>
+</ol>
+</li>
+<li>メソッド
+<ol>
+<li>品入れ</li>
+<li>品だし</li>
+<li>売上計算</li>
+<li>割引情報</li>
+<li>売り上げ推移グラフ</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>レシピ
+<ol>
+<li>プロパティ
+<ol>
+<li>料理名</li>
+<li>分類（中華・和食）</li>
+<li>材料</li>
+<li>使う調理器具</li>
+<li>予算</li>
+<li>栄養素</li>
+<li>作り方</li>
+<li>出来上がりの写真</li>
+</ol>
+</li>
+<li>メソッド
+<ol>
+<li>料理の存在を教える</li>
+<li>作り方を教える</li>
+<li>材料を教える</li>
+<li>カロリーを教える</li>
+<li>出来上がりをイメージする</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>先生の意見</strong></p>
+<ul>
+<li>車
+<ul>
+<li>アクセルよりも移動とかのほうがいいかな</li>
+</ul>
+</li>
+<li>犬
+<ul>
+<li>親の名前をプロパティにするなら、両親でわけたほうがいいかな
+<ul>
+<li>ペットショップのDBシステムと考えると、どっちの情報も欲しいし</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注文
+<ul>
+<li>商品単品じゃなくて、商品一覧にするかな</li>
+<li>商品の削除とかいれるかな</li>
+</ul>
+</li>
+<li>商品
+<ul>
+<li>1.2.3.5のメソッドは、商品に命令しても動かないので、ちょっと違うかも。<br>
+例えば、品入れ品出しは、倉庫レベルで考えたほうがしっくりくると思う。<br>
+倉庫クラスを別で作って、その倉庫の商品一覧のところにあるかな？って倉庫に対して命令したほうがしっくりくる。</li>
+<li>商品単体としてはできない、割引情報はプロパティでもいいかもしれない。</li>
+<li>例えば、商品っていう、マウスよりもうえのレイヤならメソッドはほとんどない</li>
+</ul>
+</li>
+<li>料理
+<ul>
+<li>料理の存在を教えるってのは面白いと思った</li>
+</ul>
+</li>
+</ul>
+</details>
+<h1 id="%E4%BD%9C%E3%82%8A%E6%96%B9">作り方</h1>
+<h2 id="%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">プロジェクト</h2>
+<p>プロジェクトを作るところから。想定としては、セラバンクってところからシステムを作ってくれと依頼された。<br>
+以下手順。</p>
+<ol>
+<li><code>パッケージエクスプローラー &gt; 新規 &gt; javaproject</code></li>
+<li>プロジェクト名に<code>SeraBank</code></li>
+<li>一番下のモジュールってところのチェックだけ外す</li>
+</ol>
+<h2 id="%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">パッケージについて</h2>
+<p>プログラミングをしていくにつれて、システムのメインを動かすためのものだったり、特定の処理をするためのものを、フォルダ分けして管理したりする。<br>
+DBをなんやかんやするものがメインにいっぱいあるよりも、別のDBフォルダにわけたほうが、<br>
+ネットワークならネットワークフォルダに、ユーザとのやり取りであるUIを作るならUIフォルダに……<br>
+そうやってわけたほうがわかりやすい。そのわけたフォルダのことをパッケージと呼んでいる。<br>
+例えば<code>String</code>なら、<code>jaba.utils.String</code>で、<code>utils</code>がパッケージ。</p>
+<p>プロジェクトを作るときに、パッケージ名がかぶっちゃうと使えなくなったりで大変。<br>
+例えば、<code>java.practice</code>ってパッケージを作って、その中で<code>Practice.java</code>ってのを作ると、<code>java.practice</code>のことを探すはずなのに、javaが自分のことを探し出す。<br>
+javaがjavaのパッケージを探し出して、見つからなくてコンパイルエラーとなってしまう。</p>
+<p>こういうときは、パッケージ名にURL、<code>seraku.co.jp</code>を使う。URLは一意なので。<br>
+ただし、逆から使う。つまり、<code>jp &gt; co &gt; seraku</code>となる。<br>
+そこからさらに、DBとなって、さらにそこに〇〇.java、という風になる。</p>
+<p>けれど、serakuの人がみんな<code>jp.co.seraku</code>を使うと大変なことになる。<br>
+例えば、<code>jp.co.seraku</code>で<code>App</code>というのを作ったとする。<br>
+その後、大阪支社で同じ名前の<code>App</code>というのを作られました。<br>
+その大阪の<code>App</code>を使いたいので、projectを貰って追加して、名古屋で実行しようとすると……<br>
+どっちの<code>App</code>を見ればいいのかわからなくなり、困る。</p>
+<p>なので、基本的には<code>jp.co.seraku</code>の後に今回のプロジェクト名を付けたりする。<br>
+こうやってパッケージ名を決める。また、あくまでもURLなので、全て小文字で書く。</p>
+<h1 id="%E3%82%AF%E3%83%A9%E3%82%B9">クラス</h1>
+<h2 id="%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">クラスの使い方</h2>
+<p>先程作ったパッケージを右クリックして新規クラス作成、名前は<code>SeraBankApp</code>。<br>
+で、一旦メインは放置する。ここにAccountクラスを作ると、読みにくくなってしまうし、動くことは動くけど、色々と問題がある。<br>
+なので、独自のファイルに書き込んで、それぞれのファイルに分けて作成する。</p>
+<p>さっきと同じように<code>Account</code>を作成する。<br>
+コツとして、まず必要なものを大量に書き込んで、あとで色々とちゃんとしていく。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.seraku.serabank;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+	code
+	amount
+	ownerName	
+}
+</div></code></pre>
+<p>こんな感じ。</p>
+<p>クラスのプロパティは変数と同じと思ってもらえればいい、今の3つは変数だと思ってほしい。<br>
+これ、<code>code</code>は何型にすればいいと思う？整数しか使わないので<code>int</code>。残高は日本円なので整数。</p>
+<blockquote>
+<p>余談：小数点を使うと、計算結果がズレることがある。<br>
+そのため、お金に小数点がある国では、金額系はあえて全部intにして、表示するときにint/100とすれば、計算のエラーが起きにくくなる。</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.seraku.serabank;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+	<span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">int</span> amount;
+	String ownerName;
+	
+}
+</div></code></pre>
+<p>これでAccountクラスが完成した。</p>
+<h1 id="%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9">インスタンス</h1>
+<p>Accountを使う方法について。<br>
+メインのクラスで使いたいので、Accountオブジェクトを作る。<code>new</code>ってのをつけて作ってあげる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">new</span> Account();
+</div></code></pre>
+<p>この新しくオブジェクトを作る動作を、インスタンス(instance)・インスタンス化という。<br>
+「Accountクラスをインスタンスして」といわれたら上記の<code>new</code>をすればいい。<br>
+でも、これだけだとオブジェクトを作っただけ。ここででてくるのが、変数。　　<br>
+Account型の変数を作れば、いつでも色々とできるようになる。</p>
+<h1 id="%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E5%8C%96">カプセル化</h1>
+<p>少し前に引き出しメソッドを作成したが、実はまだ、<code>myAccount.amount -〇〇</code>とすれば、自由に引き出せてしまう。<br>
+これではマズいので、他のクラスが自由にプロパティを変更できないようにする。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> amount;
+	<span class="hljs-keyword">private</span> String ownerName;	
+}
+</div></code></pre>
+<p><code>private</code>をつけると、そのプロパティを持っているクラスしか、その変数を触れなくなる。<br>
+その代わり、他のクラスに値を渡すためのメソッド（通称<code>getter</code>）と、貰った値をプロパティに設定するためのメソッド（通称<code>setter</code>）を用意する。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// getter</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getCode</span><span class="hljs-params">()</span> </span>{
+	<span class="hljs-keyword">return</span> code;
+}
+
+<span class="hljs-comment">// setter</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code)</span> </span>{
+	<span class="hljs-keyword">this</span>.code = code;
+}
+</div></code></pre>
+<blockquote>
+<p>注：getterとsetterは、手当たり次第に作成すればよいというわけではない。</p>
+</blockquote>
+<p>このように、他のクラスがプロパティに自由に触れなくすることを、カプセル化という。</p>
+<p>また、先程の<code>private</code>のように、誰が見れるのかを設定するための修飾子を、アクセス修飾子と呼ぶ。<code>public</code>もアクセス修飾子である。<br>
+アクセス修飾子は、変数やメソッドにつけることができる。</p>
+<h1 id="%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF">コンストラクタ</h1>
+<p>銀行口座の、口座名義や番号は、どのタイミングで設定される？変更される？<br>
+変更しようとするときは、削除して作り直す。つまり、値は変更されない。<br>
+そこに着目すると、コードでも同じことをすることになる。</p>
+<p>作る段階で指定して、変更できないようにする。<br>
+javaはどこまで考えてくれていて、<code>construct</code>という、最初に動作させてくれるメソッドがある。<br>
+それは、</p>
+<pre class="hljs"><code><div>Account myAccount = <span class="hljs-keyword">new</span> Account();
+</div></code></pre>
+<p>で使ってる。でもコンストラクタメソッドなんて作ってないよね？その通り。<br>
+<code>class Object</code>というのが存在する、その<code>Object</code>を親に持っていれば、子供のクラスも親のメソッドを実行できる。</p>
+<blockquote>
+<p>親にできるたいていのことは、受け継いでるから子供でもできる<br>
+クラスも同じで、javaがうらっかわで</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">()</span></span>{
+
+}
+</div></code></pre>
+<p>というメソッドを作ってくれている。</p>
+<p>で、コンストラクタといえどメソッドなので、我々が自由に書き込んで実装できます。<br>
+じゃあAccountのときだけ、我々が作ったコンストラクタメソッドで、「必ず口座名義と番号を決めないと作れない」ってしてしまえばいい。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// コンストラクタに引数を設定しないとインスタンス化できない！</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName)</span></span>{
+
+}
+</div></code></pre>
+<p>そのうえで、設定したプロパティはよそから見えなくしたいので、<code>private</code>にしました。すると、</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName)</span></span>{
+    code = code;
+    ownerName = ownerName;
+}
+</div></code></pre>
+<p>だと設定できない。エクリプスの文字色を見るとわかる通り、プロパティは青だけど、今のコードは違う色になっている。つまり、プロパティを指定できていない。<br>
+このクラスのプロパティを指定したい、そんな時は、</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName)</span></span>{
+    <span class="hljs-keyword">this</span>.code = code;
+    <span class="hljs-keyword">this</span>.ownerName = ownerName;
+}
+</div></code></pre>
+<p>とする。<code>this</code>で、このクラスの、ってすることができる。</p>
+<p>メインクラスで、</p>
+<pre class="hljs"><code><div>Account myAccount = <span class="hljs-keyword">new</span> Account(<span class="hljs-number">123</span>,<span class="hljs-string">"Geshner"</span>);
+</div></code></pre>
+<p>とすれば、Accountインスタンスが作成できる。でも今の状態だとプロパティが<code>private</code>なので、</p>
+<pre class="hljs"><code><div>myAccount.ownerName
+</div></code></pre>
+<p>としても読めない。なので、</p>
+<pre class="hljs"><code><div>myAccount.getOwnerName();
+</div></code></pre>
+<p>とかして呼び出してみてほしい。</p>
+<p>ほか、例えばアカウントを作るときに、お金を入れられると便利なので、お金を入れることも入れないこともできるようにしたい場合。<br>
+そういう時は、</p>
+<pre class="hljs"><code><div>Account myAccount = <span class="hljs-keyword">new</span> Account(<span class="hljs-number">1234</span>,<span class="hljs-string">"yasukawa"</span>);
+</div></code></pre>
+<p>から、コンストラクタを追加して、</p>
+<pre class="hljs"><code><div>Account myAccount = <span class="hljs-keyword">new</span> Account(<span class="hljs-number">1234</span>,<span class="hljs-string">"yasukawa"</span>,<span class="hljs-number">500</span>);
+</div></code></pre>
+<p>としてしまえばいい。<br>
+実はメソッドは、引数さえ違えば、同じ名前のメソッドを複数作成できる。もちろん、コンストラクタもメソッドなので複数作成できる。<br>
+しかも、コンストラクタからコンストラクタを呼ぶことも可能。なので、最終的にはこのようにすればよい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.serabank;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">private</span> String ownerName;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> amount;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName, <span class="hljs-keyword">int</span> initialValue)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.ownerName = ownerName;
+		<span class="hljs-keyword">this</span>.amount = initialValue;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName)</span> </span>{
+		<span class="hljs-keyword">this</span>(code, ownerName, <span class="hljs-number">0</span>);	<span class="hljs-comment">// アカウント作成時にお金を入れない場合は0を入れる</span>
+	}
+}
+</div></code></pre>
+<p>コンストラクタを呼ぶときは、<code>this(引数)</code>と書く。</p>
+<h1 id="%E8%AA%B2%E9%A1%8C2">課題2</h1>
+<p>さっき作ったクラスを実装して、チャットに送ってほしい。<br>
+カプセル化とかはしてほしい。</p>
+</div>
+<div class=side>
+<div class=sticky>
+<details><summary>目次</summary>
+<ul>
+<li><a href="#3%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">3日目 カンペ</a>
+<ul>
+<li><a href="#%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</a></li>
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%83%97%E3%83%A9%E3%83%B3">授業プラン</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91">オブジェクト指向</a></li>
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">オブジェクトについて</a>
+<ul>
+<li><a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">プロパティ</a></li>
+<li><a href="#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">メソッド</a>
+<ul>
+<li><a href="#%E6%88%BB%E3%82%8A%E5%80%A4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">戻り値について</a></li>
+<li><a href="#%E5%BC%95%E6%95%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">引数について</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%AA%B2%E9%A1%8C1">課題1</a>
+<ul>
+<li><a href="#%E5%AE%9F%E9%9A%9B%E3%81%AB%E4%BD%9C%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE">実際に作ってもらったもの</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%9C%E3%82%8A%E6%96%B9">作り方</a>
+<ul>
+<li><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">プロジェクト</a></li>
+<li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">パッケージについて</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9">クラス</a>
+<ul>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">クラスの使い方</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9">インスタンス</a></li>
+<li><a href="#%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E5%8C%96">カプセル化</a></li>
+<li><a href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF">コンストラクタ</a></li>
+<li><a href="#%E8%AA%B2%E9%A1%8C2">課題2</a></li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+
+</body>
+</html>

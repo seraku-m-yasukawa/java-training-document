@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4日目.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/m-yasukawa/Desktop/%E6%A1%88%E4%BB%B6/Java%E7%A0%94%E4%BF%AE%E3%82%AB%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%A9%E3%83%A0/%E7%A0%94%E4%BF%AE%E4%B8%AD%E3%83%A1%E3%83%A2/github-markdown.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div>
+<div class=main>
+<h1 id="4%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">4日目 カンペ</h1>
+<h2 id="%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</h2>
+<p>Java言語を使用して、以下の事ができるようになる。</p>
+<ul>
+<li>変数の作成及び使用</li>
+<li>条件分岐(if)を使て、処理フローを分ける</li>
+<li>振り替えし(while, for)を使って、反復処理を構築できる</li>
+<li><s>break、continueを使って、反復処理を制御できる</s></li>
+</ul>
+<h2 id="%E6%8E%88%E6%A5%AD%E3%83%97%E3%83%A9%E3%83%B3">授業プラン</h2>
+<ul>
+<li>あとで目次作りますたぶん</li>
+</ul>
+<h1 id="%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">前回の振り返り</h1>
+<ul>
+<li>アカウントクラスを作成してみた</li>
+<li>クラスが持つものとしてプロパティがあり、クラスができることとしてメソッドがある</li>
+<li>クラスを使いたいときは、型としてそのクラスの名前、次にその変数名を記述し、<code>new Account();</code>とすればよい</li>
+<li><code>private</code>を指定することで、アカウントの外部から見えないようにできる</li>
+<li>口座名義などはアカウントを作成した瞬間にしか設定しない。その実装方法として、コンストラクタメソッドを使う</li>
+</ul>
+<p>という事を勉強した。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E7%B6%99%E6%89%BF">継承</h1>
+<p>動物をプログラムで表現したいとする。<br>
+動物クラスを考えてみると、動物としてのプロパティやメソッドが存在する。<br>
+しかし、鳥は空を飛べるが、犬は飛べない。そういうときは、各々のクラスを作成することになるが、鳥と犬でかぶっているプロパティやメソッドが存在する。<br>
+そんなときに、親となる動物クラスを作成し、継承という事を行う。<br>
+子となる鳥クラスや犬クラスには、それぞれのクラスでしかできないことを実装する。</p>
+<p>例として、Serabankのシステムで、従業員を管理したいとする。<br>
+従業員のプロパティとして、</p>
+<ul>
+<li>従業員コード</li>
+<li>従業員の名前</li>
+<li>給料<br>
+従業員のメソッドとして、</li>
+<li>従業員番号と名前を表示する</li>
+<li>従業員のボーナスの金額を返す</li>
+</ul>
+<p>とする。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.seraku.serabank;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">private</span> String name;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> salary;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+		<span class="hljs-keyword">this</span>.salary = <span class="hljs-number">3000</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">info</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"Code: "</span> + code + <span class="hljs-string">"Name: "</span> + name);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.2</span>);
+	}
+
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.seraku.serabank;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SeraBankApp</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		Employee emp1 = <span class="hljs-keyword">new</span> Employee(<span class="hljs-number">0001</span>, <span class="hljs-string">"sato"</span>);
+		emp1.info();
+		System.out.println(emp1.getBonus());
+	}
+
+}
+</div></code></pre>
+<p>これで従業員クラスが無事にできた。<br>
+すると、「じゃあ、新規でマネージャーも作りたい。マネージャーは普通の従業員とは違って、給料は4000で、ボーナスは給料の4割増しにしたい」と言われた。<br>
+早速コピペしてManagerクラスを作って、給料の値を変えて、ボーナスの計算を変えて……、と実装した。<br>
+すると今度は、「さらにデザイナーも作りたい。給料は2000で、ボーナスは給料の1割増し」と言われる。またコピペしてクラス作って……</p>
+<p>最終的に、給料とボーナス計算がちょっと違うだけで、ほとんど同じクラスが3つできた。<br>
+この状態の何がよくないか？</p>
+<p>例えば、「社員の情報に、所属部署を追加してください」と要望が来たとする。<br>
+そうなると、3つすべてに部署を追加しなければいけない。似たようなコードを、3つに追加して……<br>
+とすると、非常に手間だし、ひょっとしたら改修漏れがあるかもしれない。最悪。<br>
+じゃあそれぞれ共通しているものをまとめてしまえばいいじゃん。それができます、それを継承といいます。</p>
+<p>javaでの継承のやり方は、クラス名の後に<code>extends 親クラス名</code>と書けばよい。マネージャークラスを作る場合、下記のようになる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+
+}
+</div></code></pre>
+<p>ただし、javaでは1つしか継承できない。</p>
+<p>継承しているクラスは、親のメソッド（コンストラクタ含む）を基本として持っている。また、プロパティも親のを受け継いでいる。<br>
+マネージャーが従業員と異なるのは給料とボーナス計算である。親と異なるものを作りたいときは、同じようにマネージャークラスに追加すればよい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> salary;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manager</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">super</span>(code, name);	<span class="hljs-comment">// 親のコンストラクタを呼び出すときは「super」</span>
+		<span class="hljs-keyword">this</span>.salary = <span class="hljs-number">4000</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.4</span>);
+	}
+}
+</div></code></pre>
+<p>しかし、この状態だとsalaryが重複していて、まだ使い勝手が悪い。<br>
+でもマネージャークラスのsalaryを消してしまうと、salaryが見えなくなってしまう。<br>
+継承しているのなら親のプロパティが使えるのでは？なぜ使えないの？<br>
+それは、Employeeのsalaryがprivateになっているから。privateとなっているEmployee.salaryは、Employeeでしか見えなくなっている。</p>
+<p>じゃあ、子クラスでも見えるようにしてあげればよい。<br>
+もちろん、<code>private</code>を<code>public</code>にすれば子クラスでも読めるが、そうしてしまうと外部から給料を変更できるようになってしまう。<br>
+どうすればいいのか？<code>protected</code>というアクセス修飾子に変えてあげればよい。<br>
+<code>protected</code>は、<code>private</code>よりもいろんな人が見えるけど、<code>public</code>よりも見えない。そのクラスを継承しているクラスなら見える。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">private</span> String name;
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> salary;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+		<span class="hljs-keyword">this</span>.salary = <span class="hljs-number">3000</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">info</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"Code: "</span> + code + <span class="hljs-string">"Name: "</span> + name);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.2</span>);
+	}
+
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manager</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">super</span>(code, name);
+		<span class="hljs-keyword">this</span>.salary = <span class="hljs-number">4000</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.4</span>);
+	}
+}
+</div></code></pre>
+<p>これで実装できたが、今のManagerはコンストラクタで毎回給料を入れている。これをもうちょっとスッキリさせるなら、Employeeに新しいコンストラクタを追加してあげる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">private</span> String name;
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> salary;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+		<span class="hljs-keyword">this</span>.salary = <span class="hljs-number">3000</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name, <span class="hljs-keyword">int</span> salary)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+		<span class="hljs-keyword">this</span>.salary = salary;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">info</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"Code: "</span> + code + <span class="hljs-string">"Name: "</span> + name);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.2</span>);
+	}
+
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manager</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">super</span>(code, name,<span class="hljs-number">4000</span>);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.4</span>);
+	}
+}
+</div></code></pre>
+<p>こうやることで、親クラスはガッツリと書いてるけど、子クラスはスッキリとなる。<br>
+考え方として、マネージャーにしかできないことがあったら、マネージャーに追加すること。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%82%A2%E3%83%96%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%83%88">アブストラクト</h1>
+<blockquote>
+<p>メモ：Employeeから一般社員クラスか何かを作ったほうがわかりやすいか？</p>
+</blockquote>
+<p>システムで扱う社員には、必ず何かしらの役職を付けたいとする。すると、今の状態だと実装できない。<br>
+なぜなら、役職ではない<code>Employee</code>を自由にインスタンス化できてしまうから。<br>
+<code>Employee</code>をインスタンス化できないようにしたい。そういう時は。<code>abstract</code>クラスにする。<br>
+<code>abstract</code>をつけるとインスタンスにできなくなるので、これを継承したクラスをインスタンスにして実装する。</p>
+<p>例えば、ボーナス取得はそれぞれのクラスでやり方があるので、必ずそれぞれのクラスで実装してほしい。<br>
+かならず実装してほしいメソッドは、<code>abstract</code>にできる。<br>
+その場合、親クラスの<code>abstract method</code>は空になり、子クラスで必ず作成しないと行けなくなる。（実装しないとコンパイルエラーとなる）<br>
+また、子のメソッドには<code>@Override</code>をつける。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">private</span> String name;
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> salary;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+		<span class="hljs-keyword">this</span>.salary = <span class="hljs-number">3000</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name, <span class="hljs-keyword">int</span> salary)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+		<span class="hljs-keyword">this</span>.salary = salary;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">info</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"Code: "</span> + code + <span class="hljs-string">"Name: "</span> + name);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span></span>;
+
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Manager</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">super</span>(code, name, <span class="hljs-number">4000</span>);
+	}
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBonus</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (salary * <span class="hljs-number">1.4</span>);
+	}
+
+}
+</div></code></pre>
+<div style="page-break-after:always"></div>
+<h1 id="%E8%AA%B2%E9%A1%8C1">課題1</h1>
+<p>SeraBankから、「お客様を扱うため、新しいクラスを実装してほしい。お客様には、個人と法人の2種類存在する」と追加の要望があったので対応する。ただし、個人か法人化の判定にプロパティは使わない。また、必ず継承を使うこと。<br>
+※30分時間を取る、たぶんほとんどの人はできないので最終的には50分くらいかかる。<br>
+詳しい仕様は下記の通り。</p>
+<p><strong>お客様クラス</strong></p>
+<ul>
+<li>プロパティ
+<ul>
+<li>コード</li>
+<li>名前</li>
+<li>口座</li>
+</ul>
+</li>
+<li>メソッド
+<ul>
+<li>口座を作る</li>
+<li>ローンできる
+<ul>
+<li>個人のお客様
+<ul>
+<li>借りたい金額が残高の100倍以内なら組める</li>
+<li>利子は借りたい金額の12%</li>
+</ul>
+</li>
+<li>法人のお客様
+<ul>
+<li>借りたい金額が残高の200倍以内なら組める</li>
+<li>利子は借りたい金額の15%</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<details><summary>答え</summary>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> code;
+	<span class="hljs-keyword">protected</span> String name;
+	<span class="hljs-keyword">protected</span> Account account;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Client</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">this</span>.code = code;
+		<span class="hljs-keyword">this</span>.name = name;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createAccount</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, <span class="hljs-keyword">int</span> initialValue)</span> </span>{
+		<span class="hljs-keyword">this</span>.account = <span class="hljs-keyword">new</span> Account(code, <span class="hljs-keyword">this</span>, initialValue);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createAccount</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code)</span> </span>{
+		<span class="hljs-keyword">this</span>.createAccount(code, <span class="hljs-number">0</span>);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">simulateLoan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IndividualClient</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Client</span> </span>{
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">IndividualClient</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">super</span>(code, name);
+	}
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">simulateLoan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+		<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.account == <span class="hljs-keyword">null</span>) {
+			System.out.println(<span class="hljs-string">"Please create an account to get a loan!"</span>);
+		} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.account.getAmount() * <span class="hljs-number">100</span> &gt;= value) {
+			System.out.println(<span class="hljs-string">"The loan total price is "</span> + value * <span class="hljs-number">1.12</span>);
+		} <span class="hljs-keyword">else</span> {
+			System.out.println(<span class="hljs-string">"Can't get a loan with that price"</span>);
+		}
+	}
+
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CorporationClient</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Client</span> </span>{
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CorporationClient</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String name)</span> </span>{
+		<span class="hljs-keyword">super</span>(code, name);
+	}
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">simulateLoan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+		<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.account == <span class="hljs-keyword">null</span>) {
+			System.out.println(<span class="hljs-string">"Please create an account to get a loan!"</span>);
+		} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.account.getAmount() * <span class="hljs-number">200</span> &gt;= value) {
+			System.out.println(<span class="hljs-string">"The loan total price is "</span> + value * <span class="hljs-number">1.15</span>);
+		} <span class="hljs-keyword">else</span> {
+			System.out.println(<span class="hljs-string">"Can't get a loan with that price"</span>);
+		}
+	}
+
+}
+
+&lt;/details&gt;
+
+※デモとして使う、`<span class="hljs-keyword">new</span> Client`は<span class="hljs-keyword">abstract</span>なのでダメってことを見せたりする
+
+インスタンス化して使うと、
+``` java
+IndividualClient geshner = <span class="hljs-keyword">new</span> IndividualClient(<span class="hljs-number">18735</span>,<span class="hljs-string">"Geshner"</span>);
+</div></code></pre>
+<p>となるが、この状態だとアカウントがない。そのため、いまのまま<code>geshner.simulateLoan(10000);</code>ってすると、アカウントがないっていうメッセージが表示される。<br>
+なので、</p>
+<pre class="hljs"><code><div>geshner.createAccount(<span class="hljs-number">123</span>, <span class="hljs-number">1000</span>);
+</div></code></pre>
+<p>してから</p>
+<pre class="hljs"><code><div>geshner.simurateLoan(<span class="hljs-number">10000</span>);
+</div></code></pre>
+<p>とする必要がある。法人も同じ。</p>
+<pre class="hljs"><code><div>CorporationClient glico = <span class="hljs-keyword">new</span> CorporationClient(<span class="hljs-number">1923</span>,<span class="hljs-string">"Glico"</span>);
+glico.createAccount(<span class="hljs-number">321</span>,<span class="hljs-number">5000000</span>)
+glico.simurateLoan(<span class="hljs-number">10000</span>);
+</div></code></pre>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0">ポリモーフィズム</h1>
+<p>1つのクラスを広く扱える。例えば、Client型の変数を作るとして、</p>
+<pre class="hljs"><code><div>Client client;
+client = geshner;
+client = glico;
+geshner = glico; <span class="hljs-comment">//&lt;- 型が違うので不可能</span>
+</div></code></pre>
+<p>継承しているので、Clientにいれることはできる</p>
+<pre class="hljs"><code><div>Client[] clientList = <span class="hljs-keyword">new</span> Client[<span class="hljs-number">2</span>];
+clientList[<span class="hljs-number">0</span>] = gethner;
+clientList[<span class="hljs-number">1</span>] = glico;
+</div></code></pre>
+<p>みたいに、どっちもお客さんであることにはかわりないので、こういうことができる。</p>
+<pre class="hljs"><code><div>Client[] clientList = <span class="hljs-keyword">new</span> Client[<span class="hljs-number">2</span>];
+clientList[<span class="hljs-number">0</span>] = gethner;
+clientList[<span class="hljs-number">1</span>] = glico;
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; clientList.length; i++){
+    clientList[i].createAccount(i+<span class="hljs-number">2</span>);
+    clientList[i].account.accountDetails();
+}
+</div></code></pre>
+<p>ってすると、個人、法人のどっちも表示！みたいなことができる</p>
+<p>なんなら、AccountのownerNameをClient型に変更することもできる</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9">インターフェイス</h1>
+<p>今の状態だと、ユーザのパスワードをチェックする動作がどこにもないので、その機能を実装したい。<br>
+もし、「お客さんだけパスワードで認証できる」って仕様ならクライアントに対して認証メソッドを作ればいいけど、今回は「マネージャーとお客さんだけパスワードで認証できる」という仕様で作成する。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">authenticate</span><span class="hljs-params">(String password)</span></span>{
+
+}
+</div></code></pre>
+<p>って認証メソッドを追加するのでもいいけど、結局「こいつにはつけて、こいつにはつけなくて……」ってのをやる羽目になるし、マネージャーにもクライアントにもまったく同じ名前の認証メソッドを作りたい、とかなるとスペルミスとかもありそうだしめんどくさい。同じ処理だし。<br>
+こんなときにインターフェイスを使う。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.serabank;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Authenticable</span> </span>{
+	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">authenticate</span><span class="hljs-params">(String password)</span></span>;
+}
+</div></code></pre>
+<p>これがインターフェイス。<br>
+インターフェイスは「こういう動作を<strong>絶対に</strong>実装しないといけません」っていうのを契約する。abstractと違って、クラスに依存しない。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Authenticable</span> </span>{
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">authenticate</span><span class="hljs-params">(String password)</span> </span>{
+		<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.password == password) {
+			System.out.println(<span class="hljs-string">"Manager authenticated"</span>);
+		} <span class="hljs-keyword">else</span> {
+			System.out.println(<span class="hljs-string">"Invalid password"</span>);
+		}
+	}
+
+}
+</div></code></pre>
+<p>インターフェイスを使うときは、<code>クラス名 implements インターフェイス名</code>という風に記述する。また、インターフェイスは大量に<code>implements</code>できる。そのときはカンマ区切りで追加していく。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Authnticable</span></span>{
+
+}
+</div></code></pre>
+<p><code>abstract</code>のクラスに<code>implements</code>した場合、<code>abstract</code>にメソッドを実装する必要はない。ただし、継承したクラスで実装しなければならない。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</h1>
+<pre class="hljs"><code><div>Q：abstractとinterfaceの違いは？（やっていることがほとんど同じでは？）
+A：イメージとしては、abstractを継承するときは、1つのカテゴリを表している。
+例えば、クライアントしかできないこと、クライアントなら全員出来ることならabstract。
+一方、interfaceは、クラス問わずにできること。
+例えば、乗り物があるとする。「動く」ってやってしまえばできるが、
+「動く」って動作を乗り物以外、人間も動物も動くよねって時など、
+全部に実装したいときに「動く」をinterfaceにする。
+</div></code></pre>
+<pre class="hljs"><code><div>Q：インターフェイスは複数できる？
+A：できます、カンマ区切りで記述してください
+</div></code></pre>
+<h1 id="%E3%83%A1%E3%83%A2">メモ</h1>
+<p>コードを範囲選択して右クリックでリファクタリング、エクストラクトmethodで、methodにエクリプスがしてくれる</p>
+<p><code>new Client</code>はabstractなのでダメってことを見せる</p>
+</div>
+<div class=side>
+<div class=sticky>
+<details><summary>目次</summary>
+<ul>
+<li><a href="#4%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">4日目 カンペ</a>
+<ul>
+<li><a href="#%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</a></li>
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%83%97%E3%83%A9%E3%83%B3">授業プラン</a></li>
+</ul>
+</li>
+<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">前回の振り返り</a></li>
+<li><a href="#%E7%B6%99%E6%89%BF">継承</a></li>
+<li><a href="#%E3%82%A2%E3%83%96%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%83%88">アブストラクト</a></li>
+<li><a href="#%E8%AA%B2%E9%A1%8C1">課題1</a></li>
+<li><a href="#%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0">ポリモーフィズム</a></li>
+<li><a href="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9">インターフェイス</a></li>
+<li><a href="#%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</a></li>
+<li><a href="#%E3%83%A1%E3%83%A2">メモ</a></li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>1日目.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/m-yasukawa/Desktop/%E6%A1%88%E4%BB%B6/Java%E7%A0%94%E4%BF%AE%E3%82%AB%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%A9%E3%83%A0/%E7%A0%94%E4%BF%AE%E4%B8%AD%E3%83%A1%E3%83%A2/github-markdown.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div>
+<div class=main>
+<h1 id="1%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">1日目 カンペ</h1>
+<h2 id="%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</h2>
+<p>Java言語を使用して、以下の事ができるようになる。</p>
+<ul>
+<li>変数の作成及び使用</li>
+<li>条件分岐(if)を使て、処理フローを分ける</li>
+<li>振り替えし(while, for)を使って、反復処理を構築できる</li>
+<li><s>break、continueを使って、反復処理を制御できる</s></li>
+</ul>
+<h2 id="%E5%8F%82%E8%80%83%E3%82%B5%E3%82%A4%E3%83%88">参考サイト</h2>
+<ul>
+<li><a href="https://www.javadrive.jp/start/">Java入門 ～Javaのインストール方法やJavaを使ったプログラミングの方法について～ | Let'sプログラミング</a></li>
+<li><a href="https://www.tohoho-web.com/java/index.htm">とほほのJava入門 - とほほのWWW入門</a></li>
+</ul>
+<div style="page-break-after:always"></div>
+<h1 id="%E6%8C%A8%E6%8B%B6">挨拶</h1>
+<h2 id="%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B">自己紹介</h2>
+<p>1分もないくらいの自己紹介、パワポとか使えばいいと思う</p>
+<h2 id="%E7%A0%94%E4%BF%AE%E5%89%8D%E3%81%AB">研修前に……</h2>
+<p>キャリアとしてプログラミングでやっていくために必要なことをいくつか教えたい</p>
+<ol>
+<li>自分ひとりで勉強できるようになることが大事
+<ul>
+<li>「今日最新のプログラミング技術は、明日になったら古い」という考え方をしてほしい
+<ul>
+<li>javaは結構安定しているけど、javascriptなんかはどんどん新しいライブラリが生まれている。<br>
+その新しいものを勉強し、追いつくことが大事</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>パズルとかが得意だと有利、論理的思考が大事</li>
+<li>英語を読めると強い
+<ul>
+<li>英語は世界共通語、圧倒的に人口が多いので情報量が多い</li>
+<li>IT関係のものは大体英語圏内で作られているので、情報を探したときに最初に出てくるのは英語
+<ul>
+<li>大本の情報、ソースの情報が読めるのでより信憑性が高い情報が得られる</li>
+</ul>
+</li>
+<li>ブラウザの翻訳機能を使えば最悪読めるけど、できれば英語を読めるように</li>
+</ul>
+</li>
+</ol>
+<h2 id="%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF">プログラミングとは</h2>
+<p>プログラミングって何かわかりますか？ということから入っていきます<br>
+かなりザックリいうとシステムを作ること</p>
+<ul>
+<li>フロントエンド</li>
+<li>バックエンド</li>
+<li>モバイル</li>
+</ul>
+<p>が3大システムで、基本はこの3種。それぞれ特徴はあるけどそこは各自で調べてください。</p>
+<h1 id="%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E8%82%9D%E5%BF%83%E3%81%AA%E5%87%A6%E7%90%86">プログラミングで肝心な処理</h1>
+<ol>
+<li>データの入出力</li>
+<li>処理の分岐</li>
+<li>処理の繰り返し</li>
+</ol>
+<p>Amazonの画面とかで例えてみたりした</p>
+<blockquote>
+<ol>
+<li>検索したいものが入力される</li>
+<li>DBを1件ずつ繰り返し読む</li>
+<li>読んだ商品と検索キーワードが同じなら一時的に保存する</li>
+<li>全部読み終えたら、一時的に保存した値を画面に表示する</li>
+</ol>
+</blockquote>
+<p>という感じ、このサイクルでプログラムは成り立っている<br>
+また、今のサイクルをアルゴリズムという。特定の問題を解決するために、アクションを並べたものである。</p>
+<p>実際に仕事をするときは、何らかの問題を渡される。<br>
+例えば、「Eコマースを作るので、クレカの登録方法を作れ」と言われたとき、<br>
+「どういう処理を、どういう順にならべるか？」を考える能力が一番大事。その能力を鍛えるべき。<br>
+鍛えるには数をこなすしかない。そういったサイトは存在する。</p>
+<blockquote>
+<p>アルゴリズムを作って送るとテストしてくれるサイトがある、そういったところでアルゴリズムを鍛えてほしい。</p>
+</blockquote>
+<p>プログラミングは向いてる向いてないがある、しかし必ずできるようになる。<br>
+ただし、できるようになるまで時間がかからない人、ちょっとかかる人、めちゃくちゃかかる人がいる。<br>
+それができるようになってきて、アルゴリズムを作っていると、言語の能力も上がり、作りたいものが作れるようになる。<br>
+最初は思うように作れないので、面白くないかもしれません。</p>
+<blockquote>
+<p>余談：言語の資格はいらないと思います。実際にジャズニーさんは持っていない。<br>
+しかし、アルゴリズム能力を鍛えたので、ロジックは作成できる。それができれば大丈夫。</p>
+</blockquote>
+<h2 id="%E5%AE%9F%E8%B7%B5%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E4%BD%9C%E6%88%90">実践：アルゴリズム作成</h2>
+<p>アルゴリズムを作ってもらう。ここでは日本語で大丈夫。<br>
+例として、蛍光灯が壊れたので、交換するアルゴリズムを作成する。</p>
+<p><strong>例</strong></p>
+<blockquote>
+<ol>
+<li>蛍光灯のスイッチを消す</li>
+<li>脚立を持ってくる</li>
+<li>脚立を置く</li>
+<li>脚立に登る</li>
+<li>蛍光灯を外す</li>
+<li>脚立から降りる</li>
+<li>新しい蛍光灯を持つ</li>
+<li>脚立に登る</li>
+<li>新しい蛍光灯をつける</li>
+<li>脚立から降りる</li>
+<li>スイッチを付け、ちゃんとつくか確認する</li>
+</ol>
+</blockquote>
+<p>しかし、蛍光灯を交換したことがない人に、今の例を渡せばできるかどうかはわからない。<br>
+例えば、スイッチが複数あった場合、全部消しちゃう、切っちゃいけないスイッチも切っちゃった……アウト。<br>
+これを解決するなら、どのスイッチを消すのか指定してあげないといけない。<br>
+他にも、「脚立を置く」だと、実行している人がどこにいるのかわからないので、<br>
+もしかしたら、その場に脚立を置いて、上見て、蛍光灯がなかった……とかなってしまう。<br>
+どこにいって…… と、できるかぎり細かくしないといけない。</p>
+<p>十人十色のアルゴリズムになるが、この場合の正解は「蛍光灯がつくこと」。<br>
+ただし、その正解にたどり着くまでの効率の良しあしは存在する。</p>
+<h2 id="%E8%AA%B2%E9%A1%8C1">課題1</h2>
+<ul>
+<li>2人に1つくらいで同じ問題を与える</li>
+<li>制限時間はおよそ10分</li>
+<li>相談はアリだが、作っているアルゴリズム自体はみせないこと。</li>
+<li>10分後にひとりずつ発表してもらい、他の人はそれを聞いてイメージしてもらう。<br>
+「あれっ」と思ったらそこで言ってもらう。</li>
+<li>「誰が実行しても成功する」アルゴリズムが理想</li>
+</ul>
+<p><strong>問題</strong></p>
+<ol>
+<li>国際センターの地下から、エレベータに乗って、7階のこの部屋に戻ってくる
+<ul>
+<li>エレベータとエレベータ（高層）の間の真ん中あたりに立っているイメージ</li>
+</ul>
+</li>
+<li>ピーナッツバタージャムサンドイッチを作ってもらう
+<ul>
+<li>片方にジャム、もう片方にピーナッツバターの2枚のパンを挟む</li>
+</ul>
+</li>
+<li>ご飯が炊けた状態から塩おにぎりを作ってもらう</li>
+</ol>
+<p><strong>ジャズニーさんの回答例（エレベータ）</strong></p>
+<ol>
+<li>看板を見て自分が行きたいほうのエレベータを確認</li>
+<li>そのエレベータがある方のエリアに行く</li>
+<li>上矢印のボタンを1回押す</li>
+<li>エレベータのドアの上のライトがつくのでそこに移動して待つ</li>
+<li>ドアが開いたときに、もし中に人が乗っていたら、ちょっとどいて通す</li>
+<li>エレベータの中が空になったら入る</li>
+<li>ドア付近のボタンの前に行く</li>
+<li>目的の階のボタンを1回押す</li>
+<li>目的の階についてドアが開いたら外に出る</li>
+</ol>
+<p><strong>実際の回答に対する指摘</strong></p>
+<ul>
+<li>エレベータ
+<ul>
+<li>エレベータがついたら中に入る
+<ul>
+<li>もし人が出てきたら？</li>
+</ul>
+</li>
+<li>扉が開いたら外に出る
+<ul>
+<li>目的の階じゃなかったら？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>サンドイッチ
+<ul>
+<li>塗るためのスプーンを持ちっぱなし</li>
+<li>サンドするときに適当に持っているので、手がベッタベタになっている</li>
+<li>ピーナッツバターを塗って、塗られたことを確認するのはやりすぎかも
+<ul>
+<li>右足を前に出す &gt; それを確認 &gt; 問題なし &gt; じゃあ次は左足を…… って感じ</li>
+</ul>
+</li>
+<li>あとジャムのふたを開けていない</li>
+</ul>
+</li>
+<li>塩おにぎり
+<ul>
+<li>材料の分量はもっと具体的にすべき
+<ul>
+<li>しゃもじ2杯ぶん、塩は何グラム…… って感じで指定すべき</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0-%E3%81%AE%E5%89%8D%E3%81%AB">コーディング の前に</h1>
+<p>今作ったアルゴリズムはパソコンに打ち込んでもだめ。<br>
+なぜなら、電子機器と人間はやりとりできないから。そのやり取りをするために、プログラミング言語が存在する。</p>
+<p>高レベル・低レベルの言語が存在し、低レベルなほど機械がわかりやすく、高レベルほど人間がわかりやすい。<br>
+低レベルでもっとも聞くのがアセンブリ。高レベルはjavaやcなど…… cは中間くらい、それよりちょっと上がjavaくらい？<br>
+もっと高レベルになると、小中学校でやってるプログラミングで使っている、scratchなど。<br>
+scratchはブロックでプログラミングしている。これでアルゴリズム能力を鍛えるのも面白いと思う。</p>
+<h1 id="java%E3%81%AE%E8%A9%B1">javaの話</h1>
+<p>javaはどこでも使える言語。<br>
+実は、javaが誕生した当時のプログラムは、OSごとに微妙に書き方が違った。</p>
+<blockquote>
+<p>ハード層の上にOS、そのうえにアプリケーションがあった。ハードとアプリ間でやりとりをするけど、そのやり取りの通信方法がOSごとに違ったから。<br>
+例えば、もしWindowsでのみ使えるExcelを、MACでも使えるようにしたい場合、同じものをMAC専用に作る必要があった、という状態。</p>
+</blockquote>
+<p>javaは、「1回作ったやつを、ほかのOSでも使えれば便利じゃね？」ということで生まれた?<br>
+だって、それぞれ作って、メンテナンスもそれぞれ行って、って最悪だから。もし共通なら、すごく楽だから。</p>
+<p>じゃあそれをどうやってやっている？<br>
+javaにはJVM(JavaVirtualMachine)という物が存在する。これは、javaで書いてあればどのマシンでも実行できるようにするもの。<br>
+例えば、WinJVM、MacJVM、って感じ。javaを読み込んで、OSが読めるように書き換えてくれる。これで、どのOSでもJVMがあればjavaが動くようになっている。</p>
+<h2 id="oopobjectorientedproglaming">OOP(ObjectOrientedProglaming)</h2>
+<p>javaはオブジェクト指向プログラミングという新しい考え方を、わかりやすく導入した。<br>
+当時流行っていた言語、C++に書き方が似ていたので、当時の人はあまり苦なく乗り越えられた。</p>
+<p>javaを使ってるとでてくる3つ</p>
+<ul>
+<li>JVM（JavaVirtualMachine）- Java仮想マシン</li>
+<li>JRE（JavaRuntimeEnviroment）- Java実行環境
+<ul>
+<li>Javaのプログラムを動かすときに必要なあれやこれやを詰め合わせたもの。</li>
+<li>JVMが入っている。</li>
+</ul>
+</li>
+<li>JDK（JavaDevelopmentKit）- Java開発総合環境
+<ul>
+<li>Javaを作るためのキット。</li>
+<li>JREも入っている。</li>
+<li>ライブラリ（便利機能が詰まっているやつ）も入っている。</li>
+</ul>
+</li>
+</ul>
+<p>実際に開発するとなると、色々と必要なものがあり、それをすべてパッケージにして「これを使って」と渡される。<br>
+例えば、インターネットと通信するとき、Javaだけでもできるけど、クッソ大変なので、パッケージになってるのを使う。</p>
+<h2 id="%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E8%A8%80%E8%AA%9E%E3%81%A8%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E8%A8%80%E8%AA%9E">コンパイル言語とスクリプト言語</h2>
+<p>javaはコンパイル言語。</p>
+<h3 id="%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E8%A8%80%E8%AA%9E%E3%81%A8%E3%81%AF">コンパイル言語とは？</h3>
+<p>例えば、画面上に文字を出力してください、というコマンドが存在する。</p>
+<pre class="hljs"><code><div>System.out.println(<span class="hljs-string">"Hello!"</span>);
+</div></code></pre>
+<p>みたいな感じ。<br>
+このコマンドを人が読めば理解できるけど、JVMに見せてもわからない。それをJVMが読めるように変換することをコンパイルという。<br>
+元のjavaは.javaって拡張子のファイルだけど、これをコンパイルすると、<code>.class</code>っていう拡張子のファイルになる。<br>
+このclassファイルをJVMは読んでいる。</p>
+<h3 id="%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E8%A8%80%E8%AA%9E%E3%81%A8%E3%81%AF">スクリプト言語とは？</h3>
+<p>リアタイでコマンドを実行する。有名なのはJavaScript。<br>
+ちなみに、JavaScriptはあだ名で、特にJavaとは関係ない。</p>
+<p>JSはブラウザを開いてF12を押すと出てくる、そのままコンソールを開いて</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello!"</span>)
+</div></code></pre>
+<p>でHello!って出力される。</p>
+<p>JSはその場でできる、Javaは1回コンパイルしないといけない。</p>
+<div style="page-break-after:always"></div>
+<h2 id="javajdk%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">JavaJDKについて</h2>
+<p>javaは2000年代最初のほうはオープンソースだった。それがopenJDKという名前で、今もオープンソースを続けている。<br>
+javaを作ったサンマイクロソフトって会社がつぶれ、オラクルが買い取った。その時にちょっとだけjavaの在り方が変わった。<br>
+大手会社がオープンJDKをもとに改造して、色々なJDKが存在する。今はメインがoracleJDK。個人利用はタダだけど、企業が使うと有償。サポートも有償である。<br>
+OpenJDKにOracleJDKの機能も入っては来るけど、サポートはコミュニティサイトしかないし、更新・リリース時期がちょっとズレている。</p>
+<h2 id="java%E3%81%AEdl">JavaのDL</h2>
+<p>別紙。</p>
+<h1 id="%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AEjava%E4%BD%9C%E6%88%90">初めてのJava作成</h1>
+<p>ジンクスとして、「HelloWorld」と出力する。<br>
+このプログラムを作る過程で、よくわからないことを書くと思うが、進むにつれて説明をするので、今はおまじないと思ってほしい。</p>
+<p>javaの場合、Class名はキャメルケース（新しい単語の場合最初は大文字となる、フルネームならfullNameとなる）を使う。<br>
+また、javaは全体的にキャメルケースで記述する。</p>
+<blockquote>
+<p>ラクダのこぶみたいだからキャメルケースと呼ばれる<br>
+他、スネークケースとよばれる書き方も存在する。JAVA_HOMEみたいな、アンダーバーで繋いでいるやつのこと。<br>
+プログラムは基本的にキャメルかスネークのどちらかで記述する</p>
+</blockquote>
+<p>メモ帳か何かを開いて、実際にコーディングをしてもらう。</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+
+}
+</div></code></pre>
+<p>こんな感じ。</p>
+<blockquote>
+<p>かっこを付けたら必ず閉じること！<br>
+かっこがないだけで3時間くらい迷うこともある。<br>
+必ず閉じる癖をつけること。</p>
+</blockquote>
+<h2 id="%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">インデンテーション</h2>
+<p>お作法。<br>
+コードを真横に書くとわかりにくいので、左にちょっと空間を開ける。<br>
+チームによるが、Tabキーだったり、半角スペースを4個置いたり、2個置いたりする。</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+        System.out.print(<span class="hljs-string">"Hello World!"</span>);
+    }
+}
+</div></code></pre>
+<ul>
+<li>javaには必ずmainが存在する
+<ul>
+<li>mainは最初に実行されるもの。</li>
+</ul>
+</li>
+<li>javaはコマンド最後にセミコロンを付ける</li>
+</ul>
+<p>ここまで書けたら教えてもらう。<br>
+以下その後の手順。</p>
+<ol>
+<li>「HelloWorld.java」と名前を付けて保存</li>
+<li>保存したファイルがあるフォルダのアドレスバーで<code>cmd</code></li>
+<li>さっき作った「HelloWorld.java」を<code>javac</code></li>
+<li><code>DIR</code>を実行し、結果を確認する</li>
+</ol>
+<p>今回は1回1回コンパイルしましたが、毎回確認のために実行するのは面倒だし、時間もかかるので、ふつうはそんなことしません。<br>
+Eclipseという、IDEを使います。<br>
+IDE(総合開発環境)と呼ばれるもの。</p>
+<ul>
+<li>簡単なエラーが目に見えてわかるように色付けしてくれる</li>
+<li>{}が繋がっているように線をつけてくれる</li>
+<li>コンパイルもやってくれる</li>
+</ul>
+<p>IDEは色々存在する。軽くて使いやすいし、タダなので今回はEclipseを使用する。</p>
+<div style="page-break-after:always"></div>
+<h1 id="eclipse%E3%81%AE%E8%B5%B7%E5%8B%95">Eclipseの起動</h1>
+<p>別紙。</p>
+<h2 id="eclipse%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96">Eclipseの日本語化</h2>
+<p>別紙。</p>
+<h2 id="eclipse%E3%81%A7java%E4%BD%9C%E6%88%90">Eclipseでjava作成</h2>
+<ol>
+<li>ワークスペースに作成する
+<ul>
+<li>ワークスペースは複数作成できる</li>
+<li>javaのバージョンでわけたり……</li>
+</ul>
+</li>
+<li>javaのprojectを作成する
+<ul>
+<li><code>Create a Java project</code>をクリック</li>
+<li>あるいは<code>ファイル &gt; New &gt; JavaProject</code></li>
+</ul>
+</li>
+<li>一番下のModuleのチェックだけ外してnext
+<ul>
+<li>HelloWorld/binに入っていることを覚えてもらう</li>
+</ul>
+</li>
+<li>Finish</li>
+<li>src（ソースの略）を右クリックして<code>new &gt; class</code></li>
+<li>Finish</li>
+</ol>
+<p>Eclipseの実力を見せるためにわざとコードをミスする</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		System.out.println(*Hello World!);
+	}
+
+}
+</div></code></pre>
+<p>正しく書けばいい感じになる</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		System.out.println(<span class="hljs-string">"Hello World!"</span>);
+	}
+
+}
+</div></code></pre>
+<p>文字をそのままコードに入力するとコンパイルエラーが発生するので、文字を使いたいときはダブルクオーテーションで囲む。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E6%9C%AC%E6%A0%BC%E7%9A%84%E3%81%AAjava">本格的なjava</h1>
+<h2 id="%E5%A4%89%E6%95%B0">変数</h2>
+<p>プログラミングで重要になる。イメージとしては入れ物。</p>
+<ul>
+<li>変数と定数の2つが存在する。同じ入れ物で、使い方が違う。</li>
+<li>一旦値を保存しておきたいときなど、そういった値を入れる入れ物</li>
+<li>基本的になんでも入る箱だと思ってもらえればいい</li>
+<li>名前は自分で決められるが、一部つけられない名前が存在する
+<ul>
+<li>classとか、Eclipseで赤文字になってるやつとかはダメ</li>
+</ul>
+</li>
+</ul>
+<p>javaでは「今から作る変数はこういうデータです」って宣言しないといけない。<br>
+<code>String args</code>だと、argsが変数名、Stringが型と呼ばれるもの。<br>
+javaの型でよく使うものは、</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名前</th>
+<th style="text-align:left">入るもの</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">数字（整数）</td>
+<td style="text-align:left">2,147,483,647が最大の値</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">数字（小数も可）</td>
+<td style="text-align:left">intよりも多く入る</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">文字列</td>
+<td style="text-align:left">文字なら何でも入る</td>
+</tr>
+<tr>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">true,false</td>
+<td style="text-align:left">精密には1と0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E6%95%B4%E6%95%B0%E3%81%AE%E5%85%A5%E3%82%8C%E7%89%A9%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86">整数の入れ物を作ってみよう</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> a;
+</div></code></pre>
+<p>今のコードで「aという数字を入れる箱」となる。<br>
+コード上はこれでも問題ない。けど、それじゃあわかりにくいので、人間がわかりやすいようにpriceとかの名前を付ける。</p>
+<blockquote>
+<p>数学の=とjavaの=はイコールではない。プログラミングの=は、「右にある値を左に入れる」という意味になる。</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> price;
+price=<span class="hljs-number">100</span>;
+System.out.println(price);
+</div></code></pre>
+<p>は100、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> price;
+price=<span class="hljs-number">100</span>;
+price=<span class="hljs-number">200</span>;
+System.out.println(price);
+</div></code></pre>
+<p>だと200と出力される。</p>
+<p>なぜなら、プログラミングは絶対に、上から順に実行される。上記の例だと、3行目の時に200で上書きされている。<br>
+今のように、中の値の変更ができるのが変数。</p>
+<p>じゃあ定数は？</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> price = <span class="hljs-number">100</span>;
+price = <span class="hljs-number">200</span>;
+</div></code></pre>
+<p><code>final</code>を付けると定数となる。定数は絶対に変更されない。上記のコードはコンパイルエラーを吐く。</p>
+<h2 id="%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88">キャスト</h2>
+<p>今のpriceに税率をかけようとすると、型が違うから文句を言われる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> price;
+price=<span class="hljs-number">100</span> * <span class="hljs-number">1.08</span>;
+System.out.println(price);
+</div></code></pre>
+<p>※1.08はdouble、intは型が違うのでコンパイルエラー<br>
+じゃあどうするか？</p>
+<pre class="hljs"><code><div>price = (<span class="hljs-keyword">int</span>) (<span class="hljs-number">100</span>*<span class="hljs-number">1.08</span>);
+</div></code></pre>
+<p>これで無理やり「こいつはintだよ」って教えてあげる。小数点以下は切り捨てられるけど、intとして入ってくる。</p>
+<p>例として、消費税込みの価格を計算するアルゴリズムを作るとする。<br>
+値段としてprice*税率を行う。</p>
+<pre class="hljs"><code><div>price = (<span class="hljs-keyword">int</span>) (price*<span class="hljs-number">1.08</span>);
+</div></code></pre>
+<p>とすると、priceにprice*1.08をしたものを入れる、という事ができる。<br>
+priceは変数、変数は入れた値を使いまわせる箱、だから入れなおすことができる。</p>
+<blockquote>
+<p>掛け算は*だけど割り算は/（スラッシュ）</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> sum = price + <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> sub = price - <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> multiply = price * <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> division = price / <span class="hljs-number">10</span>;
+</div></code></pre>
+<p>となる。</p>
+<p>計算順序は数学と一緒、掛け算割り算が先に行われる。足し算引き算を先にしたい場合は()で囲めばOK。<br>
+例えば1+2を3で割る場合、</p>
+<pre class="hljs"><code><div>System.out.println((<span class="hljs-number">1</span>+<span class="hljs-number">2</span>)/<span class="hljs-number">3</span>)
+</div></code></pre>
+<p>となる。</p>
+<p>また、さっきの少数を整数に変えたのとは逆に、整数を少数に変えることもできる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> price = <span class="hljs-number">500</span>;
+System.out.print(price); <span class="hljs-comment">// -&gt;500</span>
+System.out.print((<span class="hljs-keyword">double</span>)price); <span class="hljs-comment">// -&gt;500.0</span>
+</div></code></pre>
+<p>先頭に(型)ってやって、型変換をするとできる。これをキャストという。<br>
+ただしアルファベットを数字に変換、みたいな無茶な奴は、変換できるけど簡単にはできない。</p>
+<p><strong>文字列型 String</strong></p>
+<pre class="hljs"><code><div>String name = <span class="hljs-string">""</span>;
+System.out.println(name);
+</div></code></pre>
+<p>アルファベットも数字も日本語も入る。面白いことに、数字の変数と足すことができる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> num1 = <span class="hljs-number">10</span>;
+String name = <span class="hljs-string">"こんにちは"</span>;
+System.out.println(name + num1);
+</div></code></pre>
+<p>はどのように出力される？答えは<code>こんにちは10</code>。<br>
+Stringは文字列、文字列と文字列を足せば文章。じゃあなぜ数字を足したら文字列になった？<br>
+数字は10という文字列として扱える。javaが数字の10を文字列として判断したため、<code>こんにちは10</code>となった。<br>
+ただし掛け算引き算割り算はできない。じゃあなぜ足し算はできるの？<br>
+concatっていう処理がある。いろんな文字列を足す処理で、これを使うから足し算はできる。</p>
+<p>また、</p>
+<pre class="hljs"><code><div>String name = <span class="hljs-string">"こんにちは"</span> + <span class="hljs-number">10</span>;
+</div></code></pre>
+<p>もできる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> age = <span class="hljs-number">29</span>;
+String name = <span class="hljs-string">"こんにちは、私は"</span> + age + <span class="hljs-string">"歳です。"</span>
+System.out.println(name);
+</div></code></pre>
+<p>みたいにすれば、「こんにちは、私は29歳です。」と出力される。</p>
+<p>さっき紹介した以外の型は、</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名前</th>
+<th style="text-align:center">入るもの</th>
+<th style="text-align:center">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:center">数字（整数）</td>
+<td style="text-align:center">intの倍のサイズの整数を扱える</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:center">数字（整数）</td>
+<td style="text-align:center">intよりも扱える数値が少ない</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:center">数字（小数も可）</td>
+<td style="text-align:center">doubleの半分しか扱えない</td>
+</tr>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:center">文字</td>
+<td style="text-align:center">1文字しか入らない …メニューのオプションなどで使うといいかも</td>
+</tr>
+</tbody>
+</table>
+<p>ただし、少数の計算を使うときは、できれば<code>double</code>を使うように。<br>
+なぜか？floatは32bitしかつかえないため、計算をするタイミングで、bit数の関係で最後に4とついちゃったりする。<br>
+そのため、floatを使うと、計算にちょっとだけ誤差が生まれる。じゃあなぜfloatが存在するのか？使用するメモリを削減するため。<br>
+マシンによってはfloatを使うこともあるかもしれないが、基本的にはdoubleを使うように。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B2%90">条件分岐</h1>
+<p>次に教えるのは、データ入力、条件分岐、繰り返し、吐き出し……の、条件分岐。<br>
+〇〇が本当ならこういうことをしたい、〇〇が本当じゃなかったらこういうことをしたい、ということをするときに使う。</p>
+<p>例えば、18歳以上かどうかチェックするプログラムを作るとして、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> age = <span class="hljs-number">16</span>;
+System.out.println(<span class="hljs-string">"18歳以上です"</span>);
+System.out.println(<span class="hljs-string">"18歳未満です"</span>);
+</div></code></pre>
+<p>これだとどっちのメッセージも表示されてしまうので、どっちかだけを表示したい。<br>
+そういう時は<code>if</code>ってのを使う。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> age = <span class="hljs-number">16</span>;
+<span class="hljs-keyword">if</span>(age &gt;= <span class="hljs-number">18</span>){
+    System.out.println(<span class="hljs-string">"18歳以上です"</span>);
+}
+System.out.println(<span class="hljs-string">"18歳未満です"</span>);
+</div></code></pre>
+<blockquote>
+<p><code>&gt;=</code>は 左が 右以上か？ という意味。<br>
+<code>if</code>のかっこの中身が本当なら中の処理をする、そうでなければ、かっこの中の処理はスキップする。<br>
+また、boolean型はこういうところで使う。なぜなら、ifはtrue,false、本当かウソかの2択のみ扱うため。</p>
+</blockquote>
+<h2 id="else">else</h2>
+<p>今のコードのageの値を18以上にして実行すると、両方のメッセージが出力されてしまう。<br>
+なぜか？<br>
+ifというのは、そのあとの<code>{}</code>の中身のみが領域。<br>
+その中の処理は、条件に当てはまるなら実行するが、そうでなければその部分を飛ばす。<br>
+それ以降の処理はmainの直属のため、ifの条件にかかわらず、実行されてしまう。<br>
+ifが本当じゃなかった時だけ実行したいので、そういうときは<code>else</code>というのを使う。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> age = <span class="hljs-number">16</span>;
+<span class="hljs-keyword">if</span>(age &gt;= <span class="hljs-number">18</span>){
+    System.out.println(<span class="hljs-string">"18歳以上です"</span>);
+} <span class="hljs-keyword">else</span> {
+    System.out.println(<span class="hljs-string">"18歳未満です"</span>);
+}
+</div></code></pre>
+<p><code>else</code>はifの条件の逆、ifの条件が<code>false</code>だったら実行する。</p>
+<h2 id="else-if">else if</h2>
+<p>もし今のプログラムに「18歳未満でも、付き添いの人が2人以上いればOK」という条件を追加すると、<br>
+今の皆さんの知識だと以下のようになると思います。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+	<span class="hljs-keyword">int</span> age = <span class="hljs-number">5</span>;
+	<span class="hljs-keyword">int</span> totalPeople = <span class="hljs-number">2</span>;
+
+	<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
+		System.out.println(<span class="hljs-string">"18歳以上です"</span>);
+	} <span class="hljs-keyword">else</span> {
+		<span class="hljs-keyword">if</span> (totalPeople &gt;= <span class="hljs-number">2</span>) {
+			System.out.println(<span class="hljs-string">"付き添いがいるのでOK"</span>);
+		} <span class="hljs-keyword">else</span> {
+			System.out.println(<span class="hljs-string">"18歳未満です"</span>);
+		}
+	}
+}
+</div></code></pre>
+<p>これでも目的は果たしているため問題はないが、javaだと以下のように書ける。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+	<span class="hljs-keyword">int</span> age = <span class="hljs-number">5</span>;
+	<span class="hljs-keyword">int</span> totalPeople = <span class="hljs-number">2</span>;
+
+	<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
+		System.out.println(<span class="hljs-string">"18歳以上です"</span>);
+	} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (totalPeople &gt;= <span class="hljs-number">2</span>) {
+		System.out.println(<span class="hljs-string">"付き添いがいるのでOK"</span>);
+	} <span class="hljs-keyword">else</span> {
+		System.out.println(<span class="hljs-string">"18歳未満です"</span>);
+	}
+}
+</div></code></pre>
+<p><code>else if</code>はいくらでもつけられる。また、最後の<code>else</code>はそれまでの条件が全てダメだった場合のみ実行される。</p>
+<p>他の条件分岐のやり方に、<code>switch</code>というやり方があるが、それはjavaの参考URLから確認し、実践してみてほしい。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97">繰り返し</h1>
+<p>ループ。<br>
+繰り返しと条件分岐を組み合わせれば、例えばアルゴリズムの問題の「塩おにぎり」でいうと、<br>
+「ご飯を盛って、想定通りのグラムなら盛るのをやめる。足りなければもっと盛る」ということができる。</p>
+<p>3種類くらいあるが、そのうちの2種類を教える。</p>
+<h2 id="while">while</h2>
+<p>まず<code>while</code>。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">while</span>(条件){
+    何かしらの処理;
+}
+</div></code></pre>
+<p>()内の条件が本当である間、ずっと処理を実行する。<br>
+そのため、()にtrueを入れてしまうと、ずっと終わらなくなるのでやめること。</p>
+<blockquote>
+<p>jsでそれやって警察が出動した事件があったなあ……</p>
+</blockquote>
+<p>例えば、画面上に1から10までを出力したい場合、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> counter = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span>(counter &lt;= <span class="hljs-number">10</span>){
+    System.out.println(counter);
+}
+</div></code></pre>
+<p>とすると無限ループになってしまう。アルゴリズムにすると、</p>
+<ol>
+<li>counterに1を入れる</li>
+<li>counterって10より小さい?</li>
+<li>Yesなら出力、Noなら終了</li>
+<li>終了するまで2~3を繰り返し</li>
+</ol>
+<p>となる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> counter = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (counter &lt;= <span class="hljs-number">10</span>) {
+	System.out.println(counter);
+	counter = counter + <span class="hljs-number">1</span>;
+}
+</div></code></pre>
+<p>とすれば、</p>
+<ol>
+<li>counterに1を入れる</li>
+<li>counterって10より小さい?</li>
+<li>Yesなら出力してcounterに1を足す、Noなら終了</li>
+<li>終了するまで2~3を繰り返し</li>
+</ol>
+<p>となる。</p>
+<p>また、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> counter = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (counter &lt;= <span class="hljs-number">10</span>) {
+	System.out.println(counter);
+	counter = counter + <span class="hljs-number">1</span>;
+}
+System.out.println(counter);
+</div></code></pre>
+<p>とすると、繰り返しが終わった後に、<code>11</code>が出力される。<br>
+なぜなら、whileの最後（10回目）で、10を出力後に1を足し、whileを抜けているため。<br>
+すると、counterは11になっている。</p>
+<blockquote>
+<p>whileは、<em><strong>終わりのタイミングはわかっているけど、何回繰り返すかわからない場合に使う。</strong></em></p>
+</blockquote>
+<h2 id="for">for</h2>
+<p>何回繰り返すのかわからない場合は<code>while</code>を使う。<br>
+じゃあ回数に限りがある場合は？<code>for</code>という書き方を使う。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span>(初期化式;条件式;増加式){
+    何かしらの処理;
+}
+</div></code></pre>
+<p>書き方に癖があり、<code>;</code>が2つ必要。</p>
+<blockquote>
+<p>ちなみに、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span>(;;){
+
+}
+</div></code></pre>
+<p>と書くと無限ループになる。ただしコンパイルエラーは発生しない。もし無限ループを実行すると、メモリ不足でそのうち止まるけど、今どきのPCでは中々ならない。<br>
+もし作ってしまった場合は、右下の終了ボタンを押せば止まる。</p>
+</blockquote>
+<p>forの場合、最初の数字を設定できる。forの()の内部で変数を作ってもOK。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i = i + <span class="hljs-number">1</span>) {
+    System.out.println(i);
+}
+</div></code></pre>
+<p>といった感じ。これは先程の<code>while</code>と結果は同じ。<code>for</code>を使う場合、繰り返し回数が決まっている。<br>
+上記のコードを先程の<code>while</code>に当てはめると、</p>
+<ul>
+<li><code>int i = 1</code>が<code>int counter = 1;</code></li>
+<li><code>i &lt;= 10</code>が<code>counter &lt;= 10</code></li>
+<li><code>i = i + 1</code>が<code>counter = counter + 1;</code></li>
+</ul>
+<p>また、<code>i = i + 1</code>は<code>i++</code>と書くこともできる。2ずつ足したい場合は、<code>i += 2</code>と書く。</p>
+<h2 id="%E8%AA%B2%E9%A1%8C2">課題2</h2>
+<pre class="hljs"><code><div>#
+##
+###
+####
+</div></code></pre>
+<p>と出力する。</p>
+<p><strong>回答</strong></p>
+<p>whileをつかった2パターン紹介する。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> lineCount = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">int</span> counter = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span>(counter &lt;= lineCount){
+    System.out.println(<span class="hljs-string">"#"</span>.repeat(counter));
+    counter = counter + <span class="hljs-number">1</span>;
+}
+</div></code></pre>
+<p><code>String</code>はこういうことができる。Stringの後にピリオドを打つと、めちゃくちゃ使えるのが表示される。<br>
+例えば<code>index</code>とか<code>contains</code>など。その中の<code>repeat</code>というものを使った。<code>repeat</code>は、文字列を()の中の数字分返すことになる。<br>
+これは教えてないズルいやりかた、もう1つ</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> lineCount = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">int</span> counter = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (counter &lt;= lineCount) {
+	<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;
+	<span class="hljs-keyword">while</span> (j &lt;= counter) {
+		System.out.print(<span class="hljs-string">"#"</span>);
+		j++;
+	}
+	System.out.println();
+	counter++;
+}
+</div></code></pre>
+<p>皆さんがやったのはこのやり方だと思う。</p>
+<h1 id="%E3%82%B3%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA">コードウォーズ</h1>
+<p>登録・使い方は別紙。<br>
+8kyuを進めてもらう。まだ教わってないのは飛ばしても問題ない。<br>
+とりあえず1問実施してみる。<br>
+わからなかったりヒントが欲しい時は、問題のURLをグループチャットに貼り付けて、わからなかったですって言ってくれればヘルプに入る。<br>
+あるいは、全員で相談して1つの問題を解くのも力になります。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</h1>
+<pre class="hljs"><code><div>Q：アルゴリズムの考え方とは？始めと終わりがある、順番にそって考えるのか、途中から見るのかどっちがいいの？
+A：自分のやりやすいように
+</div></code></pre>
+<pre class="hljs"><code><div>Q：ファイルコピーのやり方
+A：展開したものをコピーしてほしい
+</div></code></pre>
+<pre class="hljs"><code><div>Q：タイピング速度は？
+A：そこまで求めてない
+</div></code></pre>
+<pre class="hljs"><code><div>Q：Eclipseのパッケージエクスプローラーが見えない
+A：ウィンドウのどっかからリセット、window &gt; パースペクティブ &gt; リセット
+</div></code></pre>
+<h1 id="%E5%9B%B0%E3%82%8A%E3%81%94%E3%81%A8%E3%81%AA%E3%81%A9">困りごとなど</h1>
+<ul>
+<li>休みの人がでた</li>
+<li>周りでやりたい人が現れたら途中参加させる</li>
+<li>配列など、習ってないのを使う問題が多い
+<ul>
+<li>ある程度問題をピックアップしておく？</li>
+<li>こっちで問題を用意する？
+<ul>
+<li>Webから持ってきてJUnitで</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>途中からでも参加できるようにしておきたい。</li>
+<li>変数名とか、最初は日本語で書いてもらうのもありかも……？</li>
+</ul>
+</div>
+<div class=side>
+<div class=sticky>
+<details><summary>目次</summary>
+<ul>
+<li><a href="#1%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">1日目 カンペ</a>
+<ul>
+<li><a href="#%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E3%82%B5%E3%82%A4%E3%83%88">参考サイト</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8C%A8%E6%8B%B6">挨拶</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B">自己紹介</a></li>
+<li><a href="#%E7%A0%94%E4%BF%AE%E5%89%8D%E3%81%AB">研修前に……</a></li>
+<li><a href="#%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF">プログラミングとは</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E8%82%9D%E5%BF%83%E3%81%AA%E5%87%A6%E7%90%86">プログラミングで肝心な処理</a>
+<ul>
+<li><a href="#%E5%AE%9F%E8%B7%B5%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E4%BD%9C%E6%88%90">実践：アルゴリズム作成</a></li>
+<li><a href="#%E8%AA%B2%E9%A1%8C1">課題1</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0-%E3%81%AE%E5%89%8D%E3%81%AB">コーディング の前に</a></li>
+<li><a href="#java%E3%81%AE%E8%A9%B1">javaの話</a>
+<ul>
+<li><a href="#oopobjectorientedproglaming">OOP(ObjectOrientedProglaming)</a></li>
+<li><a href="#%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E8%A8%80%E8%AA%9E%E3%81%A8%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E8%A8%80%E8%AA%9E">コンパイル言語とスクリプト言語</a>
+<ul>
+<li><a href="#%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E8%A8%80%E8%AA%9E%E3%81%A8%E3%81%AF">コンパイル言語とは？</a></li>
+<li><a href="#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E8%A8%80%E8%AA%9E%E3%81%A8%E3%81%AF">スクリプト言語とは？</a></li>
+</ul>
+</li>
+<li><a href="#javajdk%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">JavaJDKについて</a></li>
+<li><a href="#java%E3%81%AEdl">JavaのDL</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AEjava%E4%BD%9C%E6%88%90">初めてのJava作成</a>
+<ul>
+<li><a href="#%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">インデンテーション</a></li>
+</ul>
+</li>
+<li><a href="#eclipse%E3%81%AE%E8%B5%B7%E5%8B%95">Eclipseの起動</a>
+<ul>
+<li><a href="#eclipse%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96">Eclipseの日本語化</a></li>
+<li><a href="#eclipse%E3%81%A7java%E4%BD%9C%E6%88%90">Eclipseでjava作成</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%AC%E6%A0%BC%E7%9A%84%E3%81%AAjava">本格的なjava</a>
+<ul>
+<li><a href="#%E5%A4%89%E6%95%B0">変数</a>
+<ul>
+<li><a href="#%E6%95%B4%E6%95%B0%E3%81%AE%E5%85%A5%E3%82%8C%E7%89%A9%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86">整数の入れ物を作ってみよう</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88">キャスト</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B2%90">条件分岐</a>
+<ul>
+<li><a href="#else">else</a></li>
+<li><a href="#else-if">else if</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97">繰り返し</a>
+<ul>
+<li><a href="#while">while</a></li>
+<li><a href="#for">for</a></li>
+<li><a href="#%E8%AA%B2%E9%A1%8C2">課題2</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%B3%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA">コードウォーズ</a></li>
+<li><a href="#%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</a></li>
+<li><a href="#%E5%9B%B0%E3%82%8A%E3%81%94%E3%81%A8%E3%81%AA%E3%81%A9">困りごとなど</a></li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+
+</body>
+</html>

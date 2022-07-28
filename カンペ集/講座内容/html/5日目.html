@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5日目.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/m-yasukawa/Desktop/%E6%A1%88%E4%BB%B6/Java%E7%A0%94%E4%BF%AE%E3%82%AB%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%A9%E3%83%A0/%E7%A0%94%E4%BF%AE%E4%B8%AD%E3%83%A1%E3%83%A2/github-markdown.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div>
+<div class=main>
+<h1 id="5%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">5日目 カンペ</h1>
+<h2 id="%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</h2>
+<p>Java言語を使用して、以下の事ができるようになる。</p>
+<ul>
+<li>変数の作成及び使用</li>
+<li>条件分岐(if)を使て、処理フローを分ける</li>
+<li>振り替えし(while, for)を使って、反復処理を構築できる</li>
+<li><s>break、continueを使って、反復処理を制御できる</s></li>
+</ul>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E3%83%AA%E3%83%B3%E3%82%B0">エラーハンドリング</h1>
+<p>今日で最後。javaの研修が始まってから、javaの基本的な書き方を、次にオブジェクト指向の考え方を教えた。<br>
+いっこ教えていないのが、エラーハンドリング。エラーがでたらどうするかについて。</p>
+<p>例えば、Windowsならブルースクリーンになるし、ブラウザがインターネットにつながってないとエラーメッセージを出したりする。それがエラーハンドリング。そのやり方について教えていく。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestError</span> </span>{
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		System.out.println(<span class="hljs-string">"main start"</span>);
+		method1();
+		System.out.println(<span class="hljs-string">"main end"</span>);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"method1 start"</span>);
+		method2();
+		System.out.println(<span class="hljs-string">"method1 end"</span>);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"method2 start"</span>);
+		method3();
+		System.out.println(<span class="hljs-string">"method2 end"</span>);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method3</span><span class="hljs-params">()</span> </span>{
+		System.out.println(<span class="hljs-string">"method3 start"</span>);
+		System.out.println(<span class="hljs-string">"method3 end"</span>);
+	}
+}
+</div></code></pre>
+<p>このコードがどんな順番で実行されるかはわかると思う。イメージとしては、どんどん処理が積まれていく感じ。そして、積まれた上から実行されていくイメージ。</p>
+<blockquote>
+<p>TODO:なんか図をつける</p>
+</blockquote>
+<p>じゃあ<code>method3</code>でエラーが発生したら？</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method3</span><span class="hljs-params">()</span> </span>{
+	System.out.println(<span class="hljs-string">"method3 start"</span>);
+
+	String test = <span class="hljs-keyword">null</span>;	<span class="hljs-comment">// &lt;- nullを入れる</span>
+	test.length();	<span class="hljs-comment">// &lt;- nullを見ようとしてエラー発生</span>
+
+	System.out.println(<span class="hljs-string">"method3 end"</span>);
+}
+</div></code></pre>
+<p>「method3 start」を出力して終了する。</p>
+<pre class="hljs"><code><div>main start
+method1 start
+method2 start
+method3 start
+Exception in thread <span class="hljs-string">"main"</span> java.lang.NullPointerException: Cannot invoke <span class="hljs-string">"String.length()"</span> because <span class="hljs-string">"test"</span> is <span class="hljs-keyword">null</span>
+	at TestError.method3(TestError.java:<span class="hljs-number">26</span>)
+	at TestError.method2(TestError.java:<span class="hljs-number">18</span>)
+	at TestError.method1(TestError.java:<span class="hljs-number">12</span>)
+	at TestError.main(TestError.java:<span class="hljs-number">6</span>)
+</div></code></pre>
+<p>この「method3 start」より下の文はスタックトレースと呼ばれる。<br>
+どこでどんなエラーが発生し、その原因は何かを教えてくれる。言語によって違うけど、javaの場合は上から読んでいけばよい。<br>
+<code>at TestError.method3(TestError.java:26)</code>は、<code>at 発生したクラス.発生したメソッド(発生したファイル:発生した行数)</code>というふうに読む。</p>
+<p>ではなぜ「method3 start」で終わったのか？<br>
+methodNたちは、自分でエラーを処理できない。そのため、呼び出し元、親となるメソッドにエラーを渡す。それを繰り返していき、最終的にmainに渡される。<br>
+mainでもエラーを処理できないので、エラー終了となる。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E4%BE%8B%E5%A4%96%E5%87%A6%E7%90%86">例外処理</h1>
+<p>エラーを処理するための処理を追加してあげないといけない。そんなときは<code>try-catch</code>を使う。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">try</span> {
+	String test = <span class="hljs-keyword">null</span>;
+	test.length();
+} <span class="hljs-keyword">catch</span> (NullPointerException error) {
+	System.out.println(error.getMessage());
+}
+</div></code></pre>
+<p>エラーが発生するかもしれないところは、<code>try</code>で囲んであげて、<br>
+<code>catch</code>の中で、どんなエラーを捕まえるか指定する。上記だとぬるぽエラーを捕まえる。<br>
+その後の<code>{}</code>の中に、エラーを捕まえた後の処理を記述する。</p>
+<p>しかし、実際に全ての例外を指定するわけにはいかないので、そんなときは<code>Exception</code>を指定すればOK。これはポリモーフィズムで出来ている。</p>
+<p>じゃあさっきの<code>try</code>をmethod2でするとどうなる？</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>{
+	System.out.println(<span class="hljs-string">"method2 start"</span>);
+
+	<span class="hljs-keyword">try</span> {
+		method3();
+	} <span class="hljs-keyword">catch</span> (NullPointerException error) {
+		System.out.println(error.getMessage());
+	}
+	
+	System.out.println(<span class="hljs-string">"method2 end"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method3</span><span class="hljs-params">()</span> </span>{
+	System.out.println(<span class="hljs-string">"method3 start"</span>);
+	
+	String test = <span class="hljs-keyword">null</span>;
+	test.length();
+	
+	System.out.println(<span class="hljs-string">"method3 end"</span>);
+}
+</div></code></pre>
+<p>さっきみたいなエラーはでない。なぜなら、method3が処理できなかったエラーをmethod2に投げ、そのエラーをmethod2が処理したから。</p>
+<p>エラーが発生した場合、親へ親へと投げていき、誰もキャッチできなかった場合にエラーとしてブルスクが出たりする。<br>
+もし誰かがキャッチ出来たら、エラーのメッセージが表示されたりする。</p>
+<p><code>try</code>はちょっと特殊で、エラーが複数発生する場合でも、最初のエラーで止まる。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+	String test = <span class="hljs-keyword">null</span>;
+	<span class="hljs-keyword">int</span>[] testInt = { <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span> };
+
+	<span class="hljs-keyword">try</span> {
+		test.length();	<span class="hljs-comment">// NullPointerException</span>
+		System.out.println(testInt[<span class="hljs-number">3</span>]);	<span class="hljs-comment">// ArrayIndexOutOfBoundsException</span>
+
+	} <span class="hljs-keyword">catch</span> (Exception error) {
+		System.out.println(error.getMessage());
+	}
+}
+</div></code></pre>
+<p>のようなコードの場合、<code>test.length()</code>でも<code>System.out.println(testInt[3])</code>でもエラーが発生するが、最初にエラーが発生した時点で、<code>catch</code>に進んでしまう。</p>
+<p>それぞれのエラー内容によって対応を変えたい場合。（エラー内容で表示させるメッセージを変えるとか）<br>
+<code>catch</code>で捕まえるのが<code>Exception</code>なら、中に下記のようなif文を追加すればいい。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">if</span>(error <span class="hljs-keyword">instanceof</span> NullPointerException){
+	System.out.println(<span class="hljs-string">"Nullです！"</span>);
+}
+</div></code></pre>
+<p>でも、エラーの処理が増えたり、ぬるぽに関してはmainで処理をする、となった場合など、コードが読みやすい別のやり方がある。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+	String test = <span class="hljs-keyword">null</span>;
+	<span class="hljs-keyword">int</span>[] testInt = { <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span> };
+
+	<span class="hljs-keyword">try</span> {
+		test.length(); <span class="hljs-comment">// NullPointerException</span>
+		System.out.println(testInt[<span class="hljs-number">3</span>]); <span class="hljs-comment">// ArrayIndexOutOfBoundsException</span>
+
+	} <span class="hljs-keyword">catch</span> (NullPointerException error) {
+		System.out.println(<span class="hljs-string">"Nullです！"</span>);
+	} <span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException error) {
+		System.out.println(<span class="hljs-string">"指定したサイズが大きすぎます！"</span>);
+	}
+}
+</div></code></pre>
+<p>上記のように、<code>catch</code>を複数使えばいい。</p>
+<div style="page-break-after:always"></div>
+<h1 id="finally">finally</h1>
+<p><code>try</code>が終わった後に何か実行したい場合、<code>finally</code>を最後に追加する。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+	String test = <span class="hljs-keyword">null</span>;
+	<span class="hljs-keyword">int</span>[] testInt = { <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span> };
+
+	<span class="hljs-keyword">try</span> {
+		test.length(); <span class="hljs-comment">// NullPointerException</span>
+		System.out.println(testInt[<span class="hljs-number">3</span>]); <span class="hljs-comment">// ArrayIndexOutOfBoundsException</span>
+
+	} <span class="hljs-keyword">catch</span> (NullPointerException error) {
+		System.out.println(<span class="hljs-string">"Nullです！"</span>);
+	} <span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException error) {
+		System.out.println(<span class="hljs-string">"指定したサイズが大きすぎます！"</span>);
+	} <span class="hljs-keyword">finally</span> {
+		System.out.println(<span class="hljs-string">"finally！"</span>);
+	}
+}
+</div></code></pre>
+<p><code>finally</code>の中は、エラーが発生してもしなくても実行される。<br>
+例えば、DBとの接続を確実に切断したいときなどに使う。</p>
+<h1 id="throw">throw</h1>
+<p>自分でエラーを発生させたい場合、throwを使う。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+</div></code></pre>
+<p>こんな感じでエラーのインスタンスを作ってあげる。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E8%AA%B2%E9%A1%8C">課題</h1>
+<p>コンソール上で動くものでいいので、図書館のシステムを作ってほしい。<br>
+図書館のシステムといっても、まるごと作るのは無理なので、</p>
+<p>図書館のシステム<br>
+- できること<br>
+- 本のCRUD(Create,Read,Update,Delete)ができること<br>
+- メニューがあること<br>
+- 0 を選んだらシステムが終了すること</p>
+<p>メモリ上のデータの扱い方しかしてないので、メモリ上のでOK。これができたら、自分たちでDBを使うのも面白いと思う。<br>
+ただ、DBはインストールとかがちょっと大変なので、SQLiteっていう超簡単なのがあるので、それとか。mongDBとか。</p>
+<p>CRUDの解説</p>
+<p>基幹システムで<br>
+最初にメニューを表示させる。<br>
+1を押したら、1は登録なので色々入力させる。それが終わったらメニューに戻る。<br>
+メニューで0を押したらプログラムが終了する。それ以外では終了しない。</p>
+<p>本としてほしいのが、<br>
+本</p>
+<ul>
+<li>プロパティ
+<ul>
+<li>ISBN</li>
+<li>題名</li>
+<li>作者</li>
+<li>出版社</li>
+<li>出版年</li>
+</ul>
+</li>
+<li>method
+<ul>
+<li>詳細(プロパティを全て表示させる)</li>
+</ul>
+</li>
+</ul>
+<p>検索のところの最低限は、本の一覧が出せること、プラスアルファとして、特定のプロパティのものだけ表示させる、って昨日をつけてもらっても構わない</p>
+<p>今までの配列だと最初に箱の個数を作らないといけない、それは困るので、ユーザがいくらでも登録できるようにしてほしい。<br>
+それをどうやってするのかは簡単にあとで説明する。</p>
+<p><strong>入力</strong><br>
+入力はスキャナーで行う。でもスキャナーはデフォルトのパッケージに入っていないので、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+</div></code></pre>
+<p>って一番上に書いて使えるようにする。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> class <span class="hljs-title">Test</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+
+        System.out.println(<span class="hljs-string">"Input any value"</span>);
+        Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+        String userInput = sc.next;
+
+        System.out.println(<span class="hljs-string">"value: "</span> + userInput);
+    }
+}
+</div></code></pre>
+<p>他にsc.nextIntとかすると、int型として読み取ってくれる。コンソールに入力してエンターを押すと。</p>
+<p>例えば、オプションは1文字だけしか入れないって状態で、（実際はそうはいかないので何とか自分たちでしてください）0を入力で終了ってするなら、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">while</span>(option != <span class="hljs-number">0</span>){
+    System.out.flush();  <span class="hljs-comment">//&lt;-クリアにするのはこれじゃなかった、皆さんで調べてください</span>
+    System.out.println(<span class="hljs-string">"Library system"</span>);
+    option = sc.nextInt();
+}
+System.out.println(<span class="hljs-string">"end"</span>);
+</div></code></pre>
+<p>みたいな感じ、実際のレイアウトは皆さんにお任せします。</p>
+<h1 id="%E5%A4%A7%E3%81%8D%E3%81%95%E3%81%8C%E6%B1%BA%E3%81%BE%E3%81%A3%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E9%85%8D%E5%88%97">大きさが決まっていない配列</h1>
+<p>配列は処理が速い、最初に設定した配列の数でメモリを予約しておくので。<br>
+デメリットとして、設定した個数でメモリを開けてしまうので、それ未満だと空の部分がもったいないし、<br>
+個数より多く入れようとするなら、新たに配列を用意したりする必要がある。<br>
+そのために、Listっていうデータ型がある。配列のような動きをするけど、長さが決まっていない。<br>
+動的に数が変わる。数が変動しやすかったり、わからない場合に使う。<br>
+逆に配列は、数がわかりきってる場合に使う。<br>
+Listの場合、中間に入れるのも楽。その分メモリを多く使う。けど特に気にしなくても、最近のＰＣは大丈夫。<br>
+javaの場合、</p>
+<pre class="hljs"><code><div>ArrayList&lt;E&gt; intList
+</div></code></pre>
+<p>このEに何型のリストを使いたいかを入れないといけない。</p>
+<pre class="hljs"><code><div>ArrayList&lt;Integer&gt; intList = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+</div></code></pre>
+<p>ただし、intではなくIntegerを入れないといけない、ラッパークラスという。ラッパーについては参考サイトに詳しく書いてあるので、調べてください。</p>
+<pre class="hljs"><code><div>ArrayList&lt;Integer&gt; intList = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+intList.add(<span class="hljs-number">1</span>);  <span class="hljs-comment">// &lt;- 数字が入る</span>
+intList.addAll();  <span class="hljs-comment">// &lt;- 配列がそのまま入る</span>
+</div></code></pre>
+<pre class="hljs"><code><div>ArrayList&lt;Integer&gt; intList = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++){
+    intList.add(i);
+}
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> item : intList){
+    System.out.println(item);
+}
+
+</div></code></pre>
+<p>とかもできるし、</p>
+<pre class="hljs"><code><div>intList.remove(<span class="hljs-number">5</span>);
+</div></code></pre>
+<p>でインデックス5の値を消せる。（上の例で行くと値6が消せる）</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> index = intList.indexof(<span class="hljs-number">5</span>); <span class="hljs-comment">// &lt;- 5という値はインデックスのどこにあるか教えてくれる</span>
+intList.remove(index)
+</div></code></pre>
+<p>特定の位置に値を入れる</p>
+<pre class="hljs"><code><div>intList.add(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);  <span class="hljs-comment">// &lt;- index:0　に値0を入れる</span>
+</div></code></pre>
+<p>配列とは違って、ぎゅっと入れてくれる、配列の場合は上書きしてしまう。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> item : intList){
+    System.out.println(item);
+}
+</div></code></pre>
+<p>の使い方は、java8で追加されたラムダという書き方。ラムダは配列・リストでないと使えない。<br>
+ラムダを使わないと下記のようになる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; intList.size(); i++){
+    <span class="hljs-keyword">int</span> item = intList.get(i);
+    System.out.println(item);
+}
+</div></code></pre>
+<p>ラムダに関しては、完全に対応しているコードは少ないので、今回は教えないです。<br>
+興味があれば自分で調べてください。</p>
+<h1 id="%E9%96%8B%E7%99%BA%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%81%8B%E3%82%89%E3%81%AE%E4%BD%99%E8%AB%87">開発をやってきている人からの余談</h1>
+<p>開発者だと必ずいつか、githubにたどりつくと思う。<br>
+年収測定みたいのがあって、業務で使ってたコードをそのまま乗せちゃったやつのサイト。<br>
+その人の使い方が悪いだけだから……<br>
+みんなアカウントを作って（出来れば個人のメールアドレスで）<br>
+このサイトは、自分で作ったコードを乗せておくことができる。<br>
+URLさえ知っていれば、別の環境でも読めるし、DLもできるし、修正の提案もできる。<br>
+なぜ推しているかっていうと、履歴とかが残されているから。逆に例えば、自分が見直して直せるので、コーディングスキルの上達が実感できるし、<br>
+個人の感想だけど、javaの資格よりも、作ったっていうのと、このURLのコードを書きましたっていうのでは重みが違う。<br>
+デスクトップ上のアプリケーションとかもある、使いやすいので使ってみてください。<br>
+研修PC持ち帰れなくても、家でできるし、もしよかったら使ってみてください。<br>
+なんなら大概のオープンソースソフトウェアはgithubに落ちてる、他の人のコードを読むことで勉強になるし、おすすめです。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E3%81%9D%E3%81%AE%E4%BB%96">エラーに関してその他</h1>
+<h2 id="%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E7%A8%AE%E9%A1%9E">エラーの種類</h2>
+<p>javaには大きく2種類くらいエラーがある。</p>
+<ul>
+<li>ランタイムエラー
+<ul>
+<li>ぬるぽとか</li>
+<li>0割とか</li>
+<li>コンパイルでは見つからないけど、実行すると発生するエラー</li>
+<li>コンパイルでは発見されない、文法的には正しいから</li>
+</ul>
+</li>
+<li>コンパイルエラー
+<ul>
+<li>ソースを書いてる間に発生するエラー</li>
+<li>プロパティ呼び出してるけどそのプロパティ存在しないとか</li>
+<li>たいぽとか</li>
+</ul>
+</li>
+</ul>
+<p>みんなが気にしないといけないのはランタイムエラー<br>
+実際に動かさないとエラーかわからないので気を付ける必要がある、コンパイルエラーは発生してるとjavaがつくれないので絶対直る、直す</p>
+<h2 id="%E8%87%AA%E4%BD%9C%E3%82%A8%E3%83%A9%E3%83%BC">自作エラー</h2>
+<p>プログラミングをするうちに、javaの型にはまらないエラーが発生することがある。そういう時はどうすればいい？<br>
+自分でエラークラスを作ってしまえばいい。どうやって？継承先を<code>RuntimeException</code>にして作ればいい。</p>
+<div style="page-break-after:always"></div>
+<h1 id="%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</h1>
+<pre class="hljs"><code><div>Q：catchするのはExceptionで大丈夫？わかってる範囲で詳細まで決めてcatchするほうがいい？
+A：正直に言うと、開発者個人の感覚と、チームの方針による。
+例えば、DBのことやってるときにはDBのエラーしか発生しないし、どっちでもいい。裁量による。
+ただExceptionだと、何かがあったらcatch出来て安心。しかし、DB以外で何かが発生したときに、追うのが大変ってのがある。
+</div></code></pre>
+<pre class="hljs"><code><div>Q：スタックトレースってのはエラーが起きた場所を教えてくれる？
+A：それプラス、そこにたどりつくまでにどういった処理が行われたかを教えてくれる。
+</div></code></pre>
+</div>
+<div class=side>
+<div class=sticky>
+<details><summary>目次</summary>
+<ul>
+<li><a href="#5%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">5日目 カンペ</a>
+<ul>
+<li><a href="#%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E3%83%AA%E3%83%B3%E3%82%B0">エラーハンドリング</a></li>
+<li><a href="#%E4%BE%8B%E5%A4%96%E5%87%A6%E7%90%86">例外処理</a></li>
+<li><a href="#finally">finally</a></li>
+<li><a href="#throw">throw</a></li>
+<li><a href="#%E8%AA%B2%E9%A1%8C">課題</a></li>
+<li><a href="#%E5%A4%A7%E3%81%8D%E3%81%95%E3%81%8C%E6%B1%BA%E3%81%BE%E3%81%A3%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E9%85%8D%E5%88%97">大きさが決まっていない配列</a></li>
+<li><a href="#%E9%96%8B%E7%99%BA%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%81%8B%E3%82%89%E3%81%AE%E4%BD%99%E8%AB%87">開発をやってきている人からの余談</a></li>
+<li><a href="#%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E3%81%9D%E3%81%AE%E4%BB%96">エラーに関してその他</a>
+<ul>
+<li><a href="#%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E7%A8%AE%E9%A1%9E">エラーの種類</a></li>
+<li><a href="#%E8%87%AA%E4%BD%9C%E3%82%A8%E3%83%A9%E3%83%BC">自作エラー</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</a></li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</body>
+</html>

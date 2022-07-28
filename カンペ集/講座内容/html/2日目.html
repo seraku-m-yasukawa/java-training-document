@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2日目.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/m-yasukawa/Desktop/%E6%A1%88%E4%BB%B6/Java%E7%A0%94%E4%BF%AE%E3%82%AB%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%A9%E3%83%A0/%E7%A0%94%E4%BF%AE%E4%B8%AD%E3%83%A1%E3%83%A2/github-markdown.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div>
+<div class=main>
+<h1 id="2%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">2日目 カンペ</h1>
+<h2 id="%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</h2>
+<p>Java言語を使用して、以下の事ができるようになる。</p>
+<ul>
+<li>変数の作成及び使用</li>
+<li>条件分岐(if)を使て、処理フローを分ける</li>
+<li>振り替えし(while, for)を使って、反復処理を構築できる</li>
+<li><s>break、continueを使って、反復処理を制御できる</s></li>
+</ul>
+<h2 id="%E6%8E%88%E6%A5%AD%E3%83%97%E3%83%A9%E3%83%B3">授業プラン</h2>
+<ul>
+<li>あとで目次作りますたぶん</li>
+</ul>
+<div style="page-break-after:always"></div>
+<h1 id="%E9%85%8D%E5%88%97">配列</h1>
+<p>複数の変数の塊。変数が複数入る変数。引き出しをイメージすればわかりやすいかも。</p>
+<pre class="hljs"><code><div>String[]
+<span class="hljs-keyword">int</span>[]
+<span class="hljs-keyword">double</span>[]
+</div></code></pre>
+<p>のように書く。また、配列のことをArrayともいう。配列は複数の変数を入れる箱で、最初に「変数を何個入れられるか」を宣言して用意しないといけない。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span>[] array1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">6</span>];
+</div></code></pre>
+<p>これで<code>int</code>を入れる箱が6つできた。<code>new int[6]</code>で箱の数を指定している。</p>
+<h2 id="%E6%95%B0%E3%81%88%E6%96%B9">数え方</h2>
+<p>気を付けてほしいのが数え方。今の箱に1~6の値を入れた場合……</p>
+<pre class="hljs"><code><div>[6][5][4][3][2][1]
+</div></code></pre>
+<p>として、3番目の箱の値は？<br>
+ふつうは4だが、javaでは0番目から始まる。つまり、3番目の箱の値は3となる。<br>
+この数え方をindexと呼ぶ。イメージは下記の通り。</p>
+<pre class="hljs"><code><div>[6][5][4][3][2][1]
+ 0  1  2  3  4  5 
+</div></code></pre>
+<p>となる。</p>
+<p>上記の例で、「indexの0の値をくれ」っていうと、6を渡してくれる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> indexZero = array1[<span class="hljs-number">0</span>];  <span class="hljs-comment">// 配列array1のindexが0の値をindexZeroに入れている</span>
+System.out.println(indexZero);  <span class="hljs-comment">// 6が出力される</span>
+</div></code></pre>
+<p>また、配列には、配列の長さ（箱の個数）を保存しているプロパティが存在する。<br>
+上記の例だと長さは6。ただし気を付けないといけないのが、indexで長さの6を指定してしまうとエラーになる。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> arrayLength = array1.length;  <span class="hljs-comment">// 配列の長さを入れる</span>
+System.out.println(array1[arrayLength]);  <span class="hljs-comment">// indexの6を見ようとしてエラー（ArrayIndexOutOfBoundsException）発生</span>
+</div></code></pre>
+<h2 id="2%E6%AC%A1%E5%85%83%E9%85%8D%E5%88%97">2次元配列</h2>
+<p>配列の配列。配列の中に配列を入れることができる。イメージはこんな感じ。</p>
+<pre class="hljs"><code><div>┌─────────────┐   ┌─────────────┐
+│ [0] [1] [2] │   │ [3] [4] [5] │
+└─────────────┘   └─────────────┘
+</div></code></pre>
+<p>indexをつけて表記をそれっぽく合わせるとこんな感じのイメージ。</p>
+<pre class="hljs"><code><div>┌──         ──┐   ┌──         ──┐
+│ [0] [1] [2] │   │ [3] [4] [5] │
+│  0   1   2  │   │  0   1   2  │
+└──         ──┘   └──         ──┘
+       0                 1
+</div></code></pre>
+<p>2次元配列の値がほしい場合、indexを2つ指定してあげないといけない。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> value = array1[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>];  <span class="hljs-comment">//  array1のindex1のindex0をvalueに入れる</span>
+System.out.println(value);  <span class="hljs-comment">// 3が出力される</span>
+</div></code></pre>
+<p>ロッカーを想像するとイメージがつかみやすいかもしれない。<br>
+あるいは、ポッキーを段ボール買いしたときを想像するとか。（段ボールが配列、ポッキー1箱が配列の中の配列）</p>
+<h3 id="%E5%80%A4%E3%81%AF%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%85%A5%E3%82%8C%E3%82%8B">値は繰り返しを使って入れる</h3>
+<p><code>int array1[6]</code>という配列を作ったとして、値を1つずつに入れていくのは面倒なので、そういう時に<code>for</code>を使ってあげればいい。<br>
+ただし、iは0から始めること。（indexが0から始まるため）</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// 面倒！</span>
+<span class="hljs-keyword">int</span>[] array1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">6</span>];
+array1[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+array1[<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>;
+array1[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>;
+array1[<span class="hljs-number">3</span>] = <span class="hljs-number">4</span>;
+array1[<span class="hljs-number">4</span>] = <span class="hljs-number">5</span>;
+array1[<span class="hljs-number">5</span>] = <span class="hljs-number">6</span>;
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 面倒じゃない！</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+	array[i] = i;
+}
+</div></code></pre>
+<h3 id="%E3%81%84%E3%82%8D%E3%82%93%E3%81%AA%E9%85%8D%E5%88%97%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">いろんな配列の作り方</h3>
+<p>いくつか作り方がある。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span>[] array1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>];
+<span class="hljs-keyword">int</span>[] array2 = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
+<span class="hljs-keyword">int</span>[] array3 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
+</div></code></pre>
+<p>array2や3のように、配列を作るときに値を入れてしまえば、箱の数を指定しなくても作ることができる。</p>
+<blockquote>
+<p>余談：IDEは非常に便利で、コードも教えてくれたりするけど、IDEがない時に困るのは自分。<br>
+基本的なものはある程度は覚えておくべき。</p>
+</blockquote>
+<h2 id="%E8%AA%B2%E9%A1%8C1">課題1</h2>
+<p>int型配列から「最大」「最小」「平均値」を出力する。<br>
+残りの時間はCodewars。</p>
+<p><strong>問題</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">75</span>,<span class="hljs-number">80</span>,<span class="hljs-number">90</span>,<span class="hljs-number">100</span>,<span class="hljs-number">65</span>,<span class="hljs-number">50</span>,<span class="hljs-number">10</span>,<span class="hljs-number">0</span>,<span class="hljs-number">94</span>}
+</div></code></pre>
+<p>から、</p>
+<ol>
+<li>最大値</li>
+<li>最小値</li>
+<li>平均値<br>
+を画面上に出力する。</li>
+</ol>
+<pre class="hljs"><code><div>平均：n
+最大：n
+最小：n
+</div></code></pre>
+<p>って感じで表示してほしい。</p>
+<p><strong>考えるときのコツ</strong></p>
+<ol>
+<li>難しいことは一旦置いて、簡単なところから切り分けて作る</li>
+<li>手間取ったりわからなくなったりしたら、日本語でいいので言語化、抽象化する。</li>
+</ol>
+<p><em><strong>ここからはかなり詳しい解説、混乱している人がいたらする</strong></em></p>
+<details><summary>ちょっと長いので折り畳み</summary>
+<p>例えば、今回の処理の3を考えていく。</p>
+<p>平均を求めるには？数字と数字を足し算して、足した数字の個数で割ればいい。<br>
+つまり、平均値を求めるために必要なものは、</p>
+<ol>
+<li>全ての値の合計</li>
+<li>値の個数<br>
+となる。<br>
+なので、まずは全ての値の合計を求めるプログラムを考える。</li>
+</ol>
+<p>「全て足した値を求めるプログラム」を言語化しつつ考えていく。じゃあそもそも足し算とは？</p>
+<pre class="hljs"><code><div>数字 + 数字 =&gt; 数字
+</div></code></pre>
+<p>である。<br>
+そして、今回扱う値はすべて整数。整数はjavaでいうと？<code>int</code>。つまり、</p>
+<pre class="hljs"><code><div>int + int =&gt; int
+</div></code></pre>
+<p>となる。<br>
+しかし、これはjavaではできない。このintを入れる箱が必要である（これが変数）。<br>
+なので、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> value1 = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> value2 = <span class="hljs-number">2</span>;
+</div></code></pre>
+<p>とすれば、</p>
+<pre class="hljs"><code><div>value1 + value2 =&gt; int
+</div></code></pre>
+<p>とできる。</p>
+<p>さらに、配列として当てはめてみる。</p>
+<pre class="hljs"><code><div>A = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">1</span>,<span class="hljs-number">2</span>};
+</div></code></pre>
+<p>この場合、<code>A[0]</code>の値は1、<code>A[1]</code>の値は2である。<br>
+先ほどの<code>value1 + value2 =&gt; int</code>をしようとすると、つまりは</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> value1 = A[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">int</span> value2 = A[<span class="hljs-number">1</span>];
+</div></code></pre>
+<p>となる。<br>
+ところで、「平均を求める」というのは、「数字と数字を足し算して、足した数字の個数で割る」ことである。今回の場合、</p>
+<pre class="hljs"><code><div>value1 + value2 = int  &lt;- 合計
+int / 2 = 平均
+</div></code></pre>
+<p>となる。javaで書くなら、この中のintを何かに置き換えないといけない。なので、</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> value1 = A[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">int</span> value2 = A[<span class="hljs-number">1</span>];
+<span class="hljs-keyword">int</span> sumValue;  <span class="hljs-comment">// 合計</span>
+</div></code></pre>
+<p>のように<code>sumValue</code>を追加する。<br>
+さらに、<code>sumValue = value1 + value2</code>をして、この<code>sumValue</code>を配列の長さで割ればよい。<br>
+長さで割る際には、<code>sumValue / A.length</code>とすればよい。</p>
+</details>
+<div style="page-break-after:always"></div>
+<h1 id="%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</h1>
+<pre class="hljs"><code><div>Q：何もかもがまったくわからない
+A：ひも解いて解説した
+</div></code></pre>
+<h1 id="%E5%9B%B0%E3%82%8A%E3%81%94%E3%81%A8%E3%81%AA%E3%81%A9">困りごとなど</h1>
+<ul>
+<li>失敗を恐れすぎている</li>
+<li>終わって暇な人はどうしよう？
+<ul>
+<li>Codewarsとか？</li>
+</ul>
+</li>
+<li>無駄に配列を使った変数を作ろうとする人もいて面白かった</li>
+<li>javaのコードの先頭の<code>import</code>が抜けてる人がいた</li>
+<li>配列のindexのややこしさ……
+<ul>
+<li>実際に箱を用意するとか？</li>
+<li>参加者に並んでもらって、番号を振り分けたり？</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class=side>
+<div class=sticky>
+<details><summary>目次</summary>
+<ul>
+<li><a href="#2%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">2日目 カンペ</a>
+<ul>
+<li><a href="#%E3%82%B4%E3%83%BC%E3%83%AB">ゴール</a></li>
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%83%97%E3%83%A9%E3%83%B3">授業プラン</a></li>
+</ul>
+</li>
+<li><a href="#%E9%85%8D%E5%88%97">配列</a>
+<ul>
+<li><a href="#%E6%95%B0%E3%81%88%E6%96%B9">数え方</a></li>
+<li><a href="#2%E6%AC%A1%E5%85%83%E9%85%8D%E5%88%97">2次元配列</a>
+<ul>
+<li><a href="#%E5%80%A4%E3%81%AF%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%85%A5%E3%82%8C%E3%82%8B">値は繰り返しを使って入れる</a></li>
+<li><a href="#%E3%81%84%E3%82%8D%E3%82%93%E3%81%AA%E9%85%8D%E5%88%97%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">いろんな配列の作り方</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AA%B2%E9%A1%8C1">課題1</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B3%AA%E5%95%8F%E3%81%95%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8">質問されたこと</a></li>
+<li><a href="#%E5%9B%B0%E3%82%8A%E3%81%94%E3%81%A8%E3%81%AA%E3%81%A9">困りごとなど</a></li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</body>
+</html>
