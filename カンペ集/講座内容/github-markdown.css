@@ -83,10 +83,10 @@
     --color-fg-muted: #57606a;
     --color-fg-subtle: #6e7781;
     --color-canvas-default: #ffffff;
-    --color-canvas-subtle: #dfdfdf;
+    --color-canvas-subtle: #f6f8fa;
     --color-border-default: #d0d7de;
     --color-border-muted: hsla(210,18%,87%,1);
-    --color-neutral-muted: rgba(148, 156, 163, 0.2);
+    --color-neutral-muted: rgb(178 186 193 / 22%);
     --color-accent-fg: #0969da;
     --color-accent-emphasis: #0969da;
     --color-attention-subtle: #fff8c5;
@@ -97,29 +97,64 @@
 
 @media print {
 	
+	body > div{
+		/* display: block !important; */
+		width: max-content !important;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	body{
+		width: fit-content;
+		/* background-color: #0550ae; */
+		margin-left: 0% !important;
+		margin-right: 2em !important;
+		padding-left: 0% !important;
+		padding-right: 0% !important;
+	}
+
+	.main{
+		word-wrap:break-all;
+		width: max-content !important;
+		margin-left: 0% !important;
+		margin-right: 0% !important;
+		padding-left: 0% !important;
+		padding-right: 0% !important;
+	}
+
     .side, .sticky{
-        display: none;
-		border-left: 0px !important;
-		/* margin-left: 1em; */
+        display: none !important;
+		width: 0% !important;
+		/* border-left: 0 !important; */
+		margin: 0 !important;
+		padding: 0 !important;
     }
 
-	body > div{
+
+
+	.printonry{
 		display: block !important;
 	}
+
+
 }
 
 
-
+.printonry {
+	display:none;
+}
 
 body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  margin: 2em !important;
+  margin-bottom: 2em !important;
+  margin-right: 1em !important;
   margin-top: 0em !important;
   margin-left: 2em !important;
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: system-ui, 'Segoe UI',Arial,Meiryo,sans-serif;
+  /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
@@ -196,7 +231,7 @@ body dfn {
 body h1 {
   margin: .67em 0;
   font-weight: 600;
-  padding-top: 1em ;
+  /* padding-top: 1em ; */
   padding-bottom: .3em;
   font-size: 2em;
   border-bottom: 2px solid var(--color-border-muted);
@@ -229,20 +264,45 @@ body sup {
 }
 
 body img {
-  border-style: none;
+	margin-top: .7em;
+	margin-left: .7em;
+  border-style: groove;
   max-width: 100%;
   box-sizing: content-box;
   background-color: var(--color-canvas-default);
 }
 
-
+.note {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 1em !important;
+    margin: .5em !important;
+    white-space: pre-wrap !important;
+}
+.note > p {
+    margin: 0%;
+	margin-right: .7em;
+}
+.note.info {
+    background: #e3f7df !important;
+}
+.note.warn {
+    background: #fdf9e2 !important;
+}
+.note.alert {
+    background: #feebee !important;
+}
 
 .hljs {
 	padding: 1em !important;
-  margin-top: 0.5em !important;
-  margin-right: 0.5em !important;
-  margin-bottom: 1em !important;
-  margin-left: 0.5em !important;
+    margin-top: 0em !important;
+    margin-right: 0.2em !important;
+    margin-bottom: .7em !important;
+    margin-left: 0.2em !important;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgba(148, 156, 163, 0.2);
+	background-color: var(--color-neutral-muted);
 }
 
 .hljs-comment,
@@ -395,10 +455,10 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  margin-top: 24px;
+  /* margin-top: 24px; */
   margin-bottom: 16px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 body h2 {
@@ -409,6 +469,7 @@ body h2 {
 }
 
 body h3 {
+	line-height: inherit;
   font-weight: 600;
   font-size: 1.25em;
   border-bottom: 0.5px solid var(--color-border-muted);
@@ -438,9 +499,11 @@ body p {
 body blockquote {
   margin: 0;
   margin-left: 1em;
-  padding: 0 1em;
+  padding: .1em;
+  padding-left: .5em;
   color: var(--color-fg-muted);
-  border-left: .3em solid var(--color-border-default);
+  border-left: .4em solid rgba(0, 122, 204, 0.5);
+  background-color: var(--color-canvas-subtle);
 }
 
 body ul,
@@ -977,7 +1040,8 @@ body pre {
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: var(--color-canvas-subtle);
+  /* background-color: var(--color-neutral-muted); */
+  background-color: white;
   border-radius: 6px;
 }
 
@@ -1088,8 +1152,15 @@ body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
 }
 
+
+details > ul > li{
+	margin-top: .5em;
+}
+
+
 .side{
 	/* margin-top: 4em; */
+	width: 15%;
 	margin-left: 1em;
 	margin-right: 0px;
 	height:80vh;
@@ -1103,6 +1174,7 @@ body ::-webkit-calendar-picker-indicator {
 
 .sticky {	
 	overflow-y: scroll;
+	width: 100%;
 	/* overflow-x: scroll; */
 	/* max-height: 80%; */
 	padding: 0.25em;
@@ -1112,14 +1184,42 @@ body ::-webkit-calendar-picker-indicator {
 	/* border-width: 1px; */
 }
 
+.sticky > .summary{
+	font-style: oblique;
+	border-bottom: rgba(148, 156, 163, 0.2);
+	border-bottom-style: solid;
+	border-width: thin;	
+	font-size: large;
+    margin-left: 0.1em;
+}
+
+.sticky > .Naiyou{
+
+}
+.sticky > ul > li{
+	margin-top: .5em;
+}
+
+details > div{
+	padding: 0.4em;
+	font-size: 90%;
+}
+
+details > div,summary{
+	border-bottom: rgba(148, 156, 163, 0.2);
+	border-bottom-style: solid;
+	border-width: thin;	
+}
+
 details > ul,summary{
 	padding-right: 0.6em;
 }
 
 .main{
-	width: 90%;
+	/* min-width: 70%; */
+	width: 85%;
+	/* max-width: 120%; */
 }
-
 
 /* body h1 {
 	margin: .67em 0;
