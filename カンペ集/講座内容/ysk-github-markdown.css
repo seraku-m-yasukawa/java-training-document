@@ -1,3 +1,5 @@
+/* githubのmdのcssを安川が好き勝手にいじったもの */
+
 @media (prefers-color-scheme: dark) {
   body {
     color-scheme: dark;
@@ -531,14 +533,15 @@ body dd {
 
 body tt,
 body code {
-  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  /* font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; */
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,'BIZ UDゴシック',monospace;
   font-size: 12px;
 }
 
 body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,'BIZ UDゴシック',monospace;
   font-size: 12px;
   word-wrap: normal;
 }
