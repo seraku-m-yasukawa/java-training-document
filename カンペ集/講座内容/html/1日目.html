@@ -146,6 +146,7 @@
 <li>モバイル</li>
 </ul>
 <p>が3大システムで、基本はこの3種。それぞれ特徴はあるけどそこは各自で調べてください。</p>
+<div style="page-break-after:always"></div>
 <h1 id="%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E8%82%9D%E5%BF%83%E3%81%AA%E5%87%A6%E7%90%86">プログラミングで肝心な処理</h1>
 <ol>
 <li>データの入出力</li>
@@ -340,7 +341,6 @@ javaにはJVM(JavaVirtualMachine)という物が存在する。これは、java�
 </div></code></pre>
 <p>でHello!って出力される。</p>
 <p>JSはその場でできる、Javaは1回コンパイルしないといけない。</p>
-<div style="page-break-after:always"></div>
 <h2 id="javajdk%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">JavaJDKについて</h2>
 <p>javaは2000年代最初のほうはオープンソースだった。それがopenJDKという名前で、今もオープンソースを続けている。<br>
 javaを作ったサンマイクロソフトって会社がつぶれ、オラクルが買い取った。その時にちょっとだけjavaの在り方が変わった。<br>
@@ -348,10 +348,13 @@ javaを作ったサンマイクロソフトって会社がつぶれ、オラク�
 OpenJDKにOracleJDKの機能も入っては来るけど、サポートはコミュニティサイトしかないし、更新・リリース時期がちょっとズレている。</p>
 <h2 id="java%E3%81%AEdl">JavaのDL</h2>
 <p>別紙。</p>
+<div style="page-break-after:always"></div>
 <h1 id="%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AEjava%E4%BD%9C%E6%88%90">初めてのJava作成</h1>
-<p>ジンクスとして、「HelloWorld」と出力する。<br>
+<p>まずjavaを書く前に、どこかに作業用のフォルダを作っておく。</p>
+<p>ジンクスとして、「HelloWorld」と出力するjavaを作成する。<br>
 このプログラムを作る過程で、よくわからないことを書くと思うが、進むにつれて説明をするので、今はおまじないと思ってほしい。</p>
 <p>javaの場合、Class名はキャメルケース（新しい単語の場合最初は大文字となる、フルネームならfullNameとなる）を使う。<br>
+クラス名は作ったjavaプログラムの名前になる。<br>
 また、javaは全体的にキャメルケースで記述する。</p>
 <blockquote>
 <p>ラクダのこぶみたいだからキャメルケースと呼ばれる<br>
@@ -364,16 +367,26 @@ OpenJDKにOracleJDKの機能も入っては来るけど、サポートはコミ�
 }
 </div></code></pre>
 <p>こんな感じ。</p>
-<blockquote>
-<p>かっこを付けたら必ず閉じること！<br>
-かっこがないだけで3時間くらい迷うこともある。<br>
-必ず閉じる癖をつけること。</p>
-</blockquote>
+<div class="note warn">
+<p>⚠️</p>
+<p>かっこを付けたら必ず閉じること！
+かっこがないだけで3時間くらい迷うこともある。
+必ず閉じる癖をつけること。
+</p>
+</div>
 <h2 id="%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">インデンテーション</h2>
 <p>お作法。<br>
 コードを真横に書くとわかりにくいので、左にちょっと空間を開ける。<br>
 チームによるが、Tabキーだったり、半角スペースを4個置いたり、2個置いたりする。</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+<pre class="hljs"><code><div><span class="hljs-comment">// インデントなし</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+System.out.print(<span class="hljs-string">"Hello World!"</span>);
+}
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// インデントあり</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
         System.out.print(<span class="hljs-string">"Hello World!"</span>);
     }
@@ -387,14 +400,24 @@ OpenJDKにOracleJDKの機能も入っては来るけど、サポートはコミ�
 </li>
 <li>javaはコマンド最後にセミコロンを付ける</li>
 </ul>
-<p>ここまで書けたら教えてもらう。<br>
-以下その後の手順。</p>
-<ol>
-<li>「HelloWorld.java」と名前を付けて保存</li>
-<li>保存したファイルがあるフォルダのアドレスバーで<code>cmd</code></li>
-<li>さっき作った「HelloWorld.java」を<code>javac</code></li>
-<li><code>DIR</code>を実行し、結果を確認する</li>
-</ol>
+<p>ここまで書けたら教えてもらう。</p>
+<p>書けたら「HelloWorld.java」と名前を付け、さっき作成したフォルダに保存する。</p>
+<p>書いたjavaを試してみる。<br>
+保存したファイルがあるフォルダのアドレスバーで<code>cmd</code>と入力し、コマンドプロンプトを開く。<br>
+<code>java HelloWorld</code>と入力し、実行する。すると、</p>
+<pre class="hljs"><code><div>エラー: メイン・クラスHelloWorldを検出およびロードできませんでした
+原因: java.lang.ClassNotFoundException: HelloWorld
+</div></code></pre>
+<p>と出力される。これは、さっき話したコンパイルをまだしていないから。</p>
+<p>なので、さっき作った「HelloWorld.java」をコンパイルする。<br>
+コマンドプロンプトで<code>javac HelloWorld.java</code>と入力し実行。<br>
+確認のため、コマンドプロンプトで<code>DIR</code>を実行する。<br>
+<code>HelloWorld.class</code>というファイルが増えているはず。</p>
+<p>コンパイルしたため、作成したjavaを実行できる。<br>
+再度<code>java HelloWorld</code>と入力し、実行する。</p>
+<pre class="hljs"><code><div>Hello World!
+</div></code></pre>
+<p>と出力される。</p>
 <p>今回は1回1回コンパイルしましたが、毎回確認のために実行するのは面倒だし、時間もかかるので、ふつうはそんなことしません。<br>
 Eclipseという、IDEを使います。<br>
 IDE(総合開発環境)と呼ばれるもの。</p>
@@ -853,9 +876,9 @@ A：ウィンドウのどっかからリセット、window &gt; パースペク�
 </ul>
 </div>
 <div class=side>
+<div class=summary>目次</div>
 <div class=sticky>
 <!-- <details open><summary>目次</summary> -->
-<div class=summary>目次</div>
 <ul>
 <li><a href="#1%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">1日目 カンペ</a>
 <ul>
@@ -1206,6 +1229,7 @@ body img {
 	margin-top: .7em;
 	margin-left: .7em;
   border-style: groove;
+  border-width: thin;
   max-width: 100%;
   box-sizing: content-box;
   background-color: var(--color-canvas-default);
@@ -2109,6 +2133,7 @@ details > ul > li{
     position: sticky;
 	display: flex;
 	top: 2em;
+	flex-direction: column;
 	border-left: 1px solid var(--color-border-muted);
 }
 
@@ -2124,25 +2149,23 @@ details > ul > li{
 	/* border-width: 1px; */
 }
 
-.sticky > .summary{
+.side > .summary{
+	margin-top: 0.5em;
 	font-style: oblique;
 	border-bottom: rgba(148, 156, 163, 0.2);
 	border-bottom-style: solid;
 	border-width: thin;	
 	font-size: large;
-    margin-left: 0.1em;
+    margin-left: 0.3em;
 }
 
-.sticky > .Naiyou{
-
-}
 .sticky > ul > li{
 	margin-top: .5em;
 }
 
 details > div{
 	padding: 0.4em;
-	font-size: 90%;
+	font-size: 95%;
 }
 
 details > div,summary{
@@ -2161,6 +2184,10 @@ details > ul,summary{
 	/* max-width: 120%; */
 }
 
+
+
+
+
 /* body h1 {
 	margin: .67em 0;
 	font-weight: 600;
@@ -2169,6 +2196,11 @@ details > ul,summary{
 	font-size: 2em;
 	border-bottom: 2px solid var(--color-border-muted);
   } */
+
+
+
+
+
 
 </style>
 </details>

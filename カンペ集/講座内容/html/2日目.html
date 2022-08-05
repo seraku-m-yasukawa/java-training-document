@@ -289,9 +289,9 @@ A：ひも解いて解説した
 </ul>
 </div>
 <div class=side>
+<div class=summary>目次</div>
 <div class=sticky>
 <!-- <details open><summary>目次</summary> -->
-<div class=summary>目次</div>
 <ul>
 <li><a href="#2%E6%97%A5%E7%9B%AE-%E3%82%AB%E3%83%B3%E3%83%9A">2日目 カンペ</a>
 <ul>
@@ -591,6 +591,7 @@ body img {
 	margin-top: .7em;
 	margin-left: .7em;
   border-style: groove;
+  border-width: thin;
   max-width: 100%;
   box-sizing: content-box;
   background-color: var(--color-canvas-default);
@@ -1494,6 +1495,7 @@ details > ul > li{
     position: sticky;
 	display: flex;
 	top: 2em;
+	flex-direction: column;
 	border-left: 1px solid var(--color-border-muted);
 }
 
@@ -1509,25 +1511,23 @@ details > ul > li{
 	/* border-width: 1px; */
 }
 
-.sticky > .summary{
+.side > .summary{
+	margin-top: 0.5em;
 	font-style: oblique;
 	border-bottom: rgba(148, 156, 163, 0.2);
 	border-bottom-style: solid;
 	border-width: thin;	
 	font-size: large;
-    margin-left: 0.1em;
+    margin-left: 0.3em;
 }
 
-.sticky > .Naiyou{
-
-}
 .sticky > ul > li{
 	margin-top: .5em;
 }
 
 details > div{
 	padding: 0.4em;
-	font-size: 90%;
+	font-size: 95%;
 }
 
 details > div,summary{
@@ -1546,6 +1546,10 @@ details > ul,summary{
 	/* max-width: 120%; */
 }
 
+
+
+
+
 /* body h1 {
 	margin: .67em 0;
 	font-weight: 600;
@@ -1554,6 +1558,11 @@ details > ul,summary{
 	font-size: 2em;
 	border-bottom: 2px solid var(--color-border-muted);
   } */
+
+
+
+
+
 
 </style>
 </details>
