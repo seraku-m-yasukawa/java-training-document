@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>3日目.md</title>
+<title>3日目</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -78,6 +78,1320 @@
 .hljs-strong {
 	font-weight: bold;
 }
+
+
+/* githubのmdのcssを安川が好き勝手にいじったもの */
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color-scheme: dark;
+		--color-prettylights-syntax-comment: #8b949e;
+		--color-prettylights-syntax-constant: #79c0ff;
+		--color-prettylights-syntax-entity: #d2a8ff;
+		--color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+		--color-prettylights-syntax-entity-tag: #7ee787;
+		--color-prettylights-syntax-keyword: #ff7b72;
+		--color-prettylights-syntax-string: #a5d6ff;
+		--color-prettylights-syntax-variable: #ffa657;
+		--color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+		--color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+		--color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+		--color-prettylights-syntax-carriage-return-text: #f0f6fc;
+		--color-prettylights-syntax-carriage-return-bg: #b62324;
+		--color-prettylights-syntax-string-regexp: #7ee787;
+		--color-prettylights-syntax-markup-list: #f2cc60;
+		--color-prettylights-syntax-markup-heading: #1f6feb;
+		--color-prettylights-syntax-markup-italic: #c9d1d9;
+		--color-prettylights-syntax-markup-bold: #c9d1d9;
+		--color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+		--color-prettylights-syntax-markup-deleted-bg: #67060c;
+		--color-prettylights-syntax-markup-inserted-text: #aff5b4;
+		--color-prettylights-syntax-markup-inserted-bg: #033a16;
+		--color-prettylights-syntax-markup-changed-text: #ffdfb6;
+		--color-prettylights-syntax-markup-changed-bg: #5a1e02;
+		--color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+		--color-prettylights-syntax-markup-ignored-bg: #1158c7;
+		--color-prettylights-syntax-meta-diff-range: #d2a8ff;
+		--color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+		--color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+		--color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+		--color-fg-default: #c9d1d9;
+		--color-fg-muted: #8b949e;
+		--color-fg-subtle: #484f58;
+		--color-canvas-default: #0d1117;
+		--color-canvas-subtle: rgba(0, 0, 0, .08);
+		--color-border-default: #30363d;
+		--color-border-muted: #21262d;
+		--color-neutral-muted: rgba(110, 118, 129, 0.4);
+		--color-accent-fg: #58a6ff;
+		--color-accent-emphasis: #1f6feb;
+		--color-attention-subtle: rgba(187, 128, 9, 0.15);
+		--color-danger-fg: #f85149;
+		--color-hljs-default: rgb(169, 174, 179);
+		--color-hljs-comment: rgb(128, 128, 128);
+		--color-hljs-keyword: rgb(204, 108, 29);
+		--color-hljs-title: rgb(18, 144, 195);
+		--color-hljs-string: rgb(23, 198, 163);
+		--color-hljs-params: rgb(121, 171, 255);
+		--color-hljs-doctag: rgb(154, 140, 124);
+		--color-hljs-meta: rgb(160, 160, 160);
+		--color-hljs-function: rgb(30, 181, 64);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		color-scheme: light;
+		--color-prettylights-syntax-comment: #6e7781;
+		--color-prettylights-syntax-constant: #0550ae;
+		--color-prettylights-syntax-entity: #8250df;
+		--color-prettylights-syntax-storage-modifier-import: #24292f;
+		--color-prettylights-syntax-entity-tag: #116329;
+		--color-prettylights-syntax-keyword: #cf222e;
+		--color-prettylights-syntax-string: #0a3069;
+		--color-prettylights-syntax-variable: #953800;
+		--color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+		--color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+		--color-prettylights-syntax-invalid-illegal-bg: #82071e;
+		--color-prettylights-syntax-carriage-return-text: #f6f8fa;
+		--color-prettylights-syntax-carriage-return-bg: #cf222e;
+		--color-prettylights-syntax-string-regexp: #116329;
+		--color-prettylights-syntax-markup-list: #3b2300;
+		--color-prettylights-syntax-markup-heading: #0550ae;
+		--color-prettylights-syntax-markup-italic: #24292f;
+		--color-prettylights-syntax-markup-bold: #24292f;
+		--color-prettylights-syntax-markup-deleted-text: #82071e;
+		--color-prettylights-syntax-markup-deleted-bg: #FFEBE9;
+		--color-prettylights-syntax-markup-inserted-text: #116329;
+		--color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+		--color-prettylights-syntax-markup-changed-text: #953800;
+		--color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+		--color-prettylights-syntax-markup-ignored-text: #eaeef2;
+		--color-prettylights-syntax-markup-ignored-bg: #0550ae;
+		--color-prettylights-syntax-meta-diff-range: #8250df;
+		--color-prettylights-syntax-brackethighlighter-angle: #57606a;
+		--color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+		--color-prettylights-syntax-constant-other-reference-link: #0a3069;
+		--color-fg-default: #24292f;
+		--color-fg-muted: #57606a;
+		--color-fg-subtle: #6e7781;
+		--color-canvas-default: #ffffff;
+		--color-canvas-subtle: #f6f8fa;
+		--color-border-default: #d0d7de;
+		--color-border-muted: hsla(210, 18%, 87%, 1);
+		--color-neutral-muted: rgb(178 186 193 / 13%);
+		--color-accent-fg: #1871d8;
+		--color-accent-emphasis: #1c74da;
+		--color-attention-subtle: #fff8c5;
+		--color-danger-fg: #cf222e;
+		--color-hljs-default: rgb(68, 68, 68);
+		--color-hljs-comment: rgb(29, 131, 80);
+		--color-hljs-keyword: rgb(172, 0, 114);
+		/* --color-hljs-title:rgb(18,144,195); */
+		--color-hljs-string: rgba(43, 0, 255, 0.815);
+		--color-hljs-params: rgba(0, 0, 192, 0.637);
+		--color-hljs-doctag: rgb(127, 159, 191);
+		--color-hljs-meta: rgb(100, 100, 100);
+	}
+}
+
+
+@media print {
+	body {
+		width: fit-content;
+		display: flex;
+		align-items: center;
+		/* background-color: #0550ae; */
+		margin-left: 0% !important;
+		margin-right: 0em !important;
+		/* padding-left: 0% !important; */
+		padding-right: 1% !important;
+	}
+
+	body>div {
+		display: block !important;
+		width: max-content !important;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+
+
+	.main {
+		word-wrap: break-all;
+		width: 100% !important;
+		margin-left: 0% !important;
+		margin-right: 0% !important;
+		padding-left: 0% !important;
+		padding-right: 0% !important;
+	}
+
+	.side,
+	.sticky {
+		display: none !important;
+		width: 0% !important;
+		/* border-left: 0 !important; */
+		margin: 0% !important;
+		padding: 0% !important;
+	}
+
+
+
+	.printonry {
+		display: block !important;
+	}
+
+
+}
+
+.hljs {
+	padding: 1em !important;
+	margin-top: 0em !important;
+	margin-right: 0.2em !important;
+	margin-bottom: .7em !important;
+	margin-left: 0.2em !important;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgba(148, 156, 163, 0.2);
+	background-color: var(--color-neutral-muted);
+	color: var(--color-hljs-default);
+}
+
+.hljs-comment,
+.hljs-quote {
+	/* color: #3f7f5f; */
+	color: var(--color-hljs-comment);
+}
+
+.hljs-keyword {
+	color: var(--color-hljs-keyword);
+}
+
+.hljs-title,
+.hljs-section {
+	color: var(--color-hljs-title);
+}
+
+.hljs-string {
+	color: var(--color-hljs-string);
+}
+
+.hljs-params {
+	color: var(--color-hljs-params);
+}
+
+.hljs-doctag {
+	color: var(--color-hljs-doctag);
+	font-weight: 500;
+}
+
+.hljs-meta {
+	color: var(--color-hljs-meta);
+	font-style: italic;
+}
+
+.hljs-function {
+	/* color: var(--color-hljs-function); */
+	color: var(--color-hljs-keyword);
+}
+
+.hljs-function>.hljs-title {
+	color: var(--color-hljs-function);
+}
+
+
+.printonry {
+	display: none;
+}
+
+body {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	margin-bottom: 2em !important;
+	margin-right: 2em !important;
+	margin-top: 0em !important;
+	margin-left: 2em !important;
+	color: var(--color-fg-default);
+	background-color: var(--color-canvas-default);
+	font-family: system-ui, 'Segoe UI', Arial, Meiryo, sans-serif;
+	/* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
+	font-size: 16px;
+	line-height: 1.6;
+	word-wrap: break-word;
+	tab-size: 4;
+	display: flexbox;
+}
+
+body>div {
+	display: flex;
+}
+
+body .octicon {
+	display: inline-block;
+	fill: currentColor;
+	vertical-align: text-bottom;
+}
+
+body h1:hover .anchor .octicon-link:before,
+body h2:hover .anchor .octicon-link:before,
+body h3:hover .anchor .octicon-link:before,
+body h4:hover .anchor .octicon-link:before,
+body h5:hover .anchor .octicon-link:before,
+body h6:hover .anchor .octicon-link:before {
+	width: 16px;
+	height: 16px;
+	content: ' ';
+	display: inline-block;
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+	mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+
+body details,
+body figcaption,
+body figure {
+	display: block;
+}
+
+body summary {
+	display: list-item;
+}
+
+body [hidden] {
+	display: none !important;
+}
+
+body a {
+	background-color: transparent;
+	color: var(--color-accent-fg);
+	text-decoration: none;
+}
+
+body a:active,
+body a:hover {
+	outline-width: 0;
+}
+
+body abbr[title] {
+	border-bottom: none;
+	text-decoration: underline dotted;
+}
+
+body b,
+body strong {
+	font-weight: 600;
+}
+
+body dfn {
+	font-style: italic;
+}
+
+
+
+body h1 {
+	margin: .67em 0;
+	font-weight: 600;
+	/* padding-top: 1em ; */
+	padding-bottom: .3em;
+	font-size: 2em;
+	border-bottom: 2px solid var(--color-border-muted);
+}
+
+
+body mark {
+	background-color: var(--color-attention-subtle);
+	color: var(--color-text-primary);
+}
+
+body small {
+	font-size: 90%;
+}
+
+body sub,
+body sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+body sub {
+	bottom: -0.25em;
+}
+
+body sup {
+	top: -0.5em;
+}
+
+body img {
+	margin-top: .7em;
+	margin-left: .7em;
+	border-style: groove;
+	border-width: thin;
+	max-width: 100%;
+	box-sizing: content-box;
+	background-color: var(--color-canvas-default);
+}
+
+.note {
+	display: flex !important;
+	align-items: flex-start !important;
+	padding: 1em !important;
+	margin: .5em !important;
+	white-space: pre-wrap !important;
+}
+
+.note>p {
+	margin: 0%;
+	margin-right: .7em;
+}
+
+.note.info {
+	background: #e3f7df !important;
+}
+
+.note.warn {
+	background: #fdf9e2 !important;
+}
+
+.note.alert {
+	background: #feebee !important;
+}
+
+
+body blockquote>pre>code>div {
+	padding: 0.5em !important;
+	margin: 0.2em !important;
+}
+
+body code,
+body kbd,
+body pre,
+body samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+	border-color: rgba(148, 156, 163, 0.2);
+}
+
+body figure {
+	margin: 1em 40px;
+}
+
+body hr {
+	box-sizing: content-box;
+	overflow: hidden;
+	background: transparent;
+	border-bottom: 1px solid var(--color-border-muted);
+	height: .25em;
+	padding: 0;
+	margin: 24px 0;
+	background-color: var(--color-border-default);
+	border: 0;
+}
+
+body input {
+	font: inherit;
+	margin: 0;
+	overflow: visible;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+body [type=button],
+body [type=reset],
+body [type=submit] {
+	-webkit-appearance: button;
+}
+
+body [type=button]::-moz-focus-inner,
+body [type=reset]::-moz-focus-inner,
+body [type=submit]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+body [type=button]:-moz-focusring,
+body [type=reset]:-moz-focusring,
+body [type=submit]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+body [type=checkbox],
+body [type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+body [type=number]::-webkit-inner-spin-button,
+body [type=number]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+body [type=search] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+body [type=search]::-webkit-search-cancel-button,
+body [type=search]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+body ::-webkit-input-placeholder {
+	color: inherit;
+	opacity: .54;
+}
+
+body ::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+body a:hover {
+	text-decoration: underline;
+}
+
+body hr::before {
+	display: table;
+	content: "";
+}
+
+body hr::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+body table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	width: max-content;
+	max-width: 100%;
+	overflow: auto;
+}
+
+body td,
+body th {
+	padding: 0;
+}
+
+body details summary {
+	cursor: pointer;
+}
+
+body details:not([open])>*:not(summary) {
+	display: none !important;
+}
+
+body kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+	line-height: 10px;
+	color: var(--color-fg-default);
+	vertical-align: middle;
+	background-color: var(--color-canvas-subtle);
+	border: solid 1px var(--color-neutral-muted);
+	border-bottom-color: var(--color-neutral-muted);
+	border-radius: 6px;
+	box-shadow: inset 0 -1px 0 var(--color-neutral-muted);
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+	/* margin-top: 24px; */
+	margin-bottom: 16px;
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+body h2 {
+	font-weight: 600;
+	padding-bottom: .3em;
+	font-size: 1.5em;
+	border-bottom: 1px solid var(--color-border-muted);
+}
+
+body h3 {
+	line-height: inherit;
+	font-weight: 600;
+	font-size: 1.25em;
+	border-bottom: 0.5px solid var(--color-border-muted);
+}
+
+body h4 {
+	font-weight: 600;
+	font-size: 1em;
+}
+
+body h5 {
+	font-weight: 600;
+	font-size: .875em;
+}
+
+body h6 {
+	font-weight: 600;
+	font-size: .85em;
+	color: var(--color-fg-muted);
+}
+
+body p {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+body blockquote {
+	margin: 0;
+	margin-left: 1em;
+	padding: .1em;
+	padding-left: .5em;
+	color: var(--color-fg-muted);
+	border-left: .4em solid rgba(0, 122, 204, 0.5);
+	background-color: var(--color-canvas-subtle);
+}
+
+body ul,
+body ol {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 2em;
+}
+
+body ol ol,
+body ul ol {
+	list-style-type: lower-roman;
+}
+
+body ul ul ol,
+body ul ol ol,
+body ol ul ol,
+body ol ol ol {
+	list-style-type: lower-alpha;
+}
+
+body dd {
+	margin-left: 0;
+}
+
+body tt,
+body code {
+	/* font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; */
+	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, 'BIZ UDゴシック', monospace;
+	font-size: 12px;
+}
+
+body pre {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, 'BIZ UDゴシック', monospace;
+	font-size: 12px;
+	word-wrap: normal;
+}
+
+body .octicon {
+	display: inline-block;
+	overflow: visible !important;
+	vertical-align: text-bottom;
+	fill: currentColor;
+}
+
+body ::placeholder {
+	color: var(--color-fg-subtle);
+	opacity: 1;
+}
+
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button {
+	margin: 0;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+body .pl-c {
+	color: var(--color-prettylights-syntax-comment);
+}
+
+body .pl-c1,
+body .pl-s .pl-v {
+	color: var(--color-prettylights-syntax-constant);
+}
+
+body .pl-e,
+body .pl-en {
+	color: var(--color-prettylights-syntax-entity);
+}
+
+body .pl-smi,
+body .pl-s .pl-s1 {
+	color: var(--color-prettylights-syntax-storage-modifier-import);
+}
+
+body .pl-ent {
+	color: var(--color-prettylights-syntax-entity-tag);
+}
+
+body .pl-k {
+	color: var(--color-prettylights-syntax-keyword);
+}
+
+body .pl-s,
+body .pl-pds,
+body .pl-s .pl-pse .pl-s1,
+body .pl-sr,
+body .pl-sr .pl-cce,
+body .pl-sr .pl-sre,
+body .pl-sr .pl-sra {
+	color: var(--color-prettylights-syntax-string);
+}
+
+body .pl-v,
+body .pl-smw {
+	color: var(--color-prettylights-syntax-variable);
+}
+
+body .pl-bu {
+	color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
+}
+
+body .pl-ii {
+	color: var(--color-prettylights-syntax-invalid-illegal-text);
+	background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
+}
+
+body .pl-c2 {
+	color: var(--color-prettylights-syntax-carriage-return-text);
+	background-color: var(--color-prettylights-syntax-carriage-return-bg);
+}
+
+body .pl-sr .pl-cce {
+	font-weight: bold;
+	color: var(--color-prettylights-syntax-string-regexp);
+}
+
+body .pl-ml {
+	color: var(--color-prettylights-syntax-markup-list);
+}
+
+body .pl-mh,
+body .pl-mh .pl-en,
+body .pl-ms {
+	font-weight: bold;
+	color: var(--color-prettylights-syntax-markup-heading);
+}
+
+body .pl-mi {
+	font-style: italic;
+	color: var(--color-prettylights-syntax-markup-italic);
+}
+
+body .pl-mb {
+	font-weight: bold;
+	color: var(--color-prettylights-syntax-markup-bold);
+}
+
+body .pl-md {
+	color: var(--color-prettylights-syntax-markup-deleted-text);
+	background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+}
+
+body .pl-mi1 {
+	color: var(--color-prettylights-syntax-markup-inserted-text);
+	background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+}
+
+body .pl-mc {
+	color: var(--color-prettylights-syntax-markup-changed-text);
+	background-color: var(--color-prettylights-syntax-markup-changed-bg);
+}
+
+body .pl-mi2 {
+	color: var(--color-prettylights-syntax-markup-ignored-text);
+	background-color: var(--color-prettylights-syntax-markup-ignored-bg);
+}
+
+body .pl-mdr {
+	font-weight: bold;
+	color: var(--color-prettylights-syntax-meta-diff-range);
+}
+
+body .pl-ba {
+	color: var(--color-prettylights-syntax-brackethighlighter-angle);
+}
+
+body .pl-sg {
+	color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
+}
+
+body .pl-corl {
+	text-decoration: underline;
+	color: var(--color-prettylights-syntax-constant-other-reference-link);
+}
+
+body [data-catalyst] {
+	display: block;
+}
+
+body g-emoji {
+	font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 1em;
+	font-style: normal !important;
+	font-weight: 400;
+	line-height: 1;
+	vertical-align: -0.075em;
+}
+
+body g-emoji img {
+	width: 1em;
+	height: 1em;
+}
+
+body::before {
+	display: table;
+	content: "";
+}
+
+body::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+body>*:first-child {
+	margin-top: 0 !important;
+}
+
+body>*:last-child {
+	margin-bottom: 0 !important;
+}
+
+body a:not([href]) {
+	color: inherit;
+	text-decoration: none;
+}
+
+body .absent {
+	color: var(--color-danger-fg);
+}
+
+body .anchor {
+	float: left;
+	padding-right: 4px;
+	margin-left: -20px;
+	line-height: 1;
+}
+
+body .anchor:focus {
+	outline: none;
+}
+
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre,
+body details {
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+body blockquote>:first-child {
+	margin-top: 0;
+}
+
+body blockquote>:last-child {
+	margin-bottom: 0;
+}
+
+body sup>a::before {
+	content: "[";
+}
+
+body sup>a::after {
+	content: "]";
+}
+
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+	color: var(--color-fg-default);
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+	text-decoration: none;
+}
+
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+	visibility: visible;
+}
+
+body h1 tt,
+body h1 code,
+body h2 tt,
+body h2 code,
+body h3 tt,
+body h3 code,
+body h4 tt,
+body h4 code,
+body h5 tt,
+body h5 code,
+body h6 tt,
+body h6 code {
+	padding: 0 .2em;
+	font-size: inherit;
+}
+
+body ul.no-list,
+body ol.no-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+body ol[type="1"] {
+	list-style-type: decimal;
+}
+
+body ol[type=a] {
+	list-style-type: lower-alpha;
+}
+
+body ol[type=i] {
+	list-style-type: lower-roman;
+}
+
+body div>ol:not([type]) {
+	list-style-type: decimal;
+}
+
+body ul ul,
+body ul ol,
+body ol ol,
+body ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+body li>p {
+	margin-top: 16px;
+}
+
+body li+li {
+	margin-top: .25em;
+}
+
+body dl {
+	padding: 0;
+}
+
+body dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: 600;
+}
+
+body dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+body table th {
+	font-weight: 600;
+}
+
+body table th,
+body table td {
+	padding: 6px 13px;
+	border: 1px solid var(--color-border-default);
+}
+
+body table tr {
+	background-color: var(--color-canvas-default);
+	border-top: 1px solid var(--color-border-muted);
+}
+
+body table tr:nth-child(2n) {
+	background-color: var(--color-canvas-subtle);
+}
+
+body table img {
+	background-color: transparent;
+}
+
+body img[align=right] {
+	padding-left: 20px;
+}
+
+body img[align=left] {
+	padding-right: 20px;
+}
+
+body .emoji {
+	max-width: none;
+	vertical-align: text-top;
+	background-color: transparent;
+}
+
+body span.frame {
+	display: block;
+	overflow: hidden;
+}
+
+body span.frame>span {
+	display: block;
+	float: left;
+	width: auto;
+	padding: 7px;
+	margin: 13px 0 0;
+	overflow: hidden;
+	border: 1px solid var(--color-border-default);
+}
+
+body span.frame span img {
+	display: block;
+	float: left;
+}
+
+body span.frame span span {
+	display: block;
+	padding: 5px 0 0;
+	clear: both;
+	color: var(--color-fg-default);
+}
+
+body span.align-center {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+body span.align-center>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+body span.align-center span img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+body span.align-right {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+body span.align-right>span {
+	display: block;
+	margin: 13px 0 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+body span.align-right span img {
+	margin: 0;
+	text-align: right;
+}
+
+body span.float-left {
+	display: block;
+	float: left;
+	margin-right: 13px;
+	overflow: hidden;
+}
+
+body span.float-left span {
+	margin: 13px 0 0;
+}
+
+body span.float-right {
+	display: block;
+	float: right;
+	margin-left: 13px;
+	overflow: hidden;
+}
+
+body span.float-right>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+body code,
+body tt {
+	padding: .2em .3em;
+	margin: 0;
+	font-size: 85%;
+	background-color: var(--color-neutral-muted);
+	border-radius: 6px;
+}
+
+body code br,
+body tt br {
+	display: none;
+}
+
+body del code {
+	text-decoration: inherit;
+}
+
+body pre code {
+	font-size: 100%;
+}
+
+body pre>code {
+	padding: 0;
+	margin: 0;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+
+
+body .highlight {
+	margin-bottom: 16px;
+}
+
+body .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+body .highlight pre,
+body pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	/* background-color: var(--color-neutral-muted); */
+	background-color: white;
+	border-radius: 6px;
+}
+
+body pre code,
+body pre tt {
+	display: inline;
+	max-width: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+body .csv-data td,
+body .csv-data th {
+	padding: 5px;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 1;
+	text-align: left;
+	white-space: nowrap;
+}
+
+body .csv-data .blob-num {
+	padding: 10px 8px 9px;
+	text-align: right;
+	background: var(--color-canvas-default);
+	border: 0;
+}
+
+body .csv-data tr {
+	border-top: 0;
+}
+
+body .csv-data th {
+	font-weight: 600;
+	background: var(--color-canvas-subtle);
+	border-top: 0;
+}
+
+body .footnotes {
+	font-size: 12px;
+	color: var(--color-fg-muted);
+	border-top: 1px solid var(--color-border-default);
+}
+
+body .footnotes ol {
+	padding-left: 16px;
+}
+
+body .footnotes li {
+	position: relative;
+}
+
+body .footnotes li:target::before {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	bottom: -8px;
+	left: -24px;
+	pointer-events: none;
+	content: "";
+	border: 2px solid var(--color-accent-emphasis);
+	border-radius: 6px;
+}
+
+body .footnotes li:target {
+	color: var(--color-fg-default);
+}
+
+body .footnotes .data-footnote-backref g-emoji {
+	font-family: monospace;
+}
+
+body .task-list-item {
+	list-style-type: none;
+}
+
+body .task-list-item label {
+	font-weight: 400;
+}
+
+body .task-list-item.enabled label {
+	cursor: pointer;
+}
+
+body .task-list-item+.task-list-item {
+	margin-top: 3px;
+}
+
+body .task-list-item .handle {
+	display: none;
+}
+
+body .task-list-item-checkbox {
+	margin: 0 .2em .25em -1.6em;
+	vertical-align: middle;
+}
+
+body .contains-task-list:dir(rtl) .task-list-item-checkbox {
+	margin: 0 -1.6em .25em .2em;
+}
+
+body ::-webkit-calendar-picker-indicator {
+	filter: invert(50%);
+}
+
+
+details>ul>li {
+	margin-top: .5em;
+}
+
+
+.side {
+	/* margin-top: 4em; */
+	width: 15%;
+	margin-left: 1em;
+	margin-right: -1em;
+	height: 80vh;
+	/* min-width: fit-content; */
+	padding-right: 1em;
+	position: sticky;
+	display: flex;
+	top: 2em;
+	flex-direction: column;
+	border-left: 1px solid var(--color-border-muted);
+}
+
+.sticky {
+	overflow-y: scroll;
+	width: 100%;
+	/* overflow-x: scroll; */
+	/* max-height: 80%; */
+	padding: 0.25em;
+	padding-left: 0.4em;
+	font-size: 80%;
+	/* border-style: solid; */
+	/* border-width: 1px; */
+}
+
+.side>.summary {
+	margin-top: 0.5em;
+	font-style: oblique;
+	border-bottom: rgba(148, 156, 163, 0.2);
+	border-bottom-style: solid;
+	border-width: thin;
+	font-size: large;
+	margin-left: 0.3em;
+}
+
+.sticky>ul>li {
+	margin-top: .5em;
+}
+
+details>div {
+	padding: 0.4em;
+	font-size: 95%;
+}
+
+/* details > div,summary{
+	border-bottom: rgba(148, 156, 163, 0.2);
+	border-bottom-style: solid;
+	border-width: thin;	
+} */
+
+details {
+	border-bottom: rgba(148, 156, 163, 0.2);
+	border-bottom-style: solid;
+	border-width: thin;
+	margin-left: .2em;
+}
+
+details>ul,
+summary {
+	padding-right: 0.6em;
+}
+
+.main {
+	/* min-width: 70%; */
+	width: 85%;
+	/* max-width: 120%; */
+}
+
+
+
+
+
+/* body h1 {
+	margin: .67em 0;
+	font-weight: 600;
+	padding-top: 1em ;
+	padding-bottom: .3em;
+	font-size: 2em;
+	border-bottom: 2px solid var(--color-border-muted);
+  } */
+
 </style>
 
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -103,14 +1417,6 @@
 </ul>
 <div style="page-break-after:always"></div>
 <h1 id="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91">オブジェクト指向</h1>
-<p>VBSみたいなのを、Procedualと呼ぶ。<br>
-※安川この辺ちゃんと聞けてないので、Procedualに関してはあとで書く、たぶん<br>
-メリット</p>
-<ul>
-<li>コードがシンプル<br>
-デメリット</li>
-<li>現実世界のことをソフトウェアの中で表現しにくい</li>
-</ul>
 <p>例えば、銀行のシステムのうち、「口座を作る」機能を作るとなったとする。<br>
 口座（アカウント）に必要なものを考えると、</p>
 <ul>
@@ -119,35 +1425,56 @@
 <li>残高<br>
 が必要。</li>
 </ul>
-<pre class="hljs"><code><div>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> number;
+<span class="hljs-keyword">int</span> totalMoner;
+String account;
 </div></code></pre>
 <p>じゃあ、別の人が口座を作るとなったら？<br>
 この変数のセットをもうひとつ2とかつけて作る？</p>
-<pre class="hljs"><code><div>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> number;
+<span class="hljs-keyword">int</span> totalMoner;
+String account;
+
+<span class="hljs-keyword">int</span> number2;
+<span class="hljs-keyword">int</span> totalMoner2;
+String account2;
 </div></code></pre>
 <p>あるいは、<code>account</code>を<code>satoAccount</code>とかにする？</p>
-<pre class="hljs"><code><div>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> number;
+<span class="hljs-keyword">int</span> totalMoner;
+String account;
+
+<span class="hljs-keyword">int</span> satoNumber;
+<span class="hljs-keyword">int</span> satoTotalMoner;
+String satoAccount;
 </div></code></pre>
-<p>もっと複数人が登録するとなると、全員分作成する？無理。<br>
-画面単位で考えると、例えば、別画面を作るとなりました、新画面には利子を登録する機能を作ります、となると、変数コピペして、処理を追加して……ってする？<br>
+<p>もっと複数人が登録するとなると、じゃあ全員分作成する？それは流石に無理...。</p>
+<p>今のを画面単位で考える。例えば、「別画面を作るとなりました。新画面には利子を登録する機能を作ります」となると、変数コピペして、処理を追加して……ってする？<br>
 じゃあそれが追加で10画面必要です、とかになると？<br>
-そうすると、大量に同じ変数ができる。そんな中、突然「名前をフルネームじゃなくて、苗字と名前にわけてください」って言われたら、全画面の変数を直さないといけない。<br>
-当然手間だし、漏れが発生する可能性があったりで大変なので、やってません。</p>
-<p>じゃあ、もっと現実世界に即した書き方で表現しよう。じゃあ、口座っていう変数を作れば便利で面白いよね。</p>
+仮に10画面作ったとする。そうすると、大量に同じ変数ができる。</p>
+<p>そんな中、突然「名前をフルネームじゃなくて、苗字と名前にわけてください」って言われたら、全画面の変数を直さないといけない。<br>
+当然手間だし、漏れが発生する可能性があったりで大変なので、普通は10画面も作成しません。</p>
+<p>そこでじゃあ、もっと現実世界に即した書き方で表現しよう。じゃあ、口座っていう変数を作れば便利で面白いよね。</p>
 <pre class="hljs"><code><div>Account
   ├─name
   ├─number
   └─totalMoner
 </div></code></pre>
-<p>ってのを作ればいいよね。こんな風にAccountってのを作って使いまわせば、修正があったとしても、このAccountを直せば、一気にすべて直せます。</p>
+<p>ってのを作ればいいよね。こんな風にAccountってのを作って使いまわせば、修正があったとしても、このAccountを直せば、一気にすべて直せます。<br>
+この<code>Account</code>が<code>Object</code>。</p>
 <p>javaを深堀していくと、</p>
 <pre class="hljs"><code><div>int -&gt; Integer
 double -&gt; Double
 String
 </div></code></pre>
 <p>といった感じで、同じようなものがある。これらをもっと深堀していくと、全て<code>Object</code>というものから出来ている。<br>
-この<code>Object</code>を使ってプログラミングするから、OOP。<br>
-この機能を使って、自分で<code>Object</code>を作りさえすれば便利だよね。</p>
+この<code>Object</code>を使ってプログラミングするから、OOP(object-oriented programming)。<br>
+この機能を使って、自分で<code>Object</code>を作りさえすれば便利だよね、というプログラミング。</p>
+<div class="note info">
+<p>余談:</p>
+<p>オブジェクト指向プログラミングのほかに、手続き型プログラミングというものも存在する。代表的なものはC言語やVBSなど。
+どんなものか？OOPとの違いは？については、考え方や概念の話であり、知らなくても問題ないので、ここでは解説しない。</p>
+</div>
 <h1 id="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">オブジェクト</h1>
 <p>以前<code>Array.length</code>というのを設定せずとも使っていたが、これは<code>Array</code>というものの、<code>length</code>というプロパティを使っている。</p>
 <p>先程の<code>Account</code>をクラスと呼ぶ。<br>
@@ -183,13 +1510,13 @@ String
 <li>引き出し</li>
 <li>振り込み</li>
 <li>預け入れ</li>
-<li>残高照会<br>
-などである。<br>
-これらの「口座でできること」を、メソッドと呼ぶ。<br>
-<code>class Account</code>は、プロパティとメソッドの全てを含んで出来ている。</li>
+<li>残高照会</li>
 </ul>
 </li>
 </ul>
+<p>などである。<br>
+これらの「口座でできること」を、メソッドと呼ぶ。<br>
+<code>class</code>は、プロパティとメソッドの全てを含んで出来ている。</p>
 <h3 id="%E6%88%BB%E3%82%8A%E5%80%A4">戻り値</h3>
 <p>戻り値とは、メソッドを実行した結果、返ってくる値のこと。javaだと<code>return 〇〇;</code>の〇〇のところ。<br>
 メソッドは、戻り値の型を指定してあげないといけない。下記のように書く。</p>
@@ -206,8 +1533,8 @@ String
 </div></code></pre>
 <p>例えば、今の残高が欲しい場合は戻り値があるメソッドになるし、名前を設定するようなメソッドの場合は、戻り値がないメソッドとなる。</p>
 <h3 id="%E5%BC%95%E6%95%B0">引数</h3>
-<p>引数とは、メソッドに渡してあげる値のこと。<br>
-例えば、預け入れのメソッドを作成するとする。<br>
+<p>引数とは、メソッドに渡してあげる値のこと。</p>
+<p>例えば、預け入れのメソッドを作成するとする。<br>
 預け入れするために必要な情報は何か？預け入れる金額である。<br>
 つまり、預け入れメソッドには、その金額を教えてあげないといけない。そんなときに引数で指定してあげる。<br>
 引数ありのメソッドは、</p>
@@ -218,8 +1545,10 @@ String
 <p>上記のように、メソッド名の後の<code>()</code>の中に型と引数名を設定する。<br>
 また、引数は、変数と同じように扱えるし、複数設定することもできる。複数設定するときは、カンマ区切りで表現する。</p>
 <p>次、引き出しメソッドを作ってみてもらう。<br>
-要件として、引き出し金額が残高よりも少ないと引き出せない。つまり、好き勝手に引き出されないようにしたい。<br>
-※適当に放置して、後で作りながら解説する。下記参考。</p>
+要件として、引き出し金額が残高よりも少ないと引き出せない。つまり、好き勝手に引き出されないようにしたい。</p>
+<blockquote>
+<p>※適当に放置して、後で作りながら解説する。下記参考。</p>
+</blockquote>
 <pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">withdraw</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
 	<span class="hljs-keyword">if</span>(amount &gt;= value) {
 		amount -= value;
@@ -237,7 +1566,7 @@ String
 <li>商品（ちょっとひねってる）</li>
 <li>料理のレシピ</li>
 </ul>
-<p>メソッドがこれで、プロパティがこれで……って感じのもので大丈夫。</p>
+<p>メソッドがこれで、プロパティがこれで……って感じで、テキストベースで大丈夫。</p>
 <details><summary><strong>回答例</strong></summary><br/>
 <p><strong>実際に作ってもらったもの</strong></p>
 <ul>
@@ -397,31 +1726,40 @@ String
 </details>
 <h1 id="java%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">javaの作り方</h1>
 <h2 id="%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">プロジェクト</h2>
-<p>プロジェクトを作るところから。想定としては、セラバンクってところからシステムを作ってくれと依頼された。<br>
-以下手順。</p>
+<p>これから、簡単なシステムを実際に作ってみる。<br>
+想定としては、セラバンクってところからシステムを作ってくれと依頼された。</p>
+<p>javaでシステムを作るにあたって、まずプロジェクトを作成する必要がある。<br>
+プロジェクトとは、いくつかのJavaプログラムを一機能やアプリケーションとしてまとめたもの。</p>
+<p>以下手順。</p>
 <ol>
 <li><code>パッケージエクスプローラー &gt; 新規 &gt; javaproject</code></li>
 <li>プロジェクト名に<code>SeraBank</code></li>
 <li>一番下のモジュールってところのチェックだけ外す</li>
 </ol>
 <h2 id="%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">パッケージ</h2>
-<p>プログラミングをしていくにつれて、システムのメインを動かすためのものだったり、特定の処理をするためのものを、フォルダ分けして管理したりする。<br>
-DBをなんやかんやするものがメインにいっぱいあるよりも、別のDBフォルダにわけたほうが、<br>
+<p>プログラミングをしていくにつれて、システムのメインを動かすためのものだったり、特定の処理をするためのものを、フォルダ分けして管理したりする。</p>
+<p>例えば、DBをなんやかんやするものがメインフォルダにいっぱいあるよりも、DBフォルダにわけたほうがわかりやすい。<br>
 ネットワークならネットワークフォルダに、ユーザとのやり取りであるUIを作るならUIフォルダに……<br>
-そうやってわけたほうがわかりやすい。そのわけたフォルダのことをパッケージと呼んでいる。<br>
-例えば<code>String</code>なら、<code>jaba.utils.String</code>で、<code>utils</code>がパッケージ。</p>
+そうやってわけたほうが管理がしやすくわかりやすい。<br>
+そのわけたフォルダのことをパッケージと呼ぶ。<br>
+例えば<code>String</code>なら、<code>java.utils.String</code>で、<code>utils</code>がパッケージ。</p>
 <p>プロジェクトを作るときに、パッケージ名がかぶっちゃうと使えなくなったりで大変。<br>
-例えば、<code>java.practice</code>ってパッケージを作って、その中で<code>Practice.java</code>ってのを作ると、<code>java.practice</code>のことを探すはずなのに、javaが自分のことを探し出す。<br>
+例えば、<code>java.practice</code>ってパッケージを作り、その中で<code>Practice.java</code>ってのを作ってしまった場合。<br>
+<code>java.practice</code>のことを探すはずなのに、javaが自分のことを探し出す。<br>
 javaがjavaのパッケージを探し出して、見つからなくてコンパイルエラーとなってしまう。</p>
 <p>こういうときは、パッケージ名にURL、<code>seraku.co.jp</code>を使う。URLは一意なので。<br>
-ただし、逆から使う。つまり、<code>jp &gt; co &gt; seraku</code>となる。<br>
+ただし気を付けなければならないのが、逆から使っていく。つまり、<code>jp &gt; co &gt; seraku</code>となる。<br>
 そこからさらに、DBとなって、さらにそこに〇〇.java、という風になる。</p>
+<pre class="hljs"><code><div>jp &gt; co &gt; seraku						<span class="hljs-comment">// 1.URLを使って……</span>
+jp &gt; co &gt; seraku &gt; DB					<span class="hljs-comment">// 2.さらにDBとなって……</span>
+jp &gt; co &gt; seraku &gt; DB &gt; DBAccess.java	<span class="hljs-comment">// 3.さらに〇〇.javaとなる</span>
+</div></code></pre>
 <p>けれど、serakuの人がみんな<code>jp.co.seraku</code>を使うと大変なことになる。<br>
 例えば、<code>jp.co.seraku</code>で<code>App</code>というのを作ったとする。<br>
 その後、大阪支社で同じ名前の<code>App</code>というのを作られました。<br>
 その大阪の<code>App</code>を使いたいので、projectを貰って追加して、名古屋で実行しようとすると……<br>
 どっちの<code>App</code>を見ればいいのかわからなくなり、困る。</p>
-<p>なので、基本的には<code>jp.co.seraku</code>の後に今回のプロジェクト名を付けたりする。<br>
+<p>なので基本的に、<code>jp.co.seraku</code>の後に今回のプロジェクト名を付けたりする。<br>
 こうやってパッケージ名を決める。また、あくまでもURLなので、全て小文字で書く。</p>
 <h1 id="%E3%82%AF%E3%83%A9%E3%82%B9">クラス</h1>
 <h2 id="%E4%BD%BF%E3%81%84%E6%96%B9">使い方</h2>
@@ -429,7 +1767,7 @@ javaがjavaのパッケージを探し出して、見つからなくてコンパ
 で、一旦メインは放置する。ここにAccountクラスを作ると、読みにくくなってしまうし、動くことは動くけど、色々と問題がある。<br>
 なので、独自のファイルに書き込んで、それぞれのファイルに分けて作成する。</p>
 <p>さっきと同じように<code>Account</code>を作成する。<br>
-コツとして、まず必要なものを大量に書き込んで、あとで色々とちゃんとしていく。</p>
+クラスを作るときのコツとして、まず必要なものを大量に書き込んで、あとで色々とちゃんとしていく。</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.seraku.serabank;
 
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
@@ -440,11 +1778,14 @@ javaがjavaのパッケージを探し出して、見つからなくてコンパ
 </div></code></pre>
 <p>こんな感じ。</p>
 <p>クラスのプロパティは変数と同じと思ってもらえればいい、今の3つは変数だと思ってほしい。<br>
-これ、<code>code</code>は何型にすればいいと思う？整数しか使わないので<code>int</code>。残高は日本円なので整数。</p>
-<blockquote>
-<p>余談：小数点を使うと、計算結果がズレることがある。<br>
-そのため、お金に小数点がある国では、金額系はあえて全部intにして、表示するときにint/100とすれば、計算のエラーが起きにくくなる。</p>
-</blockquote>
+これ、<code>code</code>は何型にすればいいと思う？口座番号は整数しか使わない。整数しか使わないので<code>int</code>。他にも、残高は日本円なので整数。<br>
+このように考えていく。</p>
+<div class="note info">
+<p>余談:</p>
+<p>小数点を含む数値の計算は、桁数の関係で計算結果がズレることが多々ある。
+そのため、お金に小数点を含むような国では、あえて全部intにして、表示するときだけint/100としたりする。
+こうすることで、計算のエラーが起きにくくなる。</p>
+</div>
 <pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.seraku.serabank;
 
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
@@ -465,7 +1806,7 @@ javaがjavaのパッケージを探し出して、見つからなくてコンパ
 でも、これだけだとオブジェクトを作っただけ。ここででてくるのが、変数。　　<br>
 Account型の変数を作れば、いつでも色々とできるようになる。</p>
 <h1 id="%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E5%8C%96">カプセル化</h1>
-<p>少し前に引き出しメソッドを作成したが、実はまだ、<code>myAccount.amount -〇〇</code>とすれば、自由に引き出せてしまう。<br>
+<p>少し前に引き出しメソッド(withdraw)を作成したが、実はまだ、<code>myAccount.amount -〇〇</code>とすれば、自由に引き出せてしまう。<br>
 これではマズいので、他のクラスが自由にプロパティを変更できないようにする。</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
 	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> code;
@@ -473,8 +1814,9 @@ Account型の変数を作れば、いつでも色々とできるようになる�
 	<span class="hljs-keyword">private</span> String ownerName;	
 }
 </div></code></pre>
-<p><code>private</code>をつけると、そのプロパティを持っているクラスしか、その変数を触れなくなる。<br>
-その代わり、他のクラスに値を渡すためのメソッド（通称<code>getter</code>）と、貰った値をプロパティに設定するためのメソッド（通称<code>setter</code>）を用意する。</p>
+<p><code>private</code>をつけると、そのプロパティを持っているクラスしかその変数を触れなくなる。<br>
+その代わりに、他のクラスに値を渡すためのメソッド（通称<code>getter</code>）と、貰った値をプロパティに設定するためのメソッド（通称<code>setter</code>）を用意し、<br>
+必要に応じて<code>Account</code>が値を渡してあげる。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// getter</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getCode</span><span class="hljs-params">()</span> </span>{
 	<span class="hljs-keyword">return</span> code;
@@ -485,33 +1827,31 @@ Account型の変数を作れば、いつでも色々とできるようになる�
 	<span class="hljs-keyword">this</span>.code = code;
 }
 </div></code></pre>
-<blockquote>
-<p>注：getterとsetterは、手当たり次第に作成すればよいというわけではない。</p>
-</blockquote>
+<div class="note warn">
+<p style="font-family:Meiryo;">⚠️</p>
+<p>getterとsetterは手当たり次第に作成すればよいわけではないので注意！</p>
+</div>
 <p>このように、他のクラスがプロパティに自由に触れなくすることを、カプセル化という。</p>
 <p>また、先程の<code>private</code>のように、誰が見れるのかを設定するための修飾子を、アクセス修飾子と呼ぶ。<code>public</code>もアクセス修飾子である。<br>
 アクセス修飾子は、変数やメソッドにつけることができる。</p>
 <h1 id="%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF">コンストラクタ</h1>
-<p>銀行口座の、口座名義や番号は、どのタイミングで設定される？変更される？<br>
-変更しようとするときは、削除して作り直す。つまり、値は変更されない。<br>
-そこに着目すると、コードでも同じことをすることになる。</p>
-<p>作る段階で指定して、変更できないようにする。<br>
-javaはどこまで考えてくれていて、<code>construct</code>という、最初に動作させてくれるメソッドがある。<br>
+<p>銀行口座の口座名義を変更しようとしたときを、現実に即して考えてみる。<br>
+変更しようとするときは、削除して作り直す。つまり、値は変更されることはない。<br>
+そこに着目すると、コードでも同じことをしなければならない。<br>
+つまり、口座を作る段階で名義を指定して、変更できないようにする。</p>
+<p>javaはどこまで考えてくれていて、<code>construct</code>という、最初に動作するメソッドがある。<br>
 それは、</p>
 <pre class="hljs"><code><div>Account myAccount = <span class="hljs-keyword">new</span> Account();
 </div></code></pre>
-<p>で使ってる。でもコンストラクタメソッドなんて作ってないよね？その通り。<br>
-<code>class Object</code>というのが存在する、その<code>Object</code>を親に持っていれば、子供のクラスも親のメソッドを実行できる。</p>
-<blockquote>
-<p>親にできるたいていのことは、受け継いでるから子供でもできる<br>
-クラスも同じで、javaがうらっかわで</p>
-</blockquote>
+<p>で使ってる。でもコンストラクタメソッドなんて作ってないよね？その通り。</p>
+<p><code>class Object</code>というのが存在する。その<code>Object</code>を親に持っていれば、子供のクラスも親のメソッドを実行できる。<br>
+javaが裏側で自動的に、</p>
 <pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">()</span></span>{
 
 }
 </div></code></pre>
 <p>というメソッドを作ってくれている。</p>
-<p>で、コンストラクタといえどメソッドなので、我々が自由に書き込んで実装できます。<br>
+<p>で、コンストラクタといえどメソッドなので、我々が自由に書き込んで実装できる。<br>
 じゃあAccountのときだけ、我々が作ったコンストラクタメソッドで、「必ず口座名義と番号を決めないと作れない」ってしてしまえばいい。</p>
 <pre class="hljs"><code><div><span class="hljs-comment">// コンストラクタに引数を設定しないとインスタンス化できない！</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName)</span></span>{
@@ -524,8 +1864,9 @@ javaはどこまで考えてくれていて、<code>construct</code>という、
     ownerName = ownerName;
 }
 </div></code></pre>
-<p>だと設定できない。エクリプスの文字色を見るとわかる通り、プロパティは青だけど、今のコードは違う色になっている。つまり、プロパティを指定できていない。<br>
-このクラスのプロパティを指定したい、そんな時は、</p>
+<p>だと設定できない。エクリプスの文字色を見ると、プロパティは青色になるはず。だけど、今のコードは違う色になっている。<br>
+つまり、プロパティを指定できていない。</p>
+<p>このクラスのプロパティを指定したい、そんな時は、</p>
 <pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Account</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, String ownerName)</span></span>{
     <span class="hljs-keyword">this</span>.code = code;
     <span class="hljs-keyword">this</span>.ownerName = ownerName;
@@ -549,8 +1890,8 @@ javaはどこまで考えてくれていて、<code>construct</code>という、
 <p>から、コンストラクタを追加して、</p>
 <pre class="hljs"><code><div>Account myAccount = <span class="hljs-keyword">new</span> Account(<span class="hljs-number">1234</span>,<span class="hljs-string">"yasukawa"</span>,<span class="hljs-number">500</span>);
 </div></code></pre>
-<p>としてしまえばいい。<br>
-実はメソッドは、引数さえ違えば、同じ名前のメソッドを複数作成できる。もちろん、コンストラクタもメソッドなので複数作成できる。<br>
+<p>としてしまえばいい。</p>
+<p>実はメソッドは、引数さえ違えば、同じ名前のメソッドを複数作成できる。もちろん、コンストラクタもメソッドなので複数作成できる。<br>
 しかも、コンストラクタからコンストラクタを呼ぶことも可能。なので、最終的にはこのようにすればよい。</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">package</span> jp.co.serabank;
 
@@ -618,1254 +1959,6 @@ javaはどこまで考えてくれていて、<code>construct</code>という、
 </div>
 </div>
 </div>
-<details style="display: none;"><summary>以下styleのため折り畳み</summary>
-<style>
 
-/* githubのmdのcssを安川が好き勝手にいじったもの */
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color-scheme: dark;
-    --color-prettylights-syntax-comment: #8b949e;
-    --color-prettylights-syntax-constant: #79c0ff;
-    --color-prettylights-syntax-entity: #d2a8ff;
-    --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
-    --color-prettylights-syntax-entity-tag: #7ee787;
-    --color-prettylights-syntax-keyword: #ff7b72;
-    --color-prettylights-syntax-string: #a5d6ff;
-    --color-prettylights-syntax-variable: #ffa657;
-    --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
-    --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
-    --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
-    --color-prettylights-syntax-carriage-return-text: #f0f6fc;
-    --color-prettylights-syntax-carriage-return-bg: #b62324;
-    --color-prettylights-syntax-string-regexp: #7ee787;
-    --color-prettylights-syntax-markup-list: #f2cc60;
-    --color-prettylights-syntax-markup-heading: #1f6feb;
-    --color-prettylights-syntax-markup-italic: #c9d1d9;
-    --color-prettylights-syntax-markup-bold: #c9d1d9;
-    --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
-    --color-prettylights-syntax-markup-deleted-bg: #67060c;
-    --color-prettylights-syntax-markup-inserted-text: #aff5b4;
-    --color-prettylights-syntax-markup-inserted-bg: #033a16;
-    --color-prettylights-syntax-markup-changed-text: #ffdfb6;
-    --color-prettylights-syntax-markup-changed-bg: #5a1e02;
-    --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
-    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
-    --color-prettylights-syntax-meta-diff-range: #d2a8ff;
-    --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
-    --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-    --color-fg-default: #c9d1d9;
-    --color-fg-muted: #8b949e;
-    --color-fg-subtle: #484f58;
-    --color-canvas-default: #0d1117;
-    --color-canvas-subtle: rgba(0,0,0,.08);
-    --color-border-default: #30363d;
-    --color-border-muted: #21262d;
-    --color-neutral-muted: rgba(110,118,129,0.4);
-    --color-accent-fg: #58a6ff;
-    --color-accent-emphasis: #1f6feb;
-    --color-attention-subtle: rgba(187,128,9,0.15);
-    --color-danger-fg: #f85149;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    color-scheme: light;
-    --color-prettylights-syntax-comment: #6e7781;
-    --color-prettylights-syntax-constant: #0550ae;
-    --color-prettylights-syntax-entity: #8250df;
-    --color-prettylights-syntax-storage-modifier-import: #24292f;
-    --color-prettylights-syntax-entity-tag: #116329;
-    --color-prettylights-syntax-keyword: #cf222e;
-    --color-prettylights-syntax-string: #0a3069;
-    --color-prettylights-syntax-variable: #953800;
-    --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
-    --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
-    --color-prettylights-syntax-invalid-illegal-bg: #82071e;
-    --color-prettylights-syntax-carriage-return-text: #f6f8fa;
-    --color-prettylights-syntax-carriage-return-bg: #cf222e;
-    --color-prettylights-syntax-string-regexp: #116329;
-    --color-prettylights-syntax-markup-list: #3b2300;
-    --color-prettylights-syntax-markup-heading: #0550ae;
-    --color-prettylights-syntax-markup-italic: #24292f;
-    --color-prettylights-syntax-markup-bold: #24292f;
-    --color-prettylights-syntax-markup-deleted-text: #82071e;
-    --color-prettylights-syntax-markup-deleted-bg: #FFEBE9;
-    --color-prettylights-syntax-markup-inserted-text: #116329;
-    --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
-    --color-prettylights-syntax-markup-changed-text: #953800;
-    --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
-    --color-prettylights-syntax-markup-ignored-text: #eaeef2;
-    --color-prettylights-syntax-markup-ignored-bg: #0550ae;
-    --color-prettylights-syntax-meta-diff-range: #8250df;
-    --color-prettylights-syntax-brackethighlighter-angle: #57606a;
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
-    --color-prettylights-syntax-constant-other-reference-link: #0a3069;
-    --color-fg-default: #24292f;
-    --color-fg-muted: #57606a;
-    --color-fg-subtle: #6e7781;
-    --color-canvas-default: #ffffff;
-    --color-canvas-subtle: #f6f8fa;
-    --color-border-default: #d0d7de;
-    --color-border-muted: hsla(210,18%,87%,1);
-    --color-neutral-muted: rgb(178 186 193 / 22%);
-    --color-accent-fg: #0969da;
-    --color-accent-emphasis: #0969da;
-    --color-attention-subtle: #fff8c5;
-    --color-danger-fg: #cf222e;
-  }
-}
-
-
-@media print {
-	
-	body > div{
-		/* display: block !important; */
-		width: max-content !important;
-		justify-content: center;
-		flex-direction: column;
-	}
-
-	body{
-		width: fit-content;
-		/* background-color: #0550ae; */
-		margin-left: 0% !important;
-		margin-right: 2em !important;
-		padding-left: 0% !important;
-		padding-right: 0% !important;
-	}
-
-	.main{
-		word-wrap:break-all;
-		width: max-content !important;
-		margin-left: 0% !important;
-		margin-right: 0% !important;
-		padding-left: 0% !important;
-		padding-right: 0% !important;
-	}
-
-    .side, .sticky{
-        display: none !important;
-		width: 0% !important;
-		/* border-left: 0 !important; */
-		margin: 0 !important;
-		padding: 0 !important;
-    }
-
-
-
-	.printonry{
-		display: block !important;
-	}
-
-
-}
-
-
-.printonry {
-	display:none;
-}
-
-body {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  margin-bottom: 2em !important;
-  margin-right: 1em !important;
-  margin-top: 0em !important;
-  margin-left: 2em !important;
-  color: var(--color-fg-default);
-  background-color: var(--color-canvas-default);
-  font-family: system-ui, 'Segoe UI',Arial,Meiryo,sans-serif;
-  /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
-  font-size: 16px;
-  line-height: 1.6;
-  word-wrap: break-word;
-  tab-size:4;
-  display: flexbox;
-}
-
-body > div{
-	display: flex;
-}
-
-body .octicon {
-  display: inline-block;
-  fill: currentColor;
-  vertical-align: text-bottom;
-}
-
-body h1:hover .anchor .octicon-link:before,
-body h2:hover .anchor .octicon-link:before,
-body h3:hover .anchor .octicon-link:before,
-body h4:hover .anchor .octicon-link:before,
-body h5:hover .anchor .octicon-link:before,
-body h6:hover .anchor .octicon-link:before {
-  width: 16px;
-  height: 16px;
-  content: ' ';
-  display: inline-block;
-  background-color: currentColor;
-  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
-  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
-}
-
-body details,
-body figcaption,
-body figure {
-  display: block;
-}
-
-body summary {
-  display: list-item;
-}
-
-body [hidden] {
-  display: none !important;
-}
-
-body a {
-  background-color: transparent;
-  color: var(--color-accent-fg);
-  text-decoration: none;
-}
-
-body a:active,
-body a:hover {
-  outline-width: 0;
-}
-
-body abbr[title] {
-  border-bottom: none;
-  text-decoration: underline dotted;
-}
-
-body b,
-body strong {
-  font-weight: 600;
-}
-
-body dfn {
-  font-style: italic;
-}
-
-
-
-body h1 {
-  margin: .67em 0;
-  font-weight: 600;
-  /* padding-top: 1em ; */
-  padding-bottom: .3em;
-  font-size: 2em;
-  border-bottom: 2px solid var(--color-border-muted);
-}
-
-
-body mark {
-  background-color: var(--color-attention-subtle);
-  color: var(--color-text-primary);
-}
-
-body small {
-  font-size: 90%;
-}
-
-body sub,
-body sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-body sub {
-  bottom: -0.25em;
-}
-
-body sup {
-  top: -0.5em;
-}
-
-body img {
-	margin-top: .7em;
-	margin-left: .7em;
-  border-style: groove;
-  border-width: thin;
-  max-width: 100%;
-  box-sizing: content-box;
-  background-color: var(--color-canvas-default);
-}
-
-.note {
-    display: flex !important;
-    align-items: flex-start !important;
-    padding: 1em !important;
-    margin: .5em !important;
-    white-space: pre-wrap !important;
-}
-.note > p {
-    margin: 0%;
-	margin-right: .7em;
-}
-.note.info {
-    background: #e3f7df !important;
-}
-.note.warn {
-    background: #fdf9e2 !important;
-}
-.note.alert {
-    background: #feebee !important;
-}
-
-.hljs {
-	padding: 1em !important;
-    margin-top: 0em !important;
-    margin-right: 0.2em !important;
-    margin-bottom: .7em !important;
-    margin-left: 0.2em !important;
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: rgba(148, 156, 163, 0.2);
-	background-color: var(--color-neutral-muted);
-}
-
-.hljs-comment,
-.hljs-quote {
-	color: #3f7f5f;
-}
-
-body blockquote > pre > code > div{
-  padding: 0.5em !important;
-  margin: 0.2em !important;
-}
-
-body code,
-body kbd,
-body pre,
-body samp {
-  font-family: monospace,monospace;
-  font-size: 1em;
-}
-
-body figure {
-  margin: 1em 40px;
-}
-
-body hr {
-  box-sizing: content-box;
-  overflow: hidden;
-  background: transparent;
-  border-bottom: 1px solid var(--color-border-muted);
-  height: .25em;
-  padding: 0;
-  margin: 24px 0;
-  background-color: var(--color-border-default);
-  border: 0;
-}
-
-body input {
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-body [type=button],
-body [type=reset],
-body [type=submit] {
-  -webkit-appearance: button;
-}
-
-body [type=button]::-moz-focus-inner,
-body [type=reset]::-moz-focus-inner,
-body [type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-body [type=button]:-moz-focusring,
-body [type=reset]:-moz-focusring,
-body [type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-body [type=checkbox],
-body [type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-body [type=number]::-webkit-inner-spin-button,
-body [type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-body [type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-body [type=search]::-webkit-search-cancel-button,
-body [type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-body ::-webkit-input-placeholder {
-  color: inherit;
-  opacity: .54;
-}
-
-body ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-body a:hover {
-  text-decoration: underline;
-}
-
-body hr::before {
-  display: table;
-  content: "";
-}
-
-body hr::after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-body table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  display: block;
-  width: max-content;
-  max-width: 100%;
-  overflow: auto;
-}
-
-body td,
-body th {
-  padding: 0;
-}
-
-body details summary {
-  cursor: pointer;
-}
-
-body details:not([open])>*:not(summary) {
-  display: none !important;
-}
-
-body kbd {
-  display: inline-block;
-  padding: 3px 5px;
-  font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
-  line-height: 10px;
-  color: var(--color-fg-default);
-  vertical-align: middle;
-  background-color: var(--color-canvas-subtle);
-  border: solid 1px var(--color-neutral-muted);
-  border-bottom-color: var(--color-neutral-muted);
-  border-radius: 6px;
-  box-shadow: inset 0 -1px 0 var(--color-neutral-muted);
-}
-
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6 {
-  /* margin-top: 24px; */
-  margin-bottom: 16px;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-body h2 {
-  font-weight: 600;
-  padding-bottom: .3em;
-  font-size: 1.5em;
-  border-bottom: 1px solid var(--color-border-muted);
-}
-
-body h3 {
-	line-height: inherit;
-  font-weight: 600;
-  font-size: 1.25em;
-  border-bottom: 0.5px solid var(--color-border-muted);
-}
-
-body h4 {
-  font-weight: 600;
-  font-size: 1em;
-}
-
-body h5 {
-  font-weight: 600;
-  font-size: .875em;
-}
-
-body h6 {
-  font-weight: 600;
-  font-size: .85em;
-  color: var(--color-fg-muted);
-}
-
-body p {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-body blockquote {
-  margin: 0;
-  margin-left: 1em;
-  padding: .1em;
-  padding-left: .5em;
-  color: var(--color-fg-muted);
-  border-left: .4em solid rgba(0, 122, 204, 0.5);
-  background-color: var(--color-canvas-subtle);
-}
-
-body ul,
-body ol {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 2em;
-}
-
-body ol ol,
-body ul ol {
-  list-style-type: lower-roman;
-}
-
-body ul ul ol,
-body ul ol ol,
-body ol ul ol,
-body ol ol ol {
-  list-style-type: lower-alpha;
-}
-
-body dd {
-  margin-left: 0;
-}
-
-body tt,
-body code {
-  /* font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; */
-  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,'BIZ UDゴシック',monospace;
-  font-size: 12px;
-}
-
-body pre {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,'BIZ UDゴシック',monospace;
-  font-size: 12px;
-  word-wrap: normal;
-}
-
-body .octicon {
-  display: inline-block;
-  overflow: visible !important;
-  vertical-align: text-bottom;
-  fill: currentColor;
-}
-
-body ::placeholder {
-  color: var(--color-fg-subtle);
-  opacity: 1;
-}
-
-body input::-webkit-outer-spin-button,
-body input::-webkit-inner-spin-button {
-  margin: 0;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-body .pl-c {
-  color: var(--color-prettylights-syntax-comment);
-}
-
-body .pl-c1,
-body .pl-s .pl-v {
-  color: var(--color-prettylights-syntax-constant);
-}
-
-body .pl-e,
-body .pl-en {
-  color: var(--color-prettylights-syntax-entity);
-}
-
-body .pl-smi,
-body .pl-s .pl-s1 {
-  color: var(--color-prettylights-syntax-storage-modifier-import);
-}
-
-body .pl-ent {
-  color: var(--color-prettylights-syntax-entity-tag);
-}
-
-body .pl-k {
-  color: var(--color-prettylights-syntax-keyword);
-}
-
-body .pl-s,
-body .pl-pds,
-body .pl-s .pl-pse .pl-s1,
-body .pl-sr,
-body .pl-sr .pl-cce,
-body .pl-sr .pl-sre,
-body .pl-sr .pl-sra {
-  color: var(--color-prettylights-syntax-string);
-}
-
-body .pl-v,
-body .pl-smw {
-  color: var(--color-prettylights-syntax-variable);
-}
-
-body .pl-bu {
-  color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
-}
-
-body .pl-ii {
-  color: var(--color-prettylights-syntax-invalid-illegal-text);
-  background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
-}
-
-body .pl-c2 {
-  color: var(--color-prettylights-syntax-carriage-return-text);
-  background-color: var(--color-prettylights-syntax-carriage-return-bg);
-}
-
-body .pl-sr .pl-cce {
-  font-weight: bold;
-  color: var(--color-prettylights-syntax-string-regexp);
-}
-
-body .pl-ml {
-  color: var(--color-prettylights-syntax-markup-list);
-}
-
-body .pl-mh,
-body .pl-mh .pl-en,
-body .pl-ms {
-  font-weight: bold;
-  color: var(--color-prettylights-syntax-markup-heading);
-}
-
-body .pl-mi {
-  font-style: italic;
-  color: var(--color-prettylights-syntax-markup-italic);
-}
-
-body .pl-mb {
-  font-weight: bold;
-  color: var(--color-prettylights-syntax-markup-bold);
-}
-
-body .pl-md {
-  color: var(--color-prettylights-syntax-markup-deleted-text);
-  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
-}
-
-body .pl-mi1 {
-  color: var(--color-prettylights-syntax-markup-inserted-text);
-  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
-}
-
-body .pl-mc {
-  color: var(--color-prettylights-syntax-markup-changed-text);
-  background-color: var(--color-prettylights-syntax-markup-changed-bg);
-}
-
-body .pl-mi2 {
-  color: var(--color-prettylights-syntax-markup-ignored-text);
-  background-color: var(--color-prettylights-syntax-markup-ignored-bg);
-}
-
-body .pl-mdr {
-  font-weight: bold;
-  color: var(--color-prettylights-syntax-meta-diff-range);
-}
-
-body .pl-ba {
-  color: var(--color-prettylights-syntax-brackethighlighter-angle);
-}
-
-body .pl-sg {
-  color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
-}
-
-body .pl-corl {
-  text-decoration: underline;
-  color: var(--color-prettylights-syntax-constant-other-reference-link);
-}
-
-body [data-catalyst] {
-  display: block;
-}
-
-body g-emoji {
-  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 1em;
-  font-style: normal !important;
-  font-weight: 400;
-  line-height: 1;
-  vertical-align: -0.075em;
-}
-
-body g-emoji img {
-  width: 1em;
-  height: 1em;
-}
-
-body::before {
-  display: table;
-  content: "";
-}
-
-body::after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-body a:not([href]) {
-  color: inherit;
-  text-decoration: none;
-}
-
-body .absent {
-  color: var(--color-danger-fg);
-}
-
-body .anchor {
-  float: left;
-  padding-right: 4px;
-  margin-left: -20px;
-  line-height: 1;
-}
-
-body .anchor:focus {
-  outline: none;
-}
-
-body p,
-body blockquote,
-body ul,
-body ol,
-body dl,
-body table,
-body pre,
-body details {
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-body blockquote>:first-child {
-  margin-top: 0;
-}
-
-body blockquote>:last-child {
-  margin-bottom: 0;
-}
-
-body sup>a::before {
-  content: "[";
-}
-
-body sup>a::after {
-  content: "]";
-}
-
-body h1 .octicon-link,
-body h2 .octicon-link,
-body h3 .octicon-link,
-body h4 .octicon-link,
-body h5 .octicon-link,
-body h6 .octicon-link {
-  color: var(--color-fg-default);
-  vertical-align: middle;
-  visibility: hidden;
-}
-
-body h1:hover .anchor,
-body h2:hover .anchor,
-body h3:hover .anchor,
-body h4:hover .anchor,
-body h5:hover .anchor,
-body h6:hover .anchor {
-  text-decoration: none;
-}
-
-body h1:hover .anchor .octicon-link,
-body h2:hover .anchor .octicon-link,
-body h3:hover .anchor .octicon-link,
-body h4:hover .anchor .octicon-link,
-body h5:hover .anchor .octicon-link,
-body h6:hover .anchor .octicon-link {
-  visibility: visible;
-}
-
-body h1 tt,
-body h1 code,
-body h2 tt,
-body h2 code,
-body h3 tt,
-body h3 code,
-body h4 tt,
-body h4 code,
-body h5 tt,
-body h5 code,
-body h6 tt,
-body h6 code {
-  padding: 0 .2em;
-  font-size: inherit;
-}
-
-body ul.no-list,
-body ol.no-list {
-  padding: 0;
-  list-style-type: none;
-}
-
-body ol[type="1"] {
-  list-style-type: decimal;
-}
-
-body ol[type=a] {
-  list-style-type: lower-alpha;
-}
-
-body ol[type=i] {
-  list-style-type: lower-roman;
-}
-
-body div>ol:not([type]) {
-  list-style-type: decimal;
-}
-
-body ul ul,
-body ul ol,
-body ol ol,
-body ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-body li>p {
-  margin-top: 16px;
-}
-
-body li+li {
-  margin-top: .25em;
-}
-
-body dl {
-  padding: 0;
-}
-
-body dl dt {
-  padding: 0;
-  margin-top: 16px;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 600;
-}
-
-body dl dd {
-  padding: 0 16px;
-  margin-bottom: 16px;
-}
-
-body table th {
-  font-weight: 600;
-}
-
-body table th,
-body table td {
-  padding: 6px 13px;
-  border: 1px solid var(--color-border-default);
-}
-
-body table tr {
-  background-color: var(--color-canvas-default);
-  border-top: 1px solid var(--color-border-muted);
-}
-
-body table tr:nth-child(2n) {
-  background-color: var(--color-canvas-subtle);
-}
-
-body table img {
-  background-color: transparent;
-}
-
-body img[align=right] {
-  padding-left: 20px;
-}
-
-body img[align=left] {
-  padding-right: 20px;
-}
-
-body .emoji {
-  max-width: none;
-  vertical-align: text-top;
-  background-color: transparent;
-}
-
-body span.frame {
-  display: block;
-  overflow: hidden;
-}
-
-body span.frame>span {
-  display: block;
-  float: left;
-  width: auto;
-  padding: 7px;
-  margin: 13px 0 0;
-  overflow: hidden;
-  border: 1px solid var(--color-border-default);
-}
-
-body span.frame span img {
-  display: block;
-  float: left;
-}
-
-body span.frame span span {
-  display: block;
-  padding: 5px 0 0;
-  clear: both;
-  color: var(--color-fg-default);
-}
-
-body span.align-center {
-  display: block;
-  overflow: hidden;
-  clear: both;
-}
-
-body span.align-center>span {
-  display: block;
-  margin: 13px auto 0;
-  overflow: hidden;
-  text-align: center;
-}
-
-body span.align-center span img {
-  margin: 0 auto;
-  text-align: center;
-}
-
-body span.align-right {
-  display: block;
-  overflow: hidden;
-  clear: both;
-}
-
-body span.align-right>span {
-  display: block;
-  margin: 13px 0 0;
-  overflow: hidden;
-  text-align: right;
-}
-
-body span.align-right span img {
-  margin: 0;
-  text-align: right;
-}
-
-body span.float-left {
-  display: block;
-  float: left;
-  margin-right: 13px;
-  overflow: hidden;
-}
-
-body span.float-left span {
-  margin: 13px 0 0;
-}
-
-body span.float-right {
-  display: block;
-  float: right;
-  margin-left: 13px;
-  overflow: hidden;
-}
-
-body span.float-right>span {
-  display: block;
-  margin: 13px auto 0;
-  overflow: hidden;
-  text-align: right;
-}
-
-body code,
-body tt {
-  padding: .2em .4em;
-  margin: 0;
-  font-size: 85%;
-  background-color: var(--color-neutral-muted);
-  border-radius: 6px;
-}
-
-body code br,
-body tt br {
-  display: none;
-}
-
-body del code {
-  text-decoration: inherit;
-}
-
-body pre code {
-  font-size: 100%;
-}
-
-body pre>code {
-  padding: 0;
-  margin: 0;
-  word-break: normal;
-  white-space: pre;
-  background: transparent;
-  border: 0;
-}
-
-
-
-body .highlight {
-  margin-bottom: 16px;
-}
-
-body .highlight pre {
-  margin-bottom: 0;
-  word-break: normal;
-}
-
-body .highlight pre,
-body pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  /* background-color: var(--color-neutral-muted); */
-  background-color: white;
-  border-radius: 6px;
-}
-
-body pre code,
-body pre tt {
-  display: inline;
-  max-width: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  line-height: inherit;
-  word-wrap: normal;
-  background-color: transparent;
-  border: 0;
-}
-
-body .csv-data td,
-body .csv-data th {
-  padding: 5px;
-  overflow: hidden;
-  font-size: 12px;
-  line-height: 1;
-  text-align: left;
-  white-space: nowrap;
-}
-
-body .csv-data .blob-num {
-  padding: 10px 8px 9px;
-  text-align: right;
-  background: var(--color-canvas-default);
-  border: 0;
-}
-
-body .csv-data tr {
-  border-top: 0;
-}
-
-body .csv-data th {
-  font-weight: 600;
-  background: var(--color-canvas-subtle);
-  border-top: 0;
-}
-
-body .footnotes {
-  font-size: 12px;
-  color: var(--color-fg-muted);
-  border-top: 1px solid var(--color-border-default);
-}
-
-body .footnotes ol {
-  padding-left: 16px;
-}
-
-body .footnotes li {
-  position: relative;
-}
-
-body .footnotes li:target::before {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
-  left: -24px;
-  pointer-events: none;
-  content: "";
-  border: 2px solid var(--color-accent-emphasis);
-  border-radius: 6px;
-}
-
-body .footnotes li:target {
-  color: var(--color-fg-default);
-}
-
-body .footnotes .data-footnote-backref g-emoji {
-  font-family: monospace;
-}
-
-body .task-list-item {
-  list-style-type: none;
-}
-
-body .task-list-item label {
-  font-weight: 400;
-}
-
-body .task-list-item.enabled label {
-  cursor: pointer;
-}
-
-body .task-list-item+.task-list-item {
-  margin-top: 3px;
-}
-
-body .task-list-item .handle {
-  display: none;
-}
-
-body .task-list-item-checkbox {
-  margin: 0 .2em .25em -1.6em;
-  vertical-align: middle;
-}
-
-body .contains-task-list:dir(rtl) .task-list-item-checkbox {
-  margin: 0 -1.6em .25em .2em;
-}
-
-body ::-webkit-calendar-picker-indicator {
-  filter: invert(50%);
-}
-
-
-details > ul > li{
-	margin-top: .5em;
-}
-
-
-.side{
-	/* margin-top: 4em; */
-	width: 15%;
-	margin-left: 1em;
-	margin-right: 0px;
-	height:80vh;
-	/* min-width: fit-content; */
-	padding-right: 1em;
-    position: sticky;
-	display: flex;
-	top: 2em;
-	flex-direction: column;
-	border-left: 1px solid var(--color-border-muted);
-}
-
-.sticky {	
-	overflow-y: scroll;
-	width: 100%;
-	/* overflow-x: scroll; */
-	/* max-height: 80%; */
-	padding: 0.25em;
-	padding-left: 0.4em;
-	font-size: 80%;	
-	/* border-style: solid; */
-	/* border-width: 1px; */
-}
-
-.side > .summary{
-	margin-top: 0.5em;
-	font-style: oblique;
-	border-bottom: rgba(148, 156, 163, 0.2);
-	border-bottom-style: solid;
-	border-width: thin;	
-	font-size: large;
-    margin-left: 0.3em;
-}
-
-.sticky > ul > li{
-	margin-top: .5em;
-}
-
-details > div{
-	padding: 0.4em;
-	font-size: 95%;
-}
-
-details > div,summary{
-	border-bottom: rgba(148, 156, 163, 0.2);
-	border-bottom-style: solid;
-	border-width: thin;	
-}
-
-details > ul,summary{
-	padding-right: 0.6em;
-}
-
-.main{
-	/* min-width: 70%; */
-	width: 85%;
-	/* max-width: 120%; */
-}
-
-
-
-
-
-/* body h1 {
-	margin: .67em 0;
-	font-weight: 600;
-	padding-top: 1em ;
-	padding-bottom: .3em;
-	font-size: 2em;
-	border-bottom: 2px solid var(--color-border-muted);
-  } */
-
-
-
-
-
-
-</style>
-</details>
 </body>
 </html>
