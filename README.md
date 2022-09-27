@@ -1,3 +1,5 @@
+<link rel=”stylesheet” href=”https://github.com/seraku-m-yasukawa/java-training-document/blob/main/%E3%82%AB%E3%83%B3%E3%83%9A%E9%9B%86/%E8%AC%9B%E5%BA%A7%E5%86%85%E5%AE%B9/ysk-github-markdown.css”/>
+
 # java-training-document
 java研修の参考資料。教える側のカンペとして自分用に作成していましたが、  
 何かしらの理由で遅れている人や途中参加の人用にある程度は体裁を整えました。
