@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>codewars問題ピックアップ</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+
+<style>
+/* githubのmdのcssを安川が好き勝手にいじったもの */
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color-scheme: dark;
+		--color-fg-default: #c9d1d9;
+		--color-fg-muted: #8b949e;
+		--color-fg-subtle: #484f58;
+		--color-canvas-default: #0d1117;
+		--color-canvas-subtle: rgba(0, 0, 0, .08);
+		--color-border-default: #30363d;
+		--color-border-muted: #21262d;
+		--color-neutral-muted: rgba(110, 118, 129, 0.4);
+		--color-accent-fg: #58a6ff;
+		--color-accent-emphasis: #1f6feb;
+		--color-attention-subtle: rgba(187, 128, 9, 0.15);
+		--color-danger-fg: #f85149;
+		--color-hljs-default: rgb(169, 174, 179);
+		--color-hljs-comment: rgb(128, 128, 128);
+		--color-hljs-keyword: rgb(204, 108, 29);
+		--color-hljs-title: rgb(18, 144, 195);
+		--color-hljs-string: rgb(23, 198, 163);
+		--color-hljs-params: rgb(121, 171, 255);
+		--color-hljs-doctag: rgb(154, 140, 124);
+		--color-hljs-meta: rgb(160, 160, 160);
+		--color-hljs-function: rgb(30, 181, 64);
+		--color-hljs-code-copy-button: rgba(169, 174, 179, 0.5);
+		--color-hljs-code-lang: #343941;
+		--color-hljs-code-lang-background: rgba(169, 174, 179, 0.5);
+		--color-note-info: #9cff895c;
+		--color-note-warn: #a29239b3;
+		--color-note-alert: #bd394d82;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		color-scheme: light;
+		--color-fg-default: #24292f;
+		--color-fg-muted: #57606a;
+		--color-fg-subtle: #6e7781;
+		--color-canvas-default: #ffffff;
+		--color-canvas-subtle: #f6f8fa;
+		--color-border-default: #d0d7de;
+		--color-border-muted: hsla(210, 18%, 87%, 1);
+		/* --color-neutral-muted: rgb(178 186 193 / 13%); */
+		--color-neutral-muted: #f5f5f5;
+		--color-accent-fg: #1871d8;
+		--color-accent-emphasis: #1c74da;
+		--color-attention-subtle: #fff8c5;
+		--color-danger-fg: #cf222e;
+		--color-hljs-default: rgb(68, 68, 68);
+		--color-hljs-comment: rgb(29, 131, 80);
+		--color-hljs-keyword: rgb(172, 0, 114);
+		/* --color-hljs-title:rgb(18,144,195); */
+		--color-hljs-string: rgba(43, 0, 255, 0.815);
+		--color-hljs-params: rgba(0, 0, 192, 0.637);
+		--color-hljs-doctag: rgb(127, 159, 191);
+		--color-hljs-meta: rgb(100, 100, 100);
+		--color-hljs-code-copy-button: rgba(68, 68, 68, 0.5);
+		--color-hljs-code-lang: #6e6e6e;
+		--color-hljs-code-lang-background: #dedcf5b0;
+		--color-note-info: #cef1c7;
+		--color-note-warn: #fff495;
+		--color-note-alert: #ffd1d8;
+	}
+}
+
+
+@media print {
+	body {
+		width: fit-content;
+		margin-left: 0% !important;
+		margin-right: 0em !important;
+		padding-right: 1% !important;
+	}
+	.main {
+		word-wrap: break-all;
+		display: inline;
+		width: 100% !important;
+		margin-left: 0% !important;
+		margin-right: 0% !important;
+		padding-left: 0% !important;
+		padding-right: 0% !important;
+	}
+	.side,
+	.sticky {
+		display: none !important;
+		width: 0% !important;
+		margin: 0% !important;
+		padding: 0% !important;
+	}
+	.printonry {
+		display: block !important;
+	}
+	details code span,
+	details code div {
+		color: var(--color-neutral-muted) !important;
+	}
+	details:not([open]) {
+		display: block !important;
+	}
+	/* Chrome、Safari以外 */
+	summary {
+		display: block !important;
+	}
+	details {
+		margin-top: 1em !important;
+		padding-left: 0 !important;
+	}
+	/* Chrome、Safari */
+	summary::-webkit-details-marker {
+		display: none !important;
+	}
+}
+
+.hljs-parent {
+	position: relative;
+	padding-top: 0.5em;
+	padding-right: 0.5em;
+	position: relative;
+	margin-top: -0.2em;
+
+}
+
+.hljs {
+	border-radius: 6px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top: 0em;
+	margin-right: 0.2em !important;
+	margin-bottom: .7em !important;
+	margin-left: 0.2em !important;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgba(148, 156, 163, 0.2);
+	background-color: var(--color-neutral-muted);
+	color: var(--color-hljs-default);
+	margin-bottom: 0px;
+	padding-bottom: 1em;
+	padding-left: .5em;
+	padding-right: .5em;
+	position: relative;
+}
+
+.next_code-lang {
+	margin-top: 1.2em;
+}
+
+.hljs-comment,
+.hljs-quote {
+	color: var(--color-hljs-comment);
+}
+
+.hljs-keyword {
+	color: var(--color-hljs-keyword);
+}
+
+.hljs-title,
+.hljs-section {
+	color: var(--color-hljs-title);
+}
+
+.hljs-string {
+	color: var(--color-hljs-string);
+}
+
+.hljs-params {
+	color: var(--color-hljs-params);
+}
+
+.hljs-doctag {
+	color: var(--color-hljs-doctag);
+	font-weight: 500;
+}
+
+.hljs-meta {
+	color: var(--color-hljs-meta);
+	font-style: italic;
+}
+
+.hljs-function {
+	color: var(--color-hljs-keyword);
+}
+
+.hljs-function>.hljs-title {
+	color: var(--color-hljs-function);
+}
+
+
+.printonry {
+	display: none;
+}
+
+body {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	margin-bottom: 2em !important;
+	margin-right: 2em !important;
+	margin-top: 0em !important;
+	margin-left: 2em !important;
+	color: var(--color-fg-default);
+	background-color: var(--color-canvas-default);
+	font-family: system-ui, 'Segoe UI', Arial, Meiryo, sans-serif;
+	text-rendering: geometricPrecision;
+	shape-rendering: geometricprecision;
+	font-size: 16px;
+	line-height: 1.6;
+	word-wrap: break-word;
+	tab-size: 4;
+}
+
+body>div {
+	display: flex;
+}
+
+body .octicon {
+	display: inline-block;
+	fill: currentColor;
+	vertical-align: text-bottom;
+}
+
+body h1:hover .anchor .octicon-link:before,
+body h2:hover .anchor .octicon-link:before,
+body h3:hover .anchor .octicon-link:before,
+body h4:hover .anchor .octicon-link:before,
+body h5:hover .anchor .octicon-link:before,
+body h6:hover .anchor .octicon-link:before {
+	width: 16px;
+	height: 16px;
+	content: ' ';
+	display: inline-block;
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+	mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+
+body details,
+body figcaption,
+body figure {
+	display: block;
+}
+
+body summary {
+	display: list-item;
+}
+
+body [hidden] {
+	display: none !important;
+}
+
+body a {
+	background-color: transparent;
+	color: var(--color-accent-fg);
+	text-decoration: none;
+}
+
+body a:active,
+body a:hover {
+	outline-width: 0;
+}
+
+body abbr[title] {
+	border-bottom: none;
+	text-decoration: underline dotted;
+}
+
+body b,
+body strong {
+	font-weight: 600;
+}
+
+body dfn {
+	font-style: italic;
+}
+
+body h1 {
+	margin: .67em 0;
+	font-weight: 600;
+	padding-bottom: .3em;
+	font-size: 2em;
+	border-bottom: 2px solid var(--color-border-muted);
+	border-left: .2em solid rgba(0, 122, 204, 0.5);
+	padding-left: .15em;
+}
+
+
+body mark {
+	background-color: var(--color-attention-subtle);
+	color: var(--color-text-primary);
+}
+
+body small {
+	font-size: 90%;
+}
+
+body sub,
+body sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+body sub {
+	bottom: -0.25em;
+}
+
+body sup {
+	top: -0.5em;
+}
+
+body img {
+	margin-top: .7em;
+	margin-left: .7em;
+	border-style: groove;
+	border-width: thin;
+	box-sizing: content-box;
+	background-color: var(--color-canvas-default);
+}
+
+.note {
+	display: flex !important;
+	align-items: flex-start !important;
+	padding: 1em !important;
+	margin: .5em !important;
+	white-space: pre-wrap !important;
+}
+
+.note>p {
+	margin: 0%;
+	margin-right: .7em;
+	color: var(--color-fg-default);
+}
+
+.note p:first-of-type {
+	font-family: Meiryo;
+}
+
+.note.info {
+	background: var(--color-note-info) !important;
+}
+
+.note.warn {
+	background: var(--color-note-warn) !important;
+}
+
+.note.alert {
+	background: var(--color-note-alert) !important;
+}
+
+
+body blockquote>pre>code>div {
+	padding: 0.5em !important;
+	margin: 0.2em !important;
+}
+
+body code,
+body kbd,
+body pre,
+body samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+	border-color: rgba(148, 156, 163, 0.2);
+}
+
+body figure {
+	margin: 1em 40px;
+}
+
+body hr {
+	box-sizing: content-box;
+	overflow: hidden;
+	background: transparent;
+	border-bottom: 1px solid var(--color-border-muted);
+	height: .25em;
+	padding: 0;
+	margin: 24px 0;
+	background-color: var(--color-border-default);
+	border: 0;
+}
+
+body input {
+	font: inherit;
+	margin: 0;
+	overflow: visible;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+body [type=button],
+body [type=reset],
+body [type=submit] {
+	-webkit-appearance: button;
+}
+
+body [type=button]::-moz-focus-inner,
+body [type=reset]::-moz-focus-inner,
+body [type=submit]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+body [type=button]:-moz-focusring,
+body [type=reset]:-moz-focusring,
+body [type=submit]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+body [type=checkbox],
+body [type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+body [type=number]::-webkit-inner-spin-button,
+body [type=number]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+body [type=search] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+body [type=search]::-webkit-search-cancel-button,
+body [type=search]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+body ::-webkit-input-placeholder {
+	color: inherit;
+	opacity: .54;
+}
+
+body ::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+body a:hover {
+	text-decoration: underline;
+}
+
+body hr::before {
+	display: table;
+	content: "";
+}
+
+body hr::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+body table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	width: max-content;
+	max-width: 100%;
+	overflow: auto;
+}
+
+body td,
+body th {
+	padding: 0;
+}
+
+body details summary {
+	cursor: pointer;
+}
+
+body details:not([open])>*:not(summary) {
+	display: none !important;
+}
+
+body kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+	line-height: 10px;
+	color: var(--color-fg-default);
+	vertical-align: middle;
+	background-color: var(--color-canvas-subtle);
+	border: solid 1px var(--color-neutral-muted);
+	border-bottom-color: var(--color-neutral-muted);
+	border-radius: 6px;
+	box-shadow: inset 0 -1px 0 var(--color-neutral-muted);
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+	margin-bottom: 16px;
+	margin-left: -0.1em;
+	padding-bottom: 0em !important;
+	font-weight: 600;
+	line-height: 1.1em;
+}
+
+body h1 {
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin-bottom: 0.5em;
+}
+
+body h2 {
+	font-weight: 600;
+	padding-bottom: 0.2em;
+	margin-bottom: 0.4em;
+	font-size: 1.5em;
+	border-bottom: 1px solid var(--color-border-muted);
+}
+
+body h3 {
+	line-height: inherit;
+	margin-block-end: 0.3em !important;
+	font-weight: 600;
+	font-size: 1.25em;
+	border-bottom: 0.5px solid var(--color-border-muted);
+}
+
+body h4 {
+	font-weight: 600;
+	font-size: 1em;
+}
+
+body h5 {
+	font-weight: 600;
+	font-size: .875em;
+}
+
+body h6 {
+	font-weight: 600;
+	font-size: .85em;
+	color: var(--color-fg-muted);
+}
+
+body p {
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+body blockquote {
+	margin: 0;
+	margin-left: 1em;
+	padding: .1em;
+	padding-left: .5em;
+	color: var(--color-fg-muted);
+	border-left: .4em solid rgba(0, 122, 204, 0.5);
+	background-color: var(--color-canvas-subtle);
+}
+
+body ul,
+body ol {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 2em;
+	line-height: 1.4 !important;
+}
+
+.main>ul,
+.main>ol {
+	margin-left: 0.3em !important;
+}
+
+.main>ul ul,
+.main>ul ol,
+.main>ol ul,
+.main>ol ol {
+	padding-left: 1.5em;
+	margin-top: 0 !important;
+}
+
+.main ul p,
+.main ol p {
+	margin-block: 0 !important;
+}
+
+.main ul>li>p {
+	margin-left: -.3em;
+}
+
+body ol ol,
+body ul ol {
+	list-style-type: lower-roman;
+}
+
+body ul ul ol,
+body ul ol ol,
+body ol ul ol,
+body ol ol ol {
+	list-style-type: lower-alpha;
+}
+
+body dd {
+	margin-left: 0;
+}
+
+body tt,
+body code {
+	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, 'BIZ UDゴシック', monospace;
+	font-size: 12px;
+}
+
+body pre {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, 'BIZ UDゴシック', monospace;
+	font-size: 12px;
+	word-wrap: normal;
+}
+
+body .octicon {
+	display: inline-block;
+	overflow: visible !important;
+	vertical-align: text-bottom;
+	fill: currentColor;
+}
+
+body ::placeholder {
+	color: var(--color-fg-subtle);
+	opacity: 1;
+}
+
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button {
+	margin: 0;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+body [data-catalyst] {
+	display: block;
+}
+
+body g-emoji {
+	font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 1em;
+	font-style: normal !important;
+	font-weight: 400;
+	line-height: 1;
+	vertical-align: -0.075em;
+}
+
+body g-emoji img {
+	width: 1em;
+	height: 1em;
+}
+
+body::before {
+	display: table;
+	content: "";
+}
+
+body::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+body>*:first-child {
+	margin-top: 0 !important;
+}
+
+body>*:last-child {
+	margin-bottom: 0 !important;
+}
+
+body a:not([href]) {
+	color: inherit;
+	text-decoration: none;
+}
+
+body .absent {
+	color: var(--color-danger-fg);
+}
+
+body .anchor {
+	float: left;
+	padding-right: 4px;
+	margin-left: -20px;
+	line-height: 1;
+}
+
+body .anchor:focus {
+	outline: none;
+}
+
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre,
+body details {
+	margin-top: 0;
+	margin-bottom: 14px;
+}
+
+body blockquote>:first-child {
+	margin-top: 0;
+}
+
+body blockquote>:last-child {
+	margin-bottom: 0;
+}
+
+body sup>a::before {
+	content: "[";
+}
+
+body sup>a::after {
+	content: "]";
+}
+
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+	color: var(--color-fg-default);
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+	text-decoration: none;
+}
+
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+	visibility: visible;
+}
+
+body h1 tt,
+body h1 code,
+body h2 tt,
+body h2 code,
+body h3 tt,
+body h3 code,
+body h4 tt,
+body h4 code,
+body h5 tt,
+body h5 code,
+body h6 tt,
+body h6 code {
+	padding: 0 .2em;
+	font-size: inherit;
+}
+
+body ul.no-list,
+body ol.no-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+body ol[type="1"] {
+	list-style-type: decimal;
+}
+
+body ol[type=a] {
+	list-style-type: lower-alpha;
+}
+
+body ol[type=i] {
+	list-style-type: lower-roman;
+}
+
+body div>ol:not([type]) {
+	list-style-type: decimal;
+}
+
+body ul ul,
+body ul ol,
+body ol ol,
+body ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+body li>p {
+	margin-top: 12px;
+}
+
+body dl {
+	padding: 0;
+}
+
+body dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: 600;
+}
+
+body dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+body table th {
+	font-weight: 600;
+}
+
+body table th,
+body table td {
+	padding: 6px 13px;
+	border: 1px solid var(--color-border-default);
+}
+
+body table tr {
+	background-color: var(--color-canvas-default);
+	border-top: 1px solid var(--color-border-muted);
+}
+
+body table tr:nth-child(2n) {
+	background-color: var(--color-canvas-subtle);
+}
+
+body table img {
+	background-color: transparent;
+}
+
+body img[align=right] {
+	padding-left: 20px;
+}
+
+body img[align=left] {
+	padding-right: 20px;
+}
+
+body .emoji {
+	max-width: none;
+	vertical-align: text-top;
+	background-color: transparent;
+}
+
+body span.frame {
+	display: block;
+	overflow: hidden;
+}
+
+body span.frame>span {
+	display: block;
+	float: left;
+	width: auto;
+	padding: 7px;
+	margin: 13px 0 0;
+	overflow: hidden;
+	border: 1px solid var(--color-border-default);
+}
+
+body span.frame span img {
+	display: block;
+	float: left;
+}
+
+body span.frame span span {
+	display: block;
+	padding: 5px 0 0;
+	clear: both;
+	color: var(--color-fg-default);
+}
+
+body span.align-center {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+body span.align-center>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+body span.align-center span img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+body span.align-right {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+body span.align-right>span {
+	display: block;
+	margin: 13px 0 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+body span.align-right span img {
+	margin: 0;
+	text-align: right;
+}
+
+body span.float-left {
+	display: block;
+	float: left;
+	margin-right: 13px;
+	overflow: hidden;
+}
+
+body span.float-left span {
+	margin: 13px 0 0;
+}
+
+body span.float-right {
+	display: block;
+	float: right;
+	margin-left: 13px;
+	overflow: hidden;
+}
+
+body span.float-right>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+body code,
+body tt {
+	padding: .2em .3em;
+	margin: 0;
+	font-size: 85%;
+	background-color: var(--color-neutral-muted);
+	border-radius: 6px;
+}
+
+body code br,
+body tt br {
+	display: none;
+}
+
+body del code {
+	text-decoration: inherit;
+}
+
+body pre code {
+	font-size: 100%;
+}
+
+body pre>code {
+	padding: 0;
+	margin: 0;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+body .highlight {
+	margin-bottom: 16px;
+}
+
+body .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+body .highlight pre,
+body pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: white;
+	border-radius: 6px;
+}
+
+body pre code,
+body pre tt {
+	display: inline;
+	max-width: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+body .csv-data td,
+body .csv-data th {
+	padding: 5px;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 1;
+	text-align: left;
+	white-space: nowrap;
+}
+
+body .csv-data .blob-num {
+	padding: 10px 8px 9px;
+	text-align: right;
+	background: var(--color-canvas-default);
+	border: 0;
+}
+
+body .csv-data tr {
+	border-top: 0;
+}
+
+body .csv-data th {
+	font-weight: 600;
+	background: var(--color-canvas-subtle);
+	border-top: 0;
+}
+
+body .footnotes {
+	font-size: 12px;
+	color: var(--color-fg-muted);
+	border-top: 1px solid var(--color-border-default);
+}
+
+body .footnotes ol {
+	padding-left: 16px;
+}
+
+body .footnotes li {
+	position: relative;
+}
+
+body .footnotes li:target::before {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	bottom: -8px;
+	left: -24px;
+	pointer-events: none;
+	content: "";
+	border: 2px solid var(--color-accent-emphasis);
+	border-radius: 6px;
+}
+
+body .footnotes li:target {
+	color: var(--color-fg-default);
+}
+
+body .footnotes .data-footnote-backref g-emoji {
+	font-family: monospace;
+}
+
+body .task-list-item {
+	list-style-type: none;
+}
+
+body .task-list-item label {
+	font-weight: 400;
+}
+
+body .task-list-item.enabled label {
+	cursor: pointer;
+}
+
+body .task-list-item+.task-list-item {
+	margin-top: 3px;
+}
+
+body .task-list-item .handle {
+	display: none;
+}
+
+body .task-list-item-checkbox {
+	margin: 0 .2em .25em -1.6em;
+	vertical-align: middle;
+}
+
+body .contains-task-list:dir(rtl) .task-list-item-checkbox {
+	margin: 0 -1.6em .25em .2em;
+}
+
+body ::-webkit-calendar-picker-indicator {
+	filter: invert(50%);
+}
+
+details>ul>li {
+	margin-top: .5em;
+}
+
+.side {
+	width: 18%;
+	margin-left: 1em;
+	margin-right: -1em;
+	height: 80vh;
+	padding-right: 1em;
+	position: sticky;
+	display: flex;
+	top: 2em;
+	flex-direction: column;
+	border-left: 1px solid var(--color-border-muted);
+}
+
+.sticky {
+	overflow-y: auto;
+	width: 100%;
+	padding: 0.25em;
+	padding-left: 0.4em;
+	font-size: 80%;
+}
+
+.side>.summary {
+	margin-top: 0.5em;
+	font-style: oblique;
+	border-bottom: rgba(148, 156, 163, 0.2);
+	border-bottom-style: solid;
+	border-width: thin;
+	font-size: large;
+	margin-left: 0.3em;
+}
+
+.sticky>ul>li {
+	margin-top: .35em;
+}
+
+details>div {
+	font-size: 95%;
+	padding: 0.2em 0.3em 0;
+}
+
+details {
+	border-bottom: var(--color-neutral-muted);
+	border-bottom-style: solid;
+	border-width: thin;
+	margin-bottom: .7em;
+}
+
+details>* {
+	padding-left: .2em;
+	padding-right: .2em;
+}
+
+details>ul,
+summary {
+	padding-left: .1em;
+	padding-right: 0.6em;
+}
+
+.main {
+	width: 85%;
+	padding-left: .5em;
+}
+
+.ul_prev {
+	margin-bottom: .2em;
+}
+
+.ol_prev {
+	margin-bottom: .15em;
+}
+
+.hljs>code {
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-left: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.code-lang {
+	height: fit-content;
+	width: fit-content;
+	color: var(--color-hljs-code-lang);
+	display: inline-block;
+	background-color: var(--color-hljs-code-lang-background);
+	padding: 0px 4px;
+	margin-left: -0.3em;
+	word-break: break-all;
+	font-weight: bold;
+}
+
+.code-lang-firstChiled {
+	transform: translateY(-0.5em);
+}
+
+.code-lang {
+	margin-bottom: .4em;
+	position: absolute;
+	font-size: small;
+	top: 0em;
+	left: 1.75em;
+}
+
+.code-header {
+	display: inline-flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-right: .5em;
+}
+
+
+.code-copy-div {
+	display: inline-flex;
+	align-items: center;
+	height: fit-content;
+	width: fit-content;
+	right: 0.3em;
+	top: .2em;
+	position: absolute;
+}
+
+.code-copy-meesage {
+	display: none;
+	font-weight: 800;
+	z-index: 1;
+	background-color: var(--color-neutral-muted);
+	padding: 0px 2px;
+}
+
+.code-copy-button {
+	cursor: pointer;
+	width: fit-content;
+	height: fit-content;
+	border-style: solid;
+	border-width: thin;
+	border-color: rgba(148, 156, 163, 0.2);
+	font-family: "Wingdings 2";
+	font-size: x-large;
+	color: var(--color-hljs-code-copy-button);
+	font-weight: 600;
+	border-radius: 4px;
+}
+
+.code-lang-next {
+	margin-top: 1.1em;
+}
+
+.it-MdContent .code-copy {
+	display: flex;
+	position: absolute;
+	right: 32px;
+	transform: translateY(-8px);
+}
+
+.hidden {
+	display: none;
+}
+
+.codename {
+	display: none;
+}
+
+li {
+	margin-bottom: 0;
+}
+
+li>ol,
+ul {
+	padding-left: 1em;
+}
+
+.titleH1 {
+	font-size: 2.5em;
+	margin-top: .5em !important;
+	padding-left: 0;
+	border-left: none;
+}
+
+
+.main>h1:first-child {
+	font-size: 2.5em;
+	margin-top: .5em !important;
+	padding-left: 0;
+	border-left: none;
+}
+
+.main>ol>li,
+.main>ul>li {
+	margin-bottom: .2em;
+}
+
+body {
+	font-family: 'Noto Sans JP', sans-serif, "Helvetica Neue", "Hiragino Kaku Gothic ProN", Meiryo;
+	text-rendering: optimizeLegibility !important;
+}
+
+.sticky a {
+	margin-left: -0.3em;
+	display: block;
+}
+
+.sticky ul {
+	margin-left: -.2em;
+}
+
+.sticky ul ul {
+	padding-left: 1.2em;
+}
+
+svg {
+	height: 1em;
+	width: 1em;
+}
+
+.bi-link-45deg {
+	display: none;
+}
+
+a:hover+i {
+	display: unset;
+	margin-left: 0.05em;
+}
+
+.liprev {
+	margin-bottom: 0.3em;
+}
+
+.liprev:has(strong) {
+	margin-bottom: 0em;
+}
+
+.oneLi {
+	margin-bottom: 0;
+}
+
+.main * {
+	text-shadow: 0 0 0;
+}
+
+.main :is(a, strong, h1, h2, h3, h4, h5, h6, code *, blockquote *, .note *) {
+	text-shadow: none;
+}
+
+@-moz-document url-prefix() {
+	.main ul>li>p {
+		margin-left: 0;
+	}
+
+	.sticky a {
+		margin-left: 0;
+	}
+}
+
+body b,
+body strong {
+	text-shadow: none;
+}
+
+body details summary:hover,
+body details summary:focus-visible {
+	background-color: var(--color-neutral-muted);
+}
+
+body details[open] {
+	border-bottom-style: solid;
+	border-width: 3px;
+}
+
+body details[open] summary {
+	background-color: var(--color-neutral-muted);
+}
+
+body details[open] summary:hover,
+body details[open] summary:focus-visible {
+	background-color: rgba(110, 118, 129, 0.2);
+}
+
+.hanten {
+	padding: .4em;
+	padding-left: .6em;
+	border: solid 2px;
+	border-color: rgba(148, 156, 163, 0.2);
+	color: var(--color-canvas-default);
+	margin-bottom: 1em;
+	min-height: 2em;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hanten li::marker {
+	color: initial;
+}
+
+.hanten p {
+	margin-bottom: 0.5em;
+}
+
+.hanten code {
+	background-color: var(--color-canvas-default);
+	color: var(--color-canvas-default);
+}
+
+.hanten pre * {
+	background-color: var(--color-neutral-muted);
+	color: var(--color-neutral-muted);
+}
+
+.hanten pre *::selection {
+	background-color: var(--color-neutral-muted);
+	color: var(--color-hljs-default);
+}
+
+.hanten pre .hljs-string::selection {
+	color: var(--color-hljs-string);
+}
+
+.hanten pre .hljs-keyword::selection {
+	color: var(--color-hljs-keyword);
+}
+
+.hanten pre :is(.hljs-number::selection, .hljs-built_in::selection, .hljs-builtin-name::selection, .hljs-literal::selection, .hljs-type::selection, .hljs-params::selection, .hljs-meta::selection, .hljs-link::selection) {
+	color: #f5871f;
+}
+
+.hanten ::selection {
+	background: rgba(154, 159, 163, 0.2);
+	color: var(--color-fg-default);
+}
+
+.hanten code::selection {
+	background-color: rgba(137, 140, 143, 0.5);
+}
+
+.hanten :last-child {
+	margin-bottom: 0;
+}
+
+em,
+.side > .summary{
+	font-family: system-ui;
+	text-shadow: 0 0 0;
+}
+em > strong{
+	text-shadow: 0 0 0;
+}
+
+@-moz-document url-prefix() {
+	.main{
+		text-shadow:none;
+	}
+
+	em,
+	.side > .summary{
+		font-family: 'Noto Sans JP', sans-serif, "Helvetica Neue", "Hiragino Kaku Gothic ProN", Meiryo;
+		text-shadow: none;
+	}
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(function () {
+	let visiFlg = false;
+	$('.hljs').hover(function () {
+		if ($(this).find(".code-copy-div").css('opacity') < 1) {
+			$(this).find(".code-copy-div").fadeIn(0);
+		}
+		$(this).find(".code-copy-div").show();
+		visiFlg = true;
+	}, function () {
+		if ($(this).find(".code-copy-div").css('opacity') < 1) {
+		} else {
+			$(this).find(".code-copy-div").hide();
+			visiFlg = false;
+		}
+	});
+	$('.hljs').focusin(function () {
+		$(this).find(".code-copy-div").show();
+		visiFlg = true;
+	});
+
+	$('.hljs').focusout(function () {
+		if (visiFlg == true) {
+			$(this).find(".code-copy-div").hide();
+			visiFlg = false;
+		}
+	});
+	$(".hljs").keypress(function (e) {
+		if (e.key == "Enter") {
+			$(this).find(".code-copy-button").click();
+			return false;
+		}
+	});
+	$('.code-copy-button').on('click', event => {
+		visiFlg = false;
+		$(event.target).parents('.code-copy-div').show();
+		$(event.target).prev().show();
+		$(event.target).prev().fadeOut(1000);
+		$(event.target).parents('.code-copy-div').fadeOut(1000)
+		var codeinner = $(event.target).parent().prev()[0];
+		var text = codeinner.innerText;
+		var clipboard = $('<textarea class="tmptextarea"></textarea>');
+		clipboard.text(text);
+		// body直下に一時的に挿入
+		$('body').append(clipboard);
+		// 選択状態にする
+		clipboard.select();
+		// WebExtension APIのブラウザ拡張の仕組みを呼び出しクリップボードにコピー
+		document.execCommand('copy');
+		$('.tmptextarea').remove();
+	});
+})
+	$(function(){
+		$('a[href^="#"]').click(function() {								/* リンク先が#から始まる時 */
+			var speed = 200;												/* スクロールにかける時間を設定 */
+			var href = $(this).attr("href");								/* hrefの内容を取得 */
+			var target = $(href == "#" ? 'html' : href);					/* hrefが#だけだった場合、htmlに置き換えて、そうでない場合はhrefの値をtargetに格納 */
+			var position = target.offset().top-15;							/* 飛び先のIDの上からの位置を取得 */
+			$('body,html').animate({scrollTop:position}, speed, 'swing');	/* cssのアニメーションを使ってスクロールさせる */
+			return false;
+		});
+	});
+</script>
+
+</head>
+<body><div><div class="main" style="flex:1;"><script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script><h1 id="codewars問題ピックアップ">codewars問題ピックアップ</h1><p style="margin-top: 0em;"><a href="https://www.codewars.com/" target="_blank" rel="noopener noreferrer">codewars</a><i class="bi bi-link-45deg"></i>の問題のピックアップ。各問題のタイトルからcodewarsのページへ飛べる。<br>
+初日レベルでは配列を使わない問題を解いてもらう想定。解答例はできる限り自分で解いてから見ること。</p><p>ちなみに、<a href="#get-the-middle-character">Get the Middle Character</a>は7kyuだが配列を使わないので、初日でも（頑張れば）解けると思う。余裕があれば。</p><h2 id="概要">概要</h2><p class="liprev" style="margin-top: 0em;">問題を適当にピックアップし、簡単な日本語訳と解答例を記載した。<br>
+ピックアップ基準は以下の通り。</p><ul>
+<li><p>アルゴリズム能力を求められるもの</p></li>
+<li><p class="liprev">javaの知識だけである程度解けるもの</p><ul>
+<li class="oneLi"><p>あくまでも<strong>ある程度</strong>で、正規表現などは一部必要</p></li>
+</ul></li>
+<li><p class="liprev">参考になる別解がありそうなもの</p><ul>
+<li class="oneLi"><p>javaの書き方やアルゴリズムの別解</p></li>
+</ul></li>
+<li><p>解いてて楽しいもの</p></li>
+</ul><h2 id="目次">目次</h2><ul style="margin-top: 0em;">
+<li><p class="liprev"><a href="#codewars問題ピックアップ">codewars問題ピックアップ</a></p><ul>
+<li class="oneLi"><p><a href="#概要">概要</a></p></li>
+<li class="oneLi"><p><a href="#目次">目次</a></p></li>
+</ul></li>
+<li><p class="liprev"><a href="#8kyu">8kyu</a></p><ul>
+<li class="oneLi"><p><a href="#get-nth-even-number">Get Nth Even Number</a></p></li>
+<li class="oneLi"><p><a href="#twice-as-old">Twice as old</a></p></li>
+<li class="oneLi"><p><a href="#if-you-cant-sleep-just-count-sheep">If you can't sleep, just count sheep!!</a></p></li>
+<li class="oneLi"><p><a href="#triple-trouble">Triple Trouble</a></p></li>
+<li class="oneLi"><p><a href="#cat-years-dog-years">Cat years, Dog years</a></p></li>
+<li class="oneLi"><p><a href="#a-wolf-in-sheeps-clothing">A wolf in sheep's clothing</a></p></li>
+<li class="oneLi"><p><a href="#gravity-flip">Gravity Flip</a></p></li>
+</ul></li>
+<li><p class="liprev"><a href="#7kyu">7kyu</a></p><ul>
+<li class="oneLi"><p><a href="#highest-and-lowest">Highest and Lowest</a></p></li>
+<li class="oneLi"><p><a href="#get-the-middle-character">Get the Middle Character</a></p></li>
+<li class="oneLi"><p><a href="#list-filtering">List Filtering</a></p></li>
+<li class="oneLi"><p><a href="#reverse-words">Reverse words</a></p></li>
+<li class="oneLi"><p><a href="#last-survivor">Last Survivor</a></p></li>
+<li class="oneLi"><p><a href="#red-knight">Red Knight</a></p></li>
+<li class="oneLi"><p><a href="#status-arrays">Status Arrays</a></p></li>
+</ul></li>
+</ul><h1 id="8kyu">8kyu</h1><h2 id="get-nth-even-number" style="margin-top: 0em;"><a href="https://www.codewars.com/kata/5933a1f8552bc2750a0000ed" target="_blank" rel="noopener noreferrer">Get Nth Even Number</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;"><em><strong>配列を使わない問題</strong></em><br>
+N個の偶数を返す。ただし、1つめの偶数は0とする。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>N=1 --&gt; 0
+N=3 --&gt; 4 (0,2,4)
+N=5 --&gt; 8 (0,2,4,6,8)
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">nthEven</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+	<span class="hljs-keyword">return</span> n * <span class="hljs-number">2</span> - <span class="hljs-number">2</span>;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p>1つめの偶数を0とするため、<code>-2</code>している。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="twice-as-old"><a href="https://www.codewars.com/kata/5b853229cfde412a470000d0" target="_blank" rel="noopener noreferrer">Twice as old</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;"><em><strong>配列を使わない問題</strong></em><br>
+現在の父親の年齢と息子の年齢が渡されるので、「父親が息子の2倍の年齢だったのは何年前か」または「何年後に2倍の年齢になるか」を計算する。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>父親=30,息子=7 --&gt; 16 (16年後、父親46・息子23となる)
+父親=45,息子=30 --&gt; 15 (15年前、父親30・息子15となる)
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">TwiceAsOld</span><span class="hljs-params">(<span class="hljs-keyword">int</span> dadYears, <span class="hljs-keyword">int</span> sonYears)</span> </span>{
+	<span class="hljs-keyword">return</span> Math.abs(dadYears - sonYears * <span class="hljs-number">2</span>);
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p>計算後、<code>Math.abs</code>で絶対値を取得する。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="if-you-cant-sleep-just-count-sheep"><a href="https://www.codewars.com/kata/5b077ebdaf15be5c7f000077" target="_blank" rel="noopener noreferrer">If you can't sleep, just count sheep!!</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;"><em><strong>配列を使わない問題</strong></em><br>
+渡された数値の回数だけ羊を数えた文字列を返す。ただし、0が渡されたときは羊を数えない。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>3 --&gt; "1 sheep...2 sheep...3 sheep..."
+0 --&gt; ""
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">countingSheep</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>{
+	String s = <span class="hljs-string">""</span>;
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; num + <span class="hljs-number">1</span>; i++) {
+		s += i + <span class="hljs-string">" sheep..."</span>;
+	}
+
+	<span class="hljs-keyword">return</span> s;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p>最初に戻り値の文字列<code>s</code>に空文字を入れて初期化し、<code>for</code>が回らない場合（<code>num</code>が<code>0以下</code>の場合）に<code>s</code>をそのまま返している。</p>
+<p><code>for (int i = 0; i &lt; num; i++)</code>ではなく、<code>for (int i = 1; i &lt; num + 1; i++)</code>にしているのは、<code>i</code>の値を<code>for</code>の中でそのまま使いたいため。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="triple-trouble"><a href="https://www.codewars.com/kata/5704aea738428f4d30000914" target="_blank" rel="noopener noreferrer">Triple Trouble</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;"><em><strong>配列を使わない問題</strong></em><br>
+3つ文字列を渡されるので、各文字列の先頭から順に合体させた文字列を返す。<br>
+前提として、入力される文字列はすべて同じ長さである。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>"aa","bb","cc" --&gt; "abcabc"
+"Bm","aa","tn" --&gt; "Batman"
+"Cln","hlg","aee" --&gt; "Challenge"
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">tripleTrouble</span><span class="hljs-params">(String one, String two, String three)</span> </span>{
+	StringBuilder trouble = <span class="hljs-keyword">new</span> StringBuilder();	<span class="hljs-comment">// StringBuilderはStringより色々できる文字列</span>
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; one.length(); i++) {
+		trouble.append(one.charAt(i));
+		trouble.append(two.charAt(i));
+		trouble.append(three.charAt(i));
+	}
+
+
+	<span class="hljs-keyword">return</span> trouble.toString();
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p class="liprev"><code>String.charAt(int index)</code>は文字列の<code>index</code>番目の文字を<code>char</code>で返すメソッド。<br>
+<code>StringBuilder.append(char c)</code>で文字列の末尾に<code>c</code>を追加するメソッド。<br>
+つまり、<code>one</code>の文字列長の回数、各引数の<code>i</code>番目の文字を<code>trouble</code>の末尾に追加している。</p>
+<ul>
+<li class="oneLi"><p><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html#charAt-int-" target="_blank" rel="noopener noreferrer">String (Java Platform SE 8 )</a><i class="bi bi-link-45deg"></i></p></li>
+<li class="oneLi"><p><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/StringBuilder.html#append-char-" target="_blank" rel="noopener noreferrer">StringBuilder (Java Platform SE 8 )</a><i class="bi bi-link-45deg"></i></p></li>
+</ul>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="cat-years-dog-years"><a href="https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b" target="_blank" rel="noopener noreferrer">Cat years, Dog years</a><i class="bi bi-link-45deg"></i></h2><p class="liprev" style="margin-top: 0em;">人間の年齢(humanYears)を渡されるので、人間の年齢、猫の年齢(catYears)、犬の年齢(dogYears)を計算して返す。<br>
+条件は以下の通り。</p><ol>
+<li><p class="liprev">humanYears</p><ol>
+<li class="oneLi"><p>必ず1以上である</p></li>
+<li class="oneLi"><p>必ず整数である</p></li>
+</ol></li>
+<li><p class="liprev">catYears</p><ol>
+<li class="oneLi"><p>最初の年は+15年</p></li>
+<li class="oneLi"><p>2年目は+9年</p></li>
+<li class="oneLi"><p>その後は毎年+4年</p></li>
+</ol></li>
+<li><p class="liprev">dogYears</p><ol>
+<li class="oneLi"><p>最初の年は+15年</p></li>
+<li class="oneLi"><p>2年目は+9年</p></li>
+<li class="oneLi"><p>その後は毎年+5年</p></li>
+</ol></li>
+</ol><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div> 1 --&gt; humanYears=1, catYears=15, dogYears=15
+ 2 --&gt; humanYears=2, catYears=24, dogYears=24
+10 --&gt; humanYears=10, catYears=56, dogYears=64
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] humanYearsCatYearsDogYears(<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> humanYears) {
+	<span class="hljs-keyword">int</span> catYears = <span class="hljs-number">15</span>;
+	<span class="hljs-keyword">int</span> dogYears = <span class="hljs-number">15</span>;
+
+	<span class="hljs-keyword">if</span> (humanYears &gt; <span class="hljs-number">1</span>) {
+		catYears += <span class="hljs-number">9</span>;
+		dogYears += <span class="hljs-number">9</span>;
+	}
+
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= humanYears; i++) {
+		catYears += <span class="hljs-number">4</span>;
+		dogYears += <span class="hljs-number">5</span>;
+	}
+
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] { humanYears, catYears, dogYears };
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p><code>catYears</code>と<code>dogYears</code>は1年目が<code>15</code>のため、初期値に<code>15</code>を設定して変数作成。<br>
+<code>humanYears</code>が<code>1</code>より大きい場合は<code>catYears</code>と<code>dogYears</code>に<code>+9</code>。（2年目の計算）<br>
+<code>for</code>で行う処理は「3年目以降の計算」のため、初期値を<code>3</code>とし、条件を<code>humanYears以下</code>とする。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="a-wolf-in-sheeps-clothing"><a href="https://www.codewars.com/kata/5c8bfa44b9d1192e1ebd3d15" target="_blank" rel="noopener noreferrer">A wolf in sheep's clothing</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em; margin-bottom: 0.1em;">あなたは羊飼いで、ヒツジのふりをするオオカミに悩まされています。<br>
+オオカミの前にいるヒツジに、オオカミに食べられることを警告します。<br>
+あなたは配列の最後にあるキューの先頭に立っていることを思い出してください。</p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>["sheep","sheep","sheep","sheep","sheep","wolf","sheep","sheep"]
+    7       6       5       4       3              2       1   
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p>オオカミがあなたに最も近い動物である場合は、「Pls go away and stop eat my sheep」を返します。<br>
+それ以外の場合は、「Oi! Sheep number N! You are about to be eaten by a wolf!」を返します。ここで、N はキュー内の羊の位置です。</p><p>配列には常に1つのオオカミが存在します。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+
+Input: ["sheep", "sheep", "wolf"]
+Output: "Pls go away and stop eating my sheep"
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">warnTheSheep</span><span class="hljs-params">(String[] array)</span> </span>{
+	<span class="hljs-keyword">if</span> (array[array.length - <span class="hljs-number">1</span>].equals(<span class="hljs-string">"wolf"</span>)) {
+		<span class="hljs-keyword">return</span> <span class="hljs-string">"Pls go away and stop eating my sheep"</span>;
+	} <span class="hljs-keyword">else</span> {
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+			<span class="hljs-keyword">if</span> (array[i].equals(<span class="hljs-string">"wolf"</span>)) {
+				<span class="hljs-keyword">return</span> <span class="hljs-string">"Oi! Sheep number "</span> + (array.length - i - <span class="hljs-number">1</span>) + <span class="hljs-string">"! You are about to be eaten by a wolf!"</span>;
+			}
+		}
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-string">""</span>;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p class="liprev">やりたいことを整理すると、</p>
+<ol>
+<li class="oneLi"><p>配列の一番右に<code>wolf</code>が入っている場合は<code>"Pls go away and stop eating my sheep"</code></p></li>
+<li class="oneLi"><p>それ以外の場合は<code>wolf</code>の次にいる羊に<code>"Oi! Sheep number N! You are about to be eaten by a wolf!"</code><br>ただし<code>N</code>は<code>wolf</code>の次の番号</p></li>
+</ol>
+<p>ここで、番号が右から割り振られていることに注意する。<br>
+つまり、配列の1番右の値を取得するときは<code>array.length - 1</code>を指定しなければならない。</p>
+<p>それらを考慮したうえで、まず最初に一番右の値が<code>wolf</code>か確認し、<code>wolf</code>ではない場合に<code>for</code>で左から<code>wolf</code>かどうか確かめていく。<br>
+最初に一番右の値が<code>wolf</code>か確認をするのは、無駄な処理を省くため。（<code>for</code>の<code>array[i].equals("wolf")</code>の中で<code>if(i == array.length - 1)</code>とするよりも効率的）</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="gravity-flip"><a href="https://www.codewars.com/kata/5f70c883e10f9e0001c89673" target="_blank" rel="noopener noreferrer">Gravity Flip</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;">ボブは物理の授業が退屈なので、暇つぶしにおもちゃ箱を自作しました。この箱は、重力を変化させることができる特別なものです。</p><p>箱の中には立方体のおもちゃが何列か並んでいます。i番目の列にはa_i個のキューブが入っている。<br>
+最初、箱の中の重力はキューブを下に引っ張っている。ボブが重力を切り替えると、すべての立方体が箱のある辺dに引っ張られるようになる。</p><p style="margin-bottom: 0.1em;">以下は、重力の切り替え前と切り替え後の立方体の箱がどのように見えるかの例である。</p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>+---+                                       +---+
+|   |                                       |   |
++---+                                       +---+
++---++---+     +---+              +---++---++---+
+|   ||   |     |   |   --&gt;        |   ||   ||   |
++---++---+     +---+              +---++---++---+
++---++---++---++---+         +---++---++---++---+
+|   ||   ||   ||   |         |   ||   ||   ||   |
++---++---++---++---+         +---++---++---++---+
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.1em;">箱の中の立方体の初期配置が与えられたとき、ボブが重力を切り替えた後に、n 個の列のそれぞれにある立方体の数を求めよ。<br>
+<strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>* <span class="hljs-string">'R'</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]      -&gt;  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+* <span class="hljs-string">'L'</span>, [<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span> ]  -&gt;  [<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-comment">// 配列のソートをしたいのでインポート</span>
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] flip(<span class="hljs-keyword">char</span> dir, <span class="hljs-keyword">int</span>[] arr) {
+	Arrays.sort(arr);
+
+	<span class="hljs-comment">// 逆順に並び替える処理</span>
+	<span class="hljs-keyword">if</span> (<span class="hljs-string">'L'</span> == dir) {	
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> f = <span class="hljs-number">0</span>, l = arr.length - <span class="hljs-number">1</span>; f &lt; l; f++, l--) {
+			<span class="hljs-keyword">int</span> temp = arr[f];
+			arr[f] = arr[l];
+			arr[l] = temp;
+		}
+	}
+	<span class="hljs-keyword">return</span> arr;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p>難しく考えず、<code>R</code>は「右に傾けたら」、<code>L</code>は「左に傾けたら」をイメージするとわかりやすい。<br>
+そのうえでやりたいことをよく考えると、配列のソートとわかるので、<code>R</code>なら昇順、<code>L</code>なら降順に並び替える。</p>
+<p>ただし、<code>Arrays.sort()</code>は昇順にしかソートできないので、降順にしたいときは<strong>昇順にしてから</strong>改めて順を並び替える。<br>
+また、<code>char</code>は<code>String</code>と違って<code>==</code>で比較できる。<code>char</code>はプリミティブ型で<code>String</code>は参照型のため。詳細は各自で調べてください</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h1 id="7kyu">7kyu</h1><h2 id="highest-and-lowest" style="margin-top: 0em;"><a href="https://www.codewars.com/kata/554b4ac871d6813a03000035" target="_blank" rel="noopener noreferrer">Highest and Lowest</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;">数字がスペースで区切られている文字列が与えられるので、その中の最大値と最小値を「スペースで区切った文字列」で返す。</p><p class="liprev">条件は以下の通り。</p><ul>
+<li class="oneLi"><p>入力文字列には常に少なくとも 1 つの数値が含まれます。</p></li>
+<li class="oneLi"><p>出力文字列は、1つのスペースで区切られた2つの数値で、最大の数値が最初。</p></li>
+</ul><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>Input: "1 2 3 4 5"
+Output: "5 1"
+
+Input: "1 2 -3 4 5"
+Output: "5 -3"
+
+Input: "1 9 3 4 -5"
+Output: "9 -5"
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">highAndLow</span><span class="hljs-params">(String numbers)</span> </span>{
+	String[] splitNumbers = numbers.split(<span class="hljs-string">" "</span>);
+
+	<span class="hljs-keyword">int</span> max = Integer.parseInt(splitNumbers[<span class="hljs-number">0</span>]);
+	<span class="hljs-keyword">int</span> min = Integer.parseInt(splitNumbers[<span class="hljs-number">0</span>]);
+
+	<span class="hljs-keyword">for</span> (String numStr : splitNumbers) {
+		<span class="hljs-keyword">int</span> num = Integer.parseInt(numStr);
+
+		<span class="hljs-keyword">if</span> (max &lt; num) {
+			max = num;
+		}
+
+		<span class="hljs-keyword">if</span> (min &gt; num) {
+			min = num;
+		}
+	}
+
+	<span class="hljs-keyword">return</span> max + <span class="hljs-string">" "</span> + min;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p><code>String.split(String regex)</code>は、文字列を<code>regex</code>で分割した結果をString型の配列として返してくれる。<br>
+なので、まずは空白で分割した結果の配列を用意して、ひとつめの値を<code>max</code>と<code>min</code>に代入する。<br>
+その後<code>for</code>でひとつずつ取り出して比較それぞれと比較する。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="get-the-middle-character"><a href="https://www.codewars.com/kata/56747fd5cb988479af000028" target="_blank" rel="noopener noreferrer">Get the Middle Character</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;">渡される文字列の中間の文字を返す。ただし、文字列の長さが偶数の場合は中間の2文字を返す。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>"test" --&gt; "es"
+"testing" --&gt; "t"
+"A" --&gt; "A"
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getMiddle</span><span class="hljs-params">(String word)</span> </span>{
+	<span class="hljs-keyword">int</span> len = word.length();
+
+	<span class="hljs-keyword">if</span> (len == <span class="hljs-number">1</span>) {
+		<span class="hljs-keyword">return</span> word;
+	}
+
+	String result;
+	<span class="hljs-keyword">boolean</span> isOdd = len % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>;
+
+	result = word.substring(len / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>, len / <span class="hljs-number">2</span> + <span class="hljs-number">1</span>);
+
+	<span class="hljs-keyword">if</span> (isOdd) {
+		result = result.substring(<span class="hljs-number">1</span>);
+	}
+
+	<span class="hljs-keyword">return</span> result;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p><code>len % 2</code>で<code>lenを2で割ったときの余り</code>が計算できるので、<code>isOdd</code>に<code>len % 2</code>が<code>1</code>か比較した結果を代入している。<br>
+<code>String.substring(int beginIndex, int endIndex)</code>は文字列を<code>beginIndex</code>のindexから<code>endIndex</code>のindexまでを切り取って返してくれるので、<br>
+<code>substring(len / 2 - 1, len / 2 + 1)</code>で真ん中の2文字を取得する。<br>
+その後、もし<code>word</code>の長さが偶数であれば、さっき取得した文字列の先頭を<code>result.substring(1)</code>で取り除いている。<br>
+<code>substring</code>は引数が1つの場合、その引数のindex以降の文字を返す。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="list-filtering"><a href="https://www.codewars.com/kata/53dbd5315a3c69eed20002dd" target="_blank" rel="noopener noreferrer">List Filtering</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;">整数と文字列のリストを取得し、文字列をフィルタリングした新しいリストを返す。<br>
+ただし、整数は負の値を含まない。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>1, 2, "a", "b", 0, 15 --&gt; 1,2,0,15
+1, 2, "a", "b", "aasf", "1", "123", 231 --&gt; 1, 2, 231
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> List&lt;Object&gt; <span class="hljs-title">filterList</span><span class="hljs-params">(<span class="hljs-keyword">final</span> List&lt;Object&gt; list)</span> </span>{
+	List&lt;Object&gt; result = <span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;();
+
+	<span class="hljs-keyword">for</span> (Object item : list) {
+		<span class="hljs-keyword">if</span> (item <span class="hljs-keyword">instanceof</span> Integer) {
+			result.add(item);
+		}
+	}
+
+	<span class="hljs-keyword">return</span> result;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p><code>instanceof</code>で<code>item</code>が<code>Integer型</code>か確認し、もし<code>Integer型</code>なら<code>result</code>に追加する。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="reverse-words"><a href="https://www.codewars.com/kata/5259b20d6021e9e14c0010d4" target="_blank" rel="noopener noreferrer">Reverse words</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em; margin-bottom: 0.1em;">空白で単語が区切られている文字列を受け取り、単語を反転させた文字列を返す。<br>
+ただし、文字列内のスペースは全て保持する必要がある。<br>
+<strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>"This is an example!" --&gt; "sihT si na !elpmaxe"
+"double  spaces"      --&gt; "elbuod  secaps"
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">reverseWords</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String original)</span> </span>{
+	Pattern ps = Pattern.compile(<span class="hljs-string">"\\S+"</span>);
+	Pattern pw = Pattern.compile(<span class="hljs-string">"\\s+"</span>);
+	String[] spaces = ps.split(original);
+	String[] words = pw.split(original);
+	String result = <span class="hljs-string">""</span>;
+
+	<span class="hljs-keyword">switch</span> (words.length) {
+	<span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+		<span class="hljs-keyword">return</span> original;
+
+	<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> StringBuilder(original).reverse().toString();
+
+	<span class="hljs-keyword">default</span>:
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; spaces.length; i++) {
+			StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder(words[i]);
+			result += spaces[i] + sb.reverse();
+		}
+	}
+
+	<span class="hljs-keyword">return</span> result;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p style="margin-bottom: 0.1em;"><code>Pattern</code>はコンパイル済みの正規表現。<code>Pattern.compile()</code>で作成できる。<br>
+<code>Pattern.split(String)</code>で文字列を設定した正規表現で分割する。<br>
+これを利用し、<code>original</code>を<code>1文字以上の非空白文字</code>で分割した結果を<code>spaces</code>に、<code>1文字以上の空白文字</code>で分割した結果を<code>words</code>に代入する。<br>
+すると、</p>
+<div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>original:This is an example!
+spaces:[""," "," "," "]
+words:["This","is","an","example!"]
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div>
+<p style="margin-bottom: 0.1em;">という状態になる。<br>
+なぜ<code>spaces</code>の先頭が空なのか？それは、<code>1文字以上の非空白文字</code>、ここでいう<code>単語</code>で区切っているため。<br>
+つまり、</p>
+<div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>[]This[ ]is[ ]an[ ]example!
+↑     ↑    ↑    ↑
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div>
+<p>の値を配列に代入しているイメージ。ただし、<code>split</code>の結果として得られる配列には、後続の空の文字列は含まれない。</p>
+<p><code>switch</code>で、もし<br>
+<code>words</code>の長さが<code>0</code>、つまり空の場合、<code>original</code>を返して終了する。<br>
+<code>words</code>の長さが<code>1</code>、つまり1つだけの場合、<code>original</code>を<code>reverse()</code>で反転した値を返して終了。<br>
+それ以外の場合、繰り返し処理で<code>result</code>に<code>spacesのi番目の値</code>と<code>wordsのi番目の値を反転した文字列</code>を結合していく。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="last-survivor"><a href="https://www.codewars.com/kata/609eee71109f860006c377d1" target="_blank" rel="noopener noreferrer">Last Survivor</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;">文字列と数字の配列が与えられます。</p><p class="liprev">数字は、配列の先頭から順番に削除する必要がある文字の位置を示します。<br>
+削除するたびに、文字列のサイズが減少します (空のスペースはありません)。<br>
+最後に残された文字列を返します。</p><ul>
+<li class="oneLi"><p>指定された文字列が空になることはありません。</p></li>
+<li class="oneLi"><p>配列の長さは、常に文字列の長さよりも 1 少なくなります。</p></li>
+<li class="oneLi"><p>すべての数値が有効です。</p></li>
+<li class="oneLi"><p>文字と数字が重複している可能性があります。</p></li>
+</ul><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>str = "zbk", arr = {0, 1} --&gt; b
+str = "zbk", arr = {2, 1} --&gt; z
+str = "bk", arr = {1} --&gt; b
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">lastSurvivor</span><span class="hljs-params">(String letters, <span class="hljs-keyword">int</span>[] coords)</span> </span>{
+	<span class="hljs-keyword">if</span> (letters.length() == <span class="hljs-number">1</span>) {
+		<span class="hljs-keyword">return</span> letters;
+	}
+
+	StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();
+	sb.append(letters);
+
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; letters.length() - <span class="hljs-number">1</span>; i++) {
+		sb.deleteCharAt(coords[i]);
+	}
+
+	<span class="hljs-keyword">return</span> sb.toString();
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p><code>StringBuilder.deleteCharAt(int index)</code>は、<code>index</code>の位置にある文字を削除する。<br>
+これを利用し、<code>for</code>で繰り返し<code>letters</code>の文字を削除している。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="red-knight"><a href="https://www.codewars.com/kata/5fc4349ddb878a0017838d0f" target="_blank" rel="noopener noreferrer">Red Knight</a><i class="bi bi-link-45deg"></i></h2><p class="liprev" style="margin-top: 0em;"><code>Red Knight</code>は2つのポーンを追いかけています。どちらのポーンが<code>Red Knight</code>に捕まりますか？<br>
+入力は2つの整数になります。</p><ul>
+<li class="oneLi"><p>knight: <code>Red Knight</code>の縦の位置。(0 or 1)</p></li>
+<li class="oneLi"><p>pawn: 2つのポーンの位置。(2 ~ 1000000)</p></li>
+</ul><p style="margin-bottom: 0.1em;">出力はオブジェクトである必要があります。</p><div class="hljs-parent liprev"><pre class="hljs" tabindex="0"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PawnDistance</span> </span>{
+	<span class="hljs-keyword">private</span> String color;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> distance;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PawnDistance</span><span class="hljs-params">(String s, <span class="hljs-keyword">long</span> d)</span> </span>{
+		color = s;
+		distance = d;
+	}
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><ul>
+<li class="oneLi"><p>color: どちらのポーンが捕まったか("Black" or "White")</p></li>
+<li class="oneLi"><p>distance: ポーンが捕まった位置。<br><br></p></li>
+</ul><p class="liprev">条件は以下の通り。</p><ul>
+<li class="oneLi"><p><code>Red Knight</code>は常に水平位置0から開始します。</p></li>
+<li class="oneLi"><p>黒のポーンは常に一番下にあります (垂直位置 1)。</p></li>
+<li class="oneLi"><p>白いポーンは常に一番上 (垂直位置 0) にあります。</p></li>
+<li class="oneLi"><p>ポーンが先に動き、2つのポーンは同時に動きます。</p></li>
+<li class="oneLi"><p><code>Red Knight</code>は前方に 2 マス、上下に 1 マス移動します。</p></li>
+<li class="oneLi"><p>ポーンは常に 1 マス前方に移動します。</p></li>
+<li class="oneLi"><p>両方のポーンは同じ水平位置から開始します。</p></li>
+</ul><p><strong>例</strong></p><img src="data:image/png;base64,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" style="margin-bottom: 0.1em;"><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>Input = 0, 4;
+Output = new PawnDistance("White", 8);
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> PawnDistance <span class="hljs-title">redKnight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> knight, <span class="hljs-keyword">long</span> pawn)</span> </span>{
+	String pawncolor;
+	<span class="hljs-keyword">int</span> x = (<span class="hljs-keyword">int</span>) (pawn - knight);
+
+	<span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+		pawncolor = <span class="hljs-string">"White"</span>;
+	} <span class="hljs-keyword">else</span> {
+		pawncolor = <span class="hljs-string">"Black"</span>;
+	}
+
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PawnDistance(pawncolor, pawn * <span class="hljs-number">2</span>);
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p class="liprev">一見ややこしいが、</p>
+<ol>
+<li class="oneLi"><p><code>Red Knight</code>は2歩、<code>Pawn</code>は1歩進むため、<code>Pawn</code>のスタート位置から倍の距離のところで<code>Pawn</code>が捕まる</p></li>
+<li class="oneLi"><p><code>Pawn</code>のスタート位置が偶数の場合は<code>Red Knight</code>が最初にいた軸の<code>Pawn</code>が、奇数の場合は最初にいた軸とは違う方の<code>Pawn</code>が捕まる</p></li>
+</ol>
+<p>ということに気づけばロジックは簡単。捕まる場所については<code>pawn * 2</code>で求められる。</p>
+<p style="margin-bottom: 0.1em;">どちらの色が捕まるかについては、単純に考えれば下記のようになる。</p>
+<div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-comment">// Pawnのスタート位置が偶数ならtrue</span>
+<span class="hljs-keyword">boolean</span> isEven = pawn % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>;
+<span class="hljs-comment">/** 
+ * knight==0:Knightのスタート軸がWhiteと同じ
+ * knight==1:Knightのスタート軸がBlackと同じ
+ */</span>
+<span class="hljs-keyword">if</span>(knight == <span class="hljs-number">0</span>){
+	<span class="hljs-comment">// Pawnのスタート位置が偶数ならWhite、奇数ならBlack</span>
+	<span class="hljs-keyword">if</span>(isEven){
+		pawncolor = <span class="hljs-string">"White"</span>;
+	}<span class="hljs-keyword">else</span>{
+		pawncolor = <span class="hljs-string">"Black"</span>;
+	}
+}<span class="hljs-keyword">else</span>{
+	<span class="hljs-comment">// Pawnのスタート位置が偶数ならBlack、奇数ならWhite</span>
+	<span class="hljs-keyword">if</span>(isEven){
+		pawncolor = <span class="hljs-string">"White"</span>;
+	}<span class="hljs-keyword">else</span>{
+		pawncolor = <span class="hljs-string">"Black"</span>;
+	}
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div>
+<p class="liprev">しかし、これだとコードが長くてあんまりかっこよくないので、<br>
+<code>pawnのスタート位置 - RedKnightのスタート軸</code>の結果から、どちらの<code>Pawn</code>が捕まるかを求めている。</p>
+<ul>
+<li class="oneLi"><p><code>pawnのスタート位置が偶数</code>、<code>RedKnightのスタート軸が偶数</code>の場合 ... <code>int x</code>は偶数なので<code>White</code></p></li>
+<li class="oneLi"><p><code>pawnのスタート位置が偶数</code>、<code>RedKnightのスタート軸が奇数</code>の場合 ... <code>int x</code>は奇数なので<code>Black</code></p></li>
+<li class="oneLi"><p><code>pawnのスタート位置が奇数</code>、<code>RedKnightのスタート軸が偶数</code>の場合 ... <code>int x</code>は奇数なので<code>Black</code></p></li>
+<li class="oneLi"><p><code>pawnのスタート位置が奇数</code>、<code>RedKnightのスタート軸が奇数</code>の場合 ... <code>int x</code>は偶数なので<code>White</code></p></li>
+</ul>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><h2 id="status-arrays"><a href="https://www.codewars.com/kata/601c18c1d92283000ec86f2b" target="_blank" rel="noopener noreferrer">Status Arrays</a><i class="bi bi-link-45deg"></i></h2><p style="margin-top: 0em;"><em><strong>明らかに7kyuの難易度ではないので注意！(6kyu以上の難易度?)</strong></em></p><p>整数の配列の各要素のステータスは、配列内の位置と配列内の他の要素の値によって決定できます。<br>
+配列内の要素Nのステータスは、配列内の要素Nの位置を、配列内のN未満の配列要素の数に加算することによって決定されます。<br>
+たとえば、整数<code>6</code>,<code>9</code>,<code>3</code>,<code>8</code>,<code>2</code>,<code>3</code>,<code>1</code>を含む配列を考えてみます。要素<code>8</code>のステータスは<code>8</code>です。<br>
+これは、その位置が<code>3</code>であり、配列内に<code>8</code>未満の要素が<code>5</code>つあるためです。</p><p>元の配列の要素をステータスの低い順序から高い順序で返します。 2つ以上の要素の状態が同点の場合は、配列に出現する順に出力します。</p><p style="margin-bottom: 0.1em;"><strong>例</strong></p><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div>Input = [6, 9, 3, 8, 2, 3, 1]
+Output = [6, 3, 2, 1, 9, 3, 8] (ステータスが順に4, 4, 5, 6, 7, 7, 8)
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><details><div><div class="hljs-parent"><pre class="hljs" tabindex="0"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] status(<span class="hljs-keyword">int</span>[] nums) {
+	<span class="hljs-keyword">int</span> x[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; x.length; i++) {
+		<span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; x.length; j++) {
+			<span class="hljs-keyword">if</span> (nums[i] &gt; nums[j]){
+				res++;
+			}
+		}
+		x[i] = i + res;
+	}
+
+	<span class="hljs-keyword">int</span> y[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[x.length];
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = y.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+		<span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; x.length; j++) {
+			<span class="hljs-keyword">if</span> (x[j] &gt;= x[index]){
+				index = j;
+			}
+		}
+		y[i] = nums[index];
+		x[index] = Integer.MIN_VALUE;
+	}
+	
+	<span class="hljs-keyword">return</span> y;
+}
+</div><div class="code-copy-div" style="display: none;"><div class="code-copy-meesage">Copy!</div><button class="code-copy-button" tabindex="-1">2</button></div></code></pre></div><p style="margin-bottom: 0.05em;"><strong>以下反転で解説</strong></p><div class="hanten">
+<p><em><strong>解説を読んでわかるようなコードじゃないので、自分で実行して確認してみてください。</strong></em></p>
+<p>まず、最初にステータスを求める。<br>
+<code>nums[i]</code>が<code>nums[j]</code>より大きい場合、<code>res++</code>を行う。これを繰り返し、最後に<code>i + res</code>した値を<code>x[i]</code>に代入する。<br>
+例の場合、<code>int x[]</code>の値は<code>4,7,4,8,5,7,6</code>となる。</p>
+<p>次に、<code>int y[]</code>の右端から代入していく。<br>
+<code>x[j]</code>が<code>x[index]</code>以上の場合、<code>int index</code>に<code>j</code>の値を代入する。これを繰り返し、最後に<code>y[i]</code>に<code>nums[index]</code>の値を代入する。<br>
+その後、<code>x[index]</code>に<code>Integer.MIN_VALUE(Integertが扱える最小の値)</code>を代入する。</p>
+</div></div><summary style="margin-bottom: 0.1em;">回答例</summary>
+
+
+
+</details><br><input class="scrollToTopButton" type="button" value="top" onclick="scrollToTop();"><script>
+function scrollToTop() {
+	scrollTo(({top: 0,left: 0,behavior: 'smooth'}));
+}
+</script><style>
+.scrollToTopButton{
+	border-radius: 12px;
+	padding: 4px 8px;
+	position: fixed;
+	bottom: 3vh; 
+	right: 3vh;
+	border-color: rgba(148, 156, 163, 0.3);
+	background-color: rgba(105, 105, 105, 0.3);
+	color: var(--color-hljs-default);
+}
+.scrollToTopButton:hover{
+	border-color: rgba(148, 156, 163, 0.6);
+	background-color: rgba(105, 105, 105, 0.6);
+	color: rgb(32, 32, 32);
+}
+</style></div></div></body>
+</html>
